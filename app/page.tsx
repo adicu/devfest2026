@@ -54,7 +54,7 @@ export default function Home() {
           className={`${russo.className} text-6xl sm:text-7xl md:text-8xl font-bold mb-4`}
           variants={itemVariants}
         >
-          CU DevFest '26
+          CU DevFest 2026
         </motion.h1>
 
         {/* Countdown */}
