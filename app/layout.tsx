@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Orbitron } from "next/font/google";
+import { Geist, Geist_Mono, Russo_One } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,10 +12,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const orbitron = Orbitron({
+// Setup Russo_One font
+const russoOne = Russo_One({
   subsets: ["latin"],
-  variable: '--font-orbitron',
-  weight: ['400', '700'],
+  variable: '--font-russo-one', // CSS variable
+  weight: ['400'], // Russo One only has 400 weight
 });
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${russoOne.variable} font-sans antialiased overflow-hidden`}
       >
         {children}
       </body>

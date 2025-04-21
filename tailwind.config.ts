@@ -19,6 +19,11 @@ const config = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: ["var(--font-geist-sans)", ...defaultTheme.fontFamily.sans],
+				mono: ["var(--font-geist-mono)", ...defaultTheme.fontFamily.mono],
+				'russo-one': ["var(--font-russo-one)", ...defaultTheme.fontFamily.sans]
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",

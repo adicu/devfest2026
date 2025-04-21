@@ -1,43 +1,105 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { Barlow_Condensed } from 'next/font/google';
+
+// Load Barlow Condensed font
+const barlowCondensed = Barlow_Condensed({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+});
 
 const Countdown = () => {
-  const calculateDaysLeft = () => {
-    const targetDate = new Date('2026-02-08T00:00:00Z'); // Set target date to Feb 8, 2026 UTC
+  const calculateTimeLeft = () => {
+    const targetDate = new Date('2026-02-08T00:00:00Z');
     const now = new Date();
     const difference = targetDate.getTime() - now.getTime();
 
-    // Calculate days, ensuring we round up correctly
-    const daysLeft = Math.ceil(difference / (1000 * 60 * 60 * 24));
+    let timeLeft = {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    };
 
-    return daysLeft > 0 ? daysLeft : 0; // Return 0 if the date has passed
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    }
+
+    return timeLeft;
   };
 
-  const [days, setDays] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
-    // Calculate initial days on client mount
-    setDays(calculateDaysLeft());
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
 
-    // Optional: Set up an interval to update the countdown daily if needed,
-    // though for just days, it might not be necessary unless the app stays open for days.
-    // const interval = setInterval(() => {
-    //   setDays(calculateDaysLeft());
-    // }, 1000 * 60 * 60 * 24); // Update once a day
-    // return () => clearInterval(interval);
-  }, []);
+    return () => clearTimeout(timer);
+  });
+
+  const formatNumber = (num: number) => num.toString().padStart(2, '0');
 
   return (
-    <div className="text-center">
-      <div className="font-orbitron text-8xl md:text-9xl font-bold text-primary-foreground tabular-nums">
-        {days}
+    <div className={`${barlowCondensed.className} text-center mt-4 w-full`}>
+      <div className="flex justify-center items-start space-x-2 md:space-x-6">
+        {/* Days */}
+        <div className="flex flex-col items-center">
+          <div className="text-4xl md:text-6xl font-bold text-white tabular-nums">
+            {formatNumber(timeLeft.days)}
+          </div>
+          <p className="text-xs md:text-sm text-[#E9C3FF] font-medium uppercase tracking-wider mt-1">
+            Days
+          </p>
+        </div>
+
+        {/* Colon */}
+        <div className="text-4xl md:text-6xl font-bold text-[#E9C3FF]">:</div>
+
+        {/* Hours */}
+        <div className="flex flex-col items-center">
+          <div className="text-4xl md:text-6xl font-bold text-white tabular-nums">
+            {formatNumber(timeLeft.hours)}
+          </div>
+          <p className="text-xs md:text-sm text-[#E9C3FF] font-medium uppercase tracking-wider mt-1">
+            Hours
+          </p>
+        </div>
+
+        {/* Colon */}
+        <div className="text-4xl md:text-6xl font-bold text-[#E9C3FF]">:</div>
+
+        {/* Minutes */}
+        <div className="flex flex-col items-center">
+          <div className="text-4xl md:text-6xl font-bold text-white tabular-nums">
+            {formatNumber(timeLeft.minutes)}
+          </div>
+          <p className="text-xs md:text-sm text-[#E9C3FF] font-medium uppercase tracking-wider mt-1">
+            Minutes
+          </p>
+        </div>
+
+        {/* Colon */}
+        <div className="text-4xl md:text-6xl font-bold text-[#E9C3FF]">:</div>
+
+        {/* Seconds */}
+        <div className="flex flex-col items-center">
+          <div className="text-4xl md:text-6xl font-bold text-white tabular-nums">
+            {formatNumber(timeLeft.seconds)}
+          </div>
+          <p className="text-xs md:text-sm text-[#E9C3FF] font-medium uppercase tracking-wider mt-1">
+            Seconds
+          </p>
+        </div>
       </div>
-      <p className="font-orbitron mt-2 text-xl md:text-2xl text-muted-foreground font-medium tracking-wider">
-        days to launch
-      </p>
     </div>
   );
 };
 
-export default Countdown; 
+export default Countdown;
