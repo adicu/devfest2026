@@ -10,6 +10,9 @@ const russo = Russo_One({
   subsets: ['latin'],
 });
 
+// Import Instagram icon
+import { Instagram } from 'lucide-react';
+
 export default function Home() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -65,6 +68,17 @@ export default function Home() {
           <Countdown />
         </motion.div>
       </motion.div>
+
+      {/* Instagram Link - Bottom Left */}
+      <a
+        href="https://www.instagram.com/adicolumbia/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="ADI Columbia Instagram"
+        className="absolute bottom-8 left-8 z-30 text-white/70 hover:text-white/90 transition-colors"
+      >
+        <Instagram size={28} /> { /* Adjust size as needed */ }
+      </a>
     </main>
   );
 }
