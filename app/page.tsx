@@ -90,28 +90,42 @@ export default function Home() {
 
       </motion.div>
 
+      {/* Container for bottom-left links */}
+      <div className="absolute bottom-8 left-8 z-30 flex items-center space-x-4">
+        {/* Instagram Link */}
+        <a
+          href="https://www.instagram.com/adicolumbia/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="ADI Columbia Instagram"
+          className="text-white/70 hover:text-white/90 transition-colors cursor-pointer"
+        >
+          <Instagram size={28} />
+        </a>
+
+        {/* Code of Conduct Link */}
+        <a
+          href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="MLH Code of Conduct"
+          className="text-sm font-sans text-white/70 hover:text-white/90 hover:underline transition-colors cursor-pointer"
+        >
+          Code of Conduct
+        </a>
+      </div>
+
       {/* Floating Interest Form Bubble Link - Top Left */}
       <motion.a
         href="https://docs.google.com/forms/d/e/1FAIpQLSejZmvDV5WmHkvFSHGCtqsSiti1XyrRHvOeuAxn4sE1awPAog/viewform?usp=header"
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute bottom-8 right-8 z-30 px-6 py-4 text-lg bg-purple-600/70 backdrop-blur-sm rounded-full text-white font-semibold shadow-lg hover:bg-purple-500/80 transition-all duration-100"
+        className="absolute bottom-8 right-8 z-30 px-6 py-4 text-lg bg-purple-600/70 backdrop-blur-sm rounded-full text-white font-semibold shadow-lg hover:bg-purple-500/80 transition-all duration-100 cursor-pointer"
         variants={bubbleVariants}
         animate="float" // Apply the floating animation
       >
         Fill out the interest form here!!
       </motion.a>
-
-      {/* Instagram Link - Bottom Left (Uncommented) */}
-      <a
-        href="https://www.instagram.com/adicolumbia/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="ADI Columbia Instagram"
-        className="absolute bottom-8 left-8 z-30 text-white/70 hover:text-white/90 transition-colors"
-      >
-        <Instagram size={28} />
-      </a>
     </main>
   );
 }
