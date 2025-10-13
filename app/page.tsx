@@ -12,6 +12,7 @@ const russo = Russo_One({
 
 // Import Instagram icon
 import { Instagram } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
   const containerVariants: Variants = {
@@ -57,6 +58,36 @@ export default function Home() {
         className="absolute inset-0 bg-[url('/space-bg.png')] bg-cover bg-center bg-no-repeat z-0"
         aria-hidden="true"
       />
+
+      {/* Navigation Menu */}
+      <nav className="relative z-20 mb-8">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          <Link 
+            href="/speakers" 
+            className={`${russo.className} text-lg font-bold text-white/80 hover:text-white hover:underline transition-colors`}
+          >
+            Speakers
+          </Link>
+          <Link 
+            href="/tracks" 
+            className={`${russo.className} text-lg font-bold text-white/80 hover:text-white hover:underline transition-colors`}
+          >
+            Tracks
+          </Link>
+          <Link 
+            href="/faq" 
+            className={`${russo.className} text-lg font-bold text-white/80 hover:text-white hover:underline transition-colors`}
+          >
+            FAQ
+          </Link>
+          <Link 
+            href="/schedules" 
+            className={`${russo.className} text-lg font-bold text-white/80 hover:text-white hover:underline transition-colors`}
+          >
+            Schedule
+          </Link>
+        </div>
+      </nav>
 
       {/* Animated Content */}
       <motion.div
