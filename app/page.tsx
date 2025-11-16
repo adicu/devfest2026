@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [hoveredPlanet, setHoveredPlanet] = useState<string | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const planets = [
     {
@@ -95,7 +96,10 @@ export default function Home() {
           </div>
 
           {/* Menu Button */}
-          <button className="flex items-center gap-2 text-white font-zen-dots text-3xl">
+          <button 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="flex items-center gap-2 text-white font-zen-dots text-3xl hover:opacity-80 transition-opacity"
+          >
             <div className="flex flex-col gap-1.5">
               <div className="w-10 h-1 bg-white"></div>
               <div className="w-10 h-1 bg-white"></div>
@@ -105,6 +109,59 @@ export default function Home() {
           </button>
         </div>
       </nav>
+
+      {/* Menu Overlay */}
+      <div 
+        className={`fixed inset-0 z-30 bg-black transition-opacity duration-300 ${
+          isMenuOpen ? 'opacity-70' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      >
+        <div 
+          className={`absolute right-0 top-0 h-full w-80 bg-purple-900 shadow-2xl p-8 transition-transform duration-300 ease-out ${
+            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex flex-col gap-6 mt-20">
+            <Link
+              href="/"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+            >
+              Home
+            </Link>
+            <Link
+              href="/schedules"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+            >
+              Schedule
+            </Link>
+            <Link
+              href="/tracks"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+            >
+              Tracks
+            </Link>
+            <Link
+              href="/speakers"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+            >
+              Judges/Speakers
+            </Link>
+            <Link
+              href="/faq"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+            >
+              FAQ
+            </Link>
+          </div>
+        </div>
+      </div>
 
       {/* Main Content Area */}
       <div className="relative z-10 min-h-[calc(100vh-95px)]">
