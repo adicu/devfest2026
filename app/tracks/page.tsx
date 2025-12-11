@@ -71,25 +71,6 @@ export default function TracksPage() {
               />
           </div>
 
-          {/* ---------------- UI LAYER (Static HUD) ---------------- */}
-          <nav className="absolute top-0 left-0 w-full p-8 flex justify-between items-center z-20">
-              <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center font-bold text-xl shadow-[0_0_10px_rgba(168,85,247,0.5)]">?</div>
-                  <h1 className="text-2xl tracking-widest drop-shadow-md">DEVFEST 2026</h1>
-              </div>
-              <div className="flex items-center gap-2 cursor-pointer hover:text-purple-300 transition-colors drop-shadow-md">
-                  <span className="text-xl">MENU</span>
-                  <Menu size={32} />
-              </div>
-      </nav>
-
-          {/* Sidebar Info (Hidden on mobile for cleaner view) */}
-          <div className="absolute left-8 top-32 z-20 hidden md:flex flex-col gap-6 max-w-[250px]">
-              <InfoBlock title="DEVPOST" text="Checkout the Devpost for prizes and submissions." />
-              <InfoBlock title="SCHEDULE" text="Google Calendar" link />
-              <InfoBlock title="DEVFEST DISCORD" text="Join our devfest discord community to ask questions, find teammates, and more!" />
-              <InfoBlock title="WHO IS ADI?" text="ADI (Application Development Initiative) is a student group at Columbia University that aims to foster a community of students interested in tech." />
-          </div>
 
           {/* ---------------- INTERACTIVE PLANET LAYER ---------------- */}
           <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
@@ -185,7 +166,7 @@ export default function TracksPage() {
                                                   onClick={() => setSelectedTrack(track)}
                                                   whileHover={{ scale: 1.03 }}
                                                   whileTap={{ scale: 0.97 }}
-                                                  className="relative h-100 w-full cursor-pointer group flex flex-col items-center justify-center p-0 text-center"
+                                                  className="relative h-50 w-full cursor-pointer group flex flex-col items-center justify-center p-0 text-center"
                                               >
                                                   {/* 5. Track Tile Asset */}
                                                   <Image
@@ -228,9 +209,6 @@ export default function TracksPage() {
 
                                               <div className="font-sans text-lg md:text-xl leading-relaxed text-gray-200 space-y-4 max-w-3xl">
                                                   <p>{selectedTrack.fullDesc}</p>
-                                                  <p className="opacity-70 text-base">
-                                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                                                  </p>
                                               </div>
                                           </div>
                                   </motion.div>
@@ -269,15 +247,4 @@ export default function TracksPage() {
       `}</style>
     </main>
   );
-}
-
-function InfoBlock({ title, text, link = false }: { title: string, text: string, link?: boolean }) {
-    return (
-        <div className="bg-purple-900/40 backdrop-blur-sm p-4 rounded-lg border-l-4 border-cyan-400 shadow-lg">
-            <h3 className="text-cyan-300 font-bold mb-1 text-sm tracking-wide">{title}</h3>
-            <p className={`font-sans text-xs text-white/90 leading-relaxed ${link ? 'underline cursor-pointer hover:text-cyan-200' : ''}`}>
-                {text}
-            </p>
-        </div>
-    )
 }
