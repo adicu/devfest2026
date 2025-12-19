@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Russo_One } from "next/font/google";
+import { Geist, Geist_Mono, Russo_One, Pixelify_Sans, Zen_Dots, Allerta_Stencil } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,6 +19,27 @@ const russoOne = Russo_One({
   weight: ['400'], // Russo One only has 400 weight
 });
 
+// Setup Pixelify Sans font
+const pixelifySans = Pixelify_Sans({
+  subsets: ["latin"],
+  variable: '--font-pixelify-sans',
+  weight: ['400'],
+});
+
+// Setup Zen Dots font
+const zenDots = Zen_Dots({
+  subsets: ["latin"],
+  variable: '--font-zen-dots',
+  weight: ['400'],
+});
+
+// Setup Allerta Stencil font
+const allertaStencil = Allerta_Stencil({
+  subsets: ["latin"],
+  variable: '--font-allerta-stencil',
+  weight: ['400'],
+});
+
 export const metadata: Metadata = {
   title: "Columbia DevFest Countdown",
   description: "Countdown to the Columbia DevFest Hackathon on Feb 8th, 2026",
@@ -32,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${russoOne.variable} font-sans antialiased overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${russoOne.variable} ${pixelifySans.variable} ${zenDots.variable} ${allertaStencil.variable} font-sans antialiased overflow-hidden`}
       >
         {/* MLH Trust Badge */}
         <a 

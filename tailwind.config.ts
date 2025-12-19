@@ -22,7 +22,10 @@ const config = {
 			fontFamily: {
 				sans: ["var(--font-geist-sans)", ...defaultTheme.fontFamily.sans],
 				mono: ["var(--font-geist-mono)", ...defaultTheme.fontFamily.mono],
-				'russo-one': ["var(--font-russo-one)", ...defaultTheme.fontFamily.sans]
+				'russo-one': ["var(--font-russo-one)", ...defaultTheme.fontFamily.sans],
+				'pixelify': ["var(--font-pixelify-sans)", ...defaultTheme.fontFamily.sans],
+				'zen-dots': ["var(--font-zen-dots)", ...defaultTheme.fontFamily.sans],
+				'allerta-stencil': ["var(--font-allerta-stencil)", ...defaultTheme.fontFamily.sans]
 			},
 			colors: {
 				border: "hsl(var(--border))",

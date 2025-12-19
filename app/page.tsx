@@ -1,162 +1,337 @@
 'use client';
 
-import Countdown from "@/components/countdown";
-import { motion, Variants, RepeatType } from 'framer-motion';
-import { Russo_One } from 'next/font/google';
-
-// Load Russo One font
-const russo = Russo_One({
-  weight: '400',
-  subsets: ['latin'],
-});
-
-// Import Instagram icon
-import { Instagram } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { useState } from 'react';
 
 export default function Home() {
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
+  const [hoveredPlanet, setHoveredPlanet] = useState<string | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        duration: 0.8,
-      },
+  const planets = [
+    {
+      id: 'schedule',
+      name: 'Schedule',
+      image: '/planet-schedule-2cd6b3.png',
+      link: '/schedules',
+      position: { x: 305, y: 62 },
+      size: { width: 468, height: 451 },
     },
-  };
+    {
+      id: 'faq',
+      name: 'FAQ',
+      image: '/planet-faq-57ae9d.png',
+      link: '/faq',
+      position: { x: 101, y: 70 },
+      size: { width: 174, height: 170 },
+    },
+    {
+      id: 'tracks',
+      name: 'Tracks',
+      image: '/planet-tracks.png',
+      link: '/tracks',
+      position: { x: 731, y: -36 },
+      size: { width: 397.58, height: 392.61 },
+    },
+    {
+      id: 'judges-speakers',
+      name: 'Judges/Speakers',
+      image: '/planet-judges-speakers-68abd5.png',
+      link: '/speakers',
+      position: { x: 3, y: 357 },
+      size: { width: 336, height: 236 },
+    },
+  ];
 
-  // Animation for the floating bubble
-  const bubbleVariants: Variants = {
-    float: {
-      y: ["-3px", "3px"], // Move up and down slightly
-      transition: {
-        duration: 2.5, // Duration of one cycle
-        repeat: Infinity, // Repeat forever
-        repeatType: "reverse" as RepeatType, // Cast to RepeatType
-        ease: "easeInOut", // Smooth easing
-      }
+  const getSpeechBubbleText = () => {
+    switch (hoveredPlanet) {
+      case 'faq':
+        return "This is the FAQ page! Look into it to answer some of your questions!";
+      case 'schedule':
+        return "Check out the schedule to see when everything happens!";
+      case 'tracks':
+        return "Explore the different tracks available at DevFest!";
+      case 'judges-speakers':
+        return "Meet our amazing judges and speakers!";
+      default:
+        return "Welcome to DevFest 2026! Click on the planets to explore!";
     }
-  }
+  };
 
   return (
-    <main className="relative min-h-screen flex flex-col items-center justify-start pt-10 p-8 text-white overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-[url('/space-bg.png')] bg-cover bg-center bg-no-repeat z-0"
-        aria-hidden="true"
-      />
+    <main className="relative min-h-screen w-full overflow-hidden" style={{ cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto' }}>
+      {/* Background Layer */}
+      <div className="fixed inset-0 z-0">
+        <Image
+          src="/background-purple.png"
+          alt="Purple Background"
+          fill
+          className="object-cover"
+          priority
+          style={{
+            objectPosition: 'center',
+          }}
+        />
+      </div>
 
-      {/* Navigation Menu */}
-      <nav className="relative z-20 mb-8">
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-          <Link 
-            href="/speakers" 
-            className={`${russo.className} text-lg font-bold text-white/80 hover:text-white hover:underline transition-colors`}
+      {/* Navigation Bar */}
+      <nav className="relative z-20 w-full" style={{
+        background: 'transparent',
+        height: '95px',
+        paddingTop: '50px'
+      }}>
+        <div className="flex items-center justify-between px-20 h-full">
+          {/* Logo and Title */}
+          <div className="flex items-center gap-4 ml-16">
+            <div className="w-20 h-20 rounded-lg overflow-hidden">
+              <Image
+                src="/logo.svg"
+                alt="DevFest Logo"
+                width={80}
+                height={80}
+                className="w-20 h-20"
+              />
+            </div>
+            <h1 className="font-zen-dots text-white text-4xl">Devfest 2026</h1>
+          </div>
+
+          {/* Menu Button */}
+          <button 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="flex items-center gap-2 text-white font-zen-dots text-3xl hover:opacity-80 transition-opacity"
           >
-            Speakers
-          </Link>
-          <Link 
-            href="/tracks" 
-            className={`${russo.className} text-lg font-bold text-white/80 hover:text-white hover:underline transition-colors`}
-          >
-            Tracks
-          </Link>
-          <Link 
-            href="/faq" 
-            className={`${russo.className} text-lg font-bold text-white/80 hover:text-white hover:underline transition-colors`}
-          >
-            FAQ
-          </Link>
-          <Link 
-            href="/schedules" 
-            className={`${russo.className} text-lg font-bold text-white/80 hover:text-white hover:underline transition-colors`}
-          >
-            Schedule
-          </Link>
+            <div className="flex flex-col gap-1.5">
+              <div className="w-10 h-1 bg-white"></div>
+              <div className="w-10 h-1 bg-white"></div>
+              <div className="w-10 h-1 bg-white"></div>
+            </div>
+            <span>MENU</span>
+          </button>
         </div>
       </nav>
 
-      {/* Animated Content */}
-      <motion.div
-        className="relative z-20 flex flex-col items-center w-full text-center"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+      {/* Menu Overlay */}
+      <div 
+        className={`fixed inset-0 z-30 bg-black transition-opacity duration-300 ${
+          isMenuOpen ? 'opacity-70' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsMenuOpen(false)}
       >
-        {/* Title */}
-        <motion.h1
-          className={`${russo.className} text-6xl sm:text-7xl md:text-8xl font-bold mb-4`}
-          variants={itemVariants}
+        <div 
+          className={`absolute right-0 top-0 h-full w-80 bg-purple-900 shadow-2xl p-8 transition-transform duration-300 ease-out ${
+            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+          onClick={(e) => e.stopPropagation()}
         >
-          DevFest 2026
-        </motion.h1>
-
-        {/* Hosted By Text */}
-        <motion.p
-          className={`${russo.className} text-lg text-gray-400`}
-          variants={itemVariants}
-        >
-          Hosted at Columbia University in the City of New York
-        </motion.p>
-        {/* Countdown */}
-        <motion.div
-          className={`text-2xl sm:text-3xl md:text-4xl text-[#E9C3FF] drop-shadow-[0_2px_4px_rgba(255,255,255,0.3)]`}
-          variants={itemVariants}
-        >
-          <Countdown />
-        </motion.div>
-
-      </motion.div>
-
-      {/* Container for bottom-left links */}
-      <div className="absolute bottom-8 left-8 z-30 flex items-center space-x-4">
-        {/* Instagram Link */}
-        <a
-          href="https://www.instagram.com/adicolumbia/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="ADI Columbia Instagram"
-          className="text-white/70 hover:text-white/90 transition-colors cursor-pointer"
-        >
-          <Instagram size={28} />
-        </a>
-
-        {/* Code of Conduct Link */}
-        <a
-          href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="MLH Code of Conduct"
-          className="text-sm font-sans text-white/70 hover:text-white/90 hover:underline transition-colors cursor-pointer"
-        >
-          Code of Conduct
-        </a>
+          <div className="flex flex-col gap-6 mt-20">
+            <Link
+              href="/"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+            >
+              Home
+            </Link>
+            <Link
+              href="/schedules"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+            >
+              Schedule
+            </Link>
+            <Link
+              href="/tracks"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+            >
+              Tracks
+            </Link>
+            <Link
+              href="/speakers"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+            >
+              Judges/Speakers
+            </Link>
+            <Link
+              href="/faq"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+            >
+              FAQ
+            </Link>
+          </div>
+        </div>
       </div>
 
-      {/* Floating Interest Form Bubble Link - Top Left */}
-      <motion.a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSejZmvDV5WmHkvFSHGCtqsSiti1XyrRHvOeuAxn4sE1awPAog/viewform?usp=header"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute bottom-8 right-8 z-30 px-6 py-4 text-lg bg-purple-600/70 backdrop-blur-sm rounded-full text-white font-semibold shadow-lg hover:bg-purple-500/80 transition-all duration-100 cursor-pointer"
-        variants={bubbleVariants}
-        animate="float" // Apply the floating animation
-      >
-        Fill out the interest form here!!
-      </motion.a>
+      {/* Main Content Area */}
+      <div className="relative z-10 min-h-[calc(100vh-95px)]">
+        {/* Main Section with Planets */}
+        <div className="relative" style={{ minHeight: '706px' }}>
+          {/* Main Section Container - matches Figma layout_9GODRF */}
+          <div 
+            className="absolute"
+            style={{
+              left: '327px',
+              top: '62px',
+              width: '1108px',
+              height: '706px',
+            }}
+          >
+            {/* Schedule Planet - position relative to main section */}
+            <Link
+              href="/schedules"
+              className="absolute transition-transform hover:scale-110"
+              style={{
+                left: '305px',
+                top: '0px',
+                width: '330px',
+                height: '320px',
+                cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto',
+              }}
+              onMouseEnter={() => setHoveredPlanet('schedule')}
+              onMouseLeave={() => setHoveredPlanet(null)}
+            >
+              <Image
+                src={planets[0].image}
+                alt={planets[0].name}
+                fill
+                className="object-contain"
+              />
+            </Link>
+
+            {/* FAQ Planet */}
+            <Link
+              href="/faq"
+              className="absolute transition-transform hover:scale-110 z-20"
+              style={{
+                left: '70px',
+                top: '0px',
+                width: '174px',
+                height: '170px',
+                cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto',
+              }}
+              onMouseEnter={() => setHoveredPlanet('faq')}
+              onMouseLeave={() => setHoveredPlanet(null)}
+            >
+              <img
+                src="/planet-faq-57ae9d.png"
+                alt="FAQ Planet"
+                className="w-full h-full object-contain"
+                style={{
+                  display: 'block',
+                }}
+              />
+            </Link>
+
+            {/* Tracks Planet */}
+            <Link
+              href="/tracks"
+              className="absolute transition-transform hover:scale-110"
+              style={{
+                left: '600px',
+                top: '-36px',
+                width: '300px',
+                height: '200px',
+                cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto',
+              }}
+              onMouseEnter={() => setHoveredPlanet('tracks')}
+              onMouseLeave={() => setHoveredPlanet(null)}
+            >
+              <Image
+                src={planets[2].image}
+                alt={planets[2].name}
+                fill
+                className="object-contain"
+              />
+            </Link>
+
+            {/* Judges/Speakers Planet */}
+            <Link
+              href="/speakers"
+              className="absolute transition-transform hover:scale-110"
+              style={{
+                left: '3px',
+                top: '200px',
+                width: '300px',
+                height: '300px',
+                cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto',
+              }}
+              onMouseEnter={() => setHoveredPlanet('judges-speakers')}
+              onMouseLeave={() => setHoveredPlanet(null)}
+            >
+              <Image
+                src={planets[3].image}
+                alt={planets[3].name}
+                fill
+                className="object-contain"
+              />
+            </Link>
+
+            {/* Character with Speech Bubble */}
+            <div
+              className="absolute"
+              style={{
+                left: '480px',
+                top: '239px',
+                width: '600px',
+                height: '585px',
+                zIndex: 10,
+              }}
+            >
+              {/* Character Image */}
+              <div className="absolute" style={{  
+				left: '170px',
+                top: '0',
+                width: '220px', 
+                zIndex: 10,
+              }}>
+                <Image
+                  src="/roarie-character-629497.png"
+                  alt="Roarie Character"
+                  width={93}
+                  height={111}
+                  className="w-full h-auto"
+                  style={{
+                    display: 'block',
+                  }}
+                />
+              </div>
+
+              {/* Speech Bubble */}
+              <div
+                className="absolute bg-white rounded-full shadow-lg transition-opacity"
+                style={{
+                  left: '0',
+                  top: '100px',
+                  width: '200px',
+                  padding: '12px 20px',
+                }}
+              >
+                <div className="relative w-full h-full flex items-center">
+                  <p className="font-allerta-stencil text-black text-xs">
+                    {getSpeechBubbleText()}
+                  </p>
+                  {/* Speech bubble tail */}
+                  <div
+                    className="absolute"
+                    style={{
+                      right: '-7px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      width: '0',
+                      height: '0',
+                      borderTop: '5px solid transparent',
+                      borderBottom: '5px solid transparent',
+                      borderLeft: '7px solid white',
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </main>
   );
 }
