@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Russo_One } from 'next/font/google';
-import { X, Menu } from 'lucide-react';
+import { X } from 'lucide-react';
 import Image from 'next/image';
+import Sidebar from "@/components/sidebar";
 
 // Load Russo One font
 const russo = Russo_One({
@@ -15,32 +16,32 @@ const russo = Russo_One({
 // Track Data
 const tracksData = [
     {
-        id: 'web',
-        title: 'Web Development',
-        icon: '🌐',
-        shortDesc: 'Build modern web apps.',
-        fullDesc: 'Build modern web applications using the latest technologies and frameworks like React, Next.js, and Full-stack development patterns.',
+        id: 'health',
+        title: 'HEALTH',
+        icon: '🏥',
+        shortDesc: 'Improve physical, mental, and emotional well-being.',
+        fullDesc: 'The HEALTH track invites participants to explore how technology can improve physical, mental, and emotional well-being across diverse communities. This track encourages teams to think holistically about what "health" means in the modern world and rethink what being health-conscious means. Projects may range from apps that help individuals build healthier habits, to systems that make medical data more accessible, to tools that support clinicians in making informed decisions. This track also welcomes projects that engage with broader public health questions: How can we increase access to care? How can technology reduce disparities in health outcomes? What innovations could help individuals better understand their health?',
     },
     {
-        id: 'ai',
-        title: 'AI & Machine Learning',
-        icon: '🤖',
-        shortDesc: 'Explore AI & ML applications.',
-        fullDesc: 'Explore artificial intelligence applications including Neural networks, Computer vision, NLP, and Data science analytics.',
+        id: 'business',
+        title: 'BUSINESS AND ENTERPRISE',
+        icon: '💼',
+        shortDesc: 'Transform how organizations operate digitally.',
+        fullDesc: 'The BUSINESS AND ENTERPRISE track encourages teams to design software and systems that transform how organizations of all scales operate in an increasingly digital environment. These ideas are permeated through a wide range of themes, including finance, productivity, workflow automation, emerging technologies, blockchain, business intelligence, and organizational strategy. Projects may range from products that streamline day-to-day operations, to platforms that re-imagine the future of commerce, to AI-powered advisors for entrepreneurs. These solutions can draw upon analytics, AI, modern web infrastructure, or creative business models to solve real pain points faced by companies and customers alike. This track encourages teams to think beyond just the technical build and consider the broader business implications including scalability, sustainability, and accessibility.',
     },
     {
-        id: 'mobile',
-        title: 'Mobile Development',
-        icon: '📱',
-        shortDesc: 'Create iOS & Android apps.',
-        fullDesc: 'Create mobile applications for iOS and Android using React Native, Flutter, and cross-platform solutions.',
+        id: 'entertainment',
+        title: 'ENTERTAINMENT',
+        icon: '🎮',
+        shortDesc: 'Blend artistry, storytelling, and interactivity.',
+        fullDesc: 'The ENTERTAINMENT track is a creative playground that invites participants to blend artistry, storytelling, and interactivity. Projects in this track includes everything from game development and immersive media, to interactive art and music technology, to educational entertainment. Teams are challenged to build and curate digital experiments that spark curiosity, deepen engagement, and bring people together. These projects where entertainment meets impact can take the form of gamified education tools, creative platforms for self-expression, systems that foster community, or new forms of storytelling that push technical boundaries. This track invites teams to let imagination lead, delivering memorable, meaningful experiments and engagement. The goal is to create something playful, surprising, and inspiring.',
     },
     {
-        id: 'blockchain',
-        title: 'Blockchain & Web3',
-        icon: '⛓️',
-        shortDesc: 'Decentralized applications.',
-        fullDesc: 'Build decentralized applications, Smart contracts, DeFi applications, and explore NFT projects.',
+        id: 'social-impact',
+        title: 'SOCIAL IMPACT/SUSTAINABILITY',
+        icon: '🌱',
+        shortDesc: 'Make communities safer, more equitable, and sustainable.',
+        fullDesc: 'The SOCIAL IMPACT & SUSTAINABILITY track challenges teams to develop solutions that make communities safer, more equitable, and more environmentally responsible. Projects may span transportation, maps and mobility, climate and environment, civic technology, community health, and data-driven policy insights. Teams are encouraged to address real-world challenges, varying from the reduction of carbon footprints, to the improvement of access to sustainable transportation, to the identification of environmental hazards, to the empowerment of individuals to make greener and more informed choices. This track particularly welcomes projects that make complex environmental or social data intuitive. To do so, teams can draw from mobility data, climate datasets, community metrics, or public policy resources to design applications that are both actionable and accessible.',
     },
 ];
 
@@ -63,7 +64,7 @@ export default function TracksPage() {
           {/* 1. Background Asset */}
           <div className="absolute inset-0 z-0">
               <Image
-                  src="/background.png"
+                  src="/Background.png"
                   alt="Space Background"
                   fill
                   className="object-cover opacity-80"
@@ -71,6 +72,8 @@ export default function TracksPage() {
               />
           </div>
 
+          {/* Sidebar */}
+          <Sidebar />
 
           {/* ---------------- INTERACTIVE PLANET LAYER ---------------- */}
           <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
@@ -85,7 +88,7 @@ export default function TracksPage() {
                           className="object-contain drop-shadow-[0_0_50px_rgba(168,85,247,0.4)]"
                           priority
                       />
-                  </div>
+          </div>
 
                   {/* 3. Flashing Light / Button */}
                   {/* Positioning adjusted to likely "crater" location on planet - adjust top/left percentages as needed */}
@@ -125,7 +128,7 @@ export default function TracksPage() {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       onClick={handleBackdropClick}
-                      className="fixed inset-0 z-50 flex items-center justify-center **bg-transparent backdrop-blur-none** p-4"
+                      className="fixed inset-0 z-50 flex items-center justify-center bg-transparent backdrop-blur-none p-4"
                   >
                       {/* 4. Popup Frame Asset */}
                       <motion.div
@@ -143,7 +146,7 @@ export default function TracksPage() {
                               className="object-fill -z-10 pointer-events-none" // object-fill to stretch frame to container
                           />
 
-                          <h2 className="text-2xl md:0 text-white-300 mb-8 tracking-wider item-start justify-start drop-shadow-md sticky top-0 backdrop-blur-none** p-0 rounded ml-[-300px] mt-[5px]">
+                          <h2 className="text-2xl md:text-4xl text-white/70 mb-8 tracking-wider drop-shadow-md sticky top-0 p-0 rounded ml-[-300px] mt-[5px]">
                               SCANNING TRACKS...
                           </h2>
 
@@ -166,7 +169,7 @@ export default function TracksPage() {
                                                   onClick={() => setSelectedTrack(track)}
                                                   whileHover={{ scale: 1.03 }}
                                                   whileTap={{ scale: 0.97 }}
-                                                  className="relative h-50 w-full cursor-pointer group flex flex-col items-center justify-center p-0 text-center"
+                                                  className="relative h-[200px] w-full cursor-pointer group flex flex-col items-center justify-center p-0 text-center"
                                               >
                                                   {/* 5. Track Tile Asset */}
                                                   <Image
@@ -181,8 +184,8 @@ export default function TracksPage() {
                                                   <p className="text-sm font-sans text-gray-200 drop-shadow-sm">{track.shortDesc}</p>
                                               </motion.div>
                                           ))}
-                                      </div>
-                                  </motion.div>
+          </div>
+        </motion.div>
                               ) : (
                                   // --- TRACK DETAILS VIEW ---
                                   <motion.div
@@ -215,7 +218,7 @@ export default function TracksPage() {
                               )}
                           </div>
                       </motion.div>
-                  </motion.div>
+      </motion.div>
               )}
           </AnimatePresence>
 

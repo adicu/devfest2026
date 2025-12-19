@@ -1,5 +1,6 @@
 'use client';
 
+import Sidebar from "@/components/sidebar";
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -74,6 +75,9 @@ export default function Home() {
         />
       </div>
 
+      {/* Sidebar */}
+      <Sidebar />
+
       {/* Navigation Bar */}
       <nav className="relative z-20 w-full" style={{
         background: 'transparent',
@@ -92,13 +96,14 @@ export default function Home() {
                 className="w-20 h-20"
               />
             </div>
-            <h1 className="font-zen-dots text-white text-4xl">Devfest 2026</h1>
+            <h1 className="font-zen-dots text-white text-4xl" style={{ fontFamily: 'var(--font-zen-dots), "Zen Dots", sans-serif' }}>Devfest 2026</h1>
           </div>
 
           {/* Menu Button */}
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="flex items-center gap-2 text-white font-zen-dots text-3xl hover:opacity-80 transition-opacity"
+            style={{ fontFamily: 'var(--font-zen-dots), "Zen Dots", sans-serif' }}
           >
             <div className="flex flex-col gap-1.5">
               <div className="w-10 h-1 bg-white"></div>
@@ -128,6 +133,7 @@ export default function Home() {
               href="/"
               onClick={() => setIsMenuOpen(false)}
               className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+              style={{ fontFamily: 'var(--font-zen-dots), "Zen Dots", sans-serif' }}
             >
               Home
             </Link>
@@ -135,6 +141,7 @@ export default function Home() {
               href="/schedules"
               onClick={() => setIsMenuOpen(false)}
               className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+              style={{ fontFamily: 'var(--font-zen-dots), "Zen Dots", sans-serif' }}
             >
               Schedule
             </Link>
@@ -142,6 +149,7 @@ export default function Home() {
               href="/tracks"
               onClick={() => setIsMenuOpen(false)}
               className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+              style={{ fontFamily: 'var(--font-zen-dots), "Zen Dots", sans-serif' }}
             >
               Tracks
             </Link>
@@ -149,6 +157,7 @@ export default function Home() {
               href="/speakers"
               onClick={() => setIsMenuOpen(false)}
               className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+              style={{ fontFamily: 'var(--font-zen-dots), "Zen Dots", sans-serif' }}
             >
               Judges/Speakers
             </Link>
@@ -156,6 +165,7 @@ export default function Home() {
               href="/faq"
               onClick={() => setIsMenuOpen(false)}
               className="text-white font-zen-dots text-2xl hover:text-purple-300 transition-colors"
+              style={{ fontFamily: 'var(--font-zen-dots), "Zen Dots", sans-serif' }}
             >
               FAQ
             </Link>
@@ -178,8 +188,8 @@ export default function Home() {
             }}
           >
             {/* Schedule Planet - position relative to main section */}
-            <Link
-              href="/schedules"
+          <Link 
+            href="/schedules" 
               className="absolute transition-transform hover:scale-110"
               style={{
                 left: '305px',
@@ -195,9 +205,10 @@ export default function Home() {
                 src={planets[0].image}
                 alt={planets[0].name}
                 fill
+                sizes="330px"
                 className="object-contain"
               />
-            </Link>
+          </Link>
 
             {/* FAQ Planet */}
             <Link
@@ -241,6 +252,7 @@ export default function Home() {
                 src={planets[2].image}
                 alt={planets[2].name}
                 fill
+                sizes="300px"
                 className="object-contain"
               />
             </Link>
@@ -263,6 +275,7 @@ export default function Home() {
                 src={planets[3].image}
                 alt={planets[3].name}
                 fill
+                sizes="300px"
                 className="object-contain"
               />
             </Link>

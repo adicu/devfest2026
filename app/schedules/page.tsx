@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Russo_One } from 'next/font/google';
 import { Instagram } from 'lucide-react';
 import Link from 'next/link';
+import Sidebar from "@/components/sidebar";
 
 // Load Russo One font
 const russo = Russo_One({
@@ -72,6 +73,9 @@ export default function Schedules() {
         className="absolute inset-0 bg-[url('/space-bg.png')] bg-cover bg-center bg-no-repeat z-0"
         aria-hidden="true"
       />
+
+      {/* Sidebar */}
+      <Sidebar />
 
       {/* Navigation */}
       <nav className="relative z-20 mb-8">
