@@ -1,9 +1,10 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Russo_One } from 'next/font/google';
-import { Instagram } from 'lucide-react';
-import Link from 'next/link';
+import { X, Menu } from 'lucide-react';
+import Image from 'next/image';
 
 // Load Russo One font
 const russo = Russo_One({
@@ -11,154 +12,239 @@ const russo = Russo_One({
   subsets: ['latin'],
 });
 
-export default function Tracks() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+// Track Data
+const tracksData = [
+    {
+        id: 'web',
+        title: 'Web Development',
+        icon: '🌐',
+        shortDesc: 'Build modern web apps.',
+        fullDesc: 'Build modern web applications using the latest technologies and frameworks like React, Next.js, and Full-stack development patterns.',
     },
-  };
+    {
+        id: 'ai',
+        title: 'AI & Machine Learning',
+        icon: '🤖',
+        shortDesc: 'Explore AI & ML applications.',
+        fullDesc: 'Explore artificial intelligence applications including Neural networks, Computer vision, NLP, and Data science analytics.',
+    },
+    {
+        id: 'mobile',
+        title: 'Mobile Development',
+        icon: '📱',
+        shortDesc: 'Create iOS & Android apps.',
+        fullDesc: 'Create mobile applications for iOS and Android using React Native, Flutter, and cross-platform solutions.',
+    },
+    {
+        id: 'blockchain',
+        title: 'Blockchain & Web3',
+        icon: '⛓️',
+        shortDesc: 'Decentralized applications.',
+        fullDesc: 'Build decentralized applications, Smart contracts, DeFi applications, and explore NFT projects.',
+    },
+];
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { 
-        type: "spring",
-        stiffness: 100,
-        duration: 0.8 
-      }
-    },
+export default function TracksPage() {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [selectedTrack, setSelectedTrack] = useState<typeof tracksData[0] | null>(null);
+
+    const handlePlanetClick = () => setIsPopupOpen(true);
+
+    const handleBackdropClick = (e: React.MouseEvent) => {
+        if (e.target === e.currentTarget) {
+            setIsPopupOpen(false);
+            setSelectedTrack(null);
+        }
   };
 
   return (
-    <main className="relative min-h-screen flex flex-col items-center justify-start pt-10 p-8 text-white overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-[url('/space-bg.png')] bg-cover bg-center bg-no-repeat z-0"
-        aria-hidden="true"
-      />
+      <main className={`relative min-h-screen w-full overflow-hidden text-white bg-black ${russo.className}`}>
 
-      {/* Navigation */}
-      <nav className="relative z-20 mb-8">
-        <Link 
-          href="/" 
-          className={`${russo.className} text-2xl font-bold text-white hover:text-purple-300 transition-colors`}
-        >
-          ← Back to Home
-        </Link>
-      </nav>
-
-      {/* Animated Content */}
-      <motion.div
-        className="relative z-20 flex flex-col items-center w-full text-center max-w-4xl"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {/* Title */}
-        <motion.h1
-          className={`${russo.className} text-5xl sm:text-6xl md:text-7xl font-bold mb-12 text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]`}
-          variants={itemVariants}
-        >
-          TRACKS
-        </motion.h1>
-
-        {/* Tracks Grid */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full"
-          variants={itemVariants}
-        >
-          {/* Track 1 - Web Development */}
-          <div className="bg-gradient-to-br from-blue-500/20 to-purple-600/20 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-            <div className="text-4xl mb-4">🌐</div>
-            <h3 className={`${russo.className} text-2xl font-bold mb-4`}>Web Development</h3>
-            <p className="text-gray-300 mb-4">Build modern web applications using the latest technologies and frameworks.</p>
-            <ul className="text-sm text-gray-400 space-y-2">
-              <li>• React & Next.js</li>
-              <li>• Full-stack development</li>
-              <li>• API design</li>
-              <li>• UI/UX best practices</li>
-            </ul>
+          {/* 1. Background Asset */}
+          <div className="absolute inset-0 z-0">
+              <Image
+                  src="/background.png"
+                  alt="Space Background"
+                  fill
+                  className="object-cover opacity-80"
+                  priority
+              />
           </div>
 
-          {/* Track 2 - AI/ML */}
-          <div className="bg-gradient-to-br from-green-500/20 to-blue-600/20 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-            <div className="text-4xl mb-4">🤖</div>
-            <h3 className={`${russo.className} text-2xl font-bold mb-4`}>AI & Machine Learning</h3>
-            <p className="text-gray-300 mb-4">Explore artificial intelligence and machine learning applications.</p>
-            <ul className="text-sm text-gray-400 space-y-2">
-              <li>• Neural networks</li>
-              <li>• Computer vision</li>
-              <li>• Natural language processing</li>
-              <li>• Data science</li>
-            </ul>
+
+          {/* ---------------- INTERACTIVE PLANET LAYER ---------------- */}
+          <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+              <div className="relative w-[500px] h-[500px] md:w-[750px] md:h-[750px]">
+
+                  {/* 2. Planet Asset */}
+                  <div className="relative w-full h-full animate-float">
+                      <Image
+                          src="/track_planet.svg"
+                          alt="Planet"
+                          fill
+                          className="object-contain drop-shadow-[0_0_50px_rgba(168,85,247,0.4)]"
+                          priority
+                      />
+                  </div>
+
+                  {/* 3. Flashing Light / Button */}
+                  {/* Positioning adjusted to likely "crater" location on planet - adjust top/left percentages as needed */}
+                  <div className="absolute top-[50%] left-[28%] pointer-events-auto z-20">
+                      <motion.button
+                          onClick={handlePlanetClick}
+                          animate={{
+                              scale: [1, 1.2, 1], // "Periodically grow bigger and smaller"
+                          }}
+                          transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                          }}
+                          whileHover={{ scale: 1.3 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="relative w-20 h-20 md:w-28 md:h-28 flex items-center justify-center cursor-pointer focus:outline-none"
+                      >
+                          {/* Star GIF Asset */}
+                          <Image
+                              src="/star.gif"
+                              alt="Click to Scan"
+                              fill
+                              className="object-contain"
+                              unoptimized // Required for GIFs in some Next.js configs to animate correctly
+                          />
+                      </motion.button>
+                  </div>
+              </div>
           </div>
 
-          {/* Track 3 - Mobile Development */}
-          <div className="bg-gradient-to-br from-purple-500/20 to-pink-600/20 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-            <div className="text-4xl mb-4">📱</div>
-            <h3 className={`${russo.className} text-2xl font-bold mb-4`}>Mobile Development</h3>
-            <p className="text-gray-300 mb-4">Create mobile applications for iOS and Android platforms.</p>
-            <ul className="text-sm text-gray-400 space-y-2">
-              <li>• React Native</li>
-              <li>• Flutter</li>
-              <li>• Native development</li>
-              <li>• Cross-platform solutions</li>
-            </ul>
-          </div>
+          {/* ---------------- POPUP LAYER ---------------- */}
+          <AnimatePresence>
+              {isPopupOpen && (
+                  <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      onClick={handleBackdropClick}
+                      className="fixed inset-0 z-50 flex items-center justify-center **bg-transparent backdrop-blur-none** p-4"
+                  >
+                      {/* 4. Popup Frame Asset */}
+                      <motion.div
+                          initial={{ scale: 0.9, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          exit={{ scale: 0.9, opacity: 0 }}
+                          onClick={(e) => e.stopPropagation()}
+                          className="relative w-[418px] h-[322px] md:w-[836px] md:h-[644px] max-w-5xl flex flex-col justify-center items-center p-12 md:p-20 text-white mt-[-150px] ml-[550px]"
+                      >
+                          {/* Frame Background Image */}
+                          <Image
+                              src="/track_popup_frame.png"
+                              alt="Popup Frame"
+                              fill
+                              className="object-fill -z-10 pointer-events-none" // object-fill to stretch frame to container
+                          />
 
-          {/* Track 4 - Blockchain */}
-          <div className="bg-gradient-to-br from-orange-500/20 to-red-600/20 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-            <div className="text-4xl mb-4">⛓️</div>
-            <h3 className={`${russo.className} text-2xl font-bold mb-4`}>Blockchain & Web3</h3>
-            <p className="text-gray-300 mb-4">Build decentralized applications and explore blockchain technology.</p>
-            <ul className="text-sm text-gray-400 space-y-2">
-              <li>• Smart contracts</li>
-              <li>• DeFi applications</li>
-              <li>• NFT projects</li>
-              <li>• Cryptocurrency</li>
-            </ul>
-          </div>
-        </motion.div>
+                          <h2 className="text-2xl md:0 text-white-300 mb-8 tracking-wider item-start justify-start drop-shadow-md sticky top-0 backdrop-blur-none** p-0 rounded ml-[-300px] mt-[5px]">
+                              SCANNING TRACKS...
+                          </h2>
 
-        {/* Additional Info */}
-        <motion.p
-          className="text-lg text-white/70 mt-12 font-sans"
-          variants={itemVariants}
-        >
-          Choose your track and start building something amazing!
-        </motion.p>
-      </motion.div>
+                          {/* Content Container (Scrollable) */}
+                          <div className="w-[650px] h-full overflow-y-auto custom-scrollbar pr-2 relative ml-[50px]">
 
-      {/* Container for bottom-left links */}
-      <div className="absolute bottom-8 left-8 z-30 flex items-center space-x-4">
-        {/* Instagram Link */}
-        <a
-          href="https://www.instagram.com/adicolumbia/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="ADI Columbia Instagram"
-          className="text-white/70 hover:text-white/90 transition-colors cursor-pointer"
-        >
-          <Instagram size={28} />
-        </a>
+                              {!selectedTrack ? (
+                                  // --- INITIAL GRID VIEW ---
+                                  <motion.div
+                                      initial={{ opacity: 0, x: 20 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      className="h-full"
+                                  >
 
-        {/* Code of Conduct Link */}
-        <a
-          href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="MLH Code of Conduct"
-          className="text-sm font-sans text-white/70 hover:text-white/90 hover:underline transition-colors cursor-pointer"
-        >
-          Code of Conduct
-        </a>
-      </div>
+                                      {/* Grid Layout */}
+                                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pb-10">
+                                          {tracksData.map((track) => (
+                                              <motion.div
+                                                  key={track.id}
+                                                  onClick={() => setSelectedTrack(track)}
+                                                  whileHover={{ scale: 1.03 }}
+                                                  whileTap={{ scale: 0.97 }}
+                                                  className="relative h-50 w-full cursor-pointer group flex flex-col items-center justify-center p-0 text-center"
+                                              >
+                                                  {/* 5. Track Tile Asset */}
+                                                  <Image
+                                                      src="/track_tile.png"
+                                                      alt="Track Tile Background"
+                                                      fill
+                                                      className="object-fill -z-10 rounded-lg opacity-100 group-hover:opacity-100 transition-opacity"
+                                                  />
+
+                                                  <div className="text-4xl mb-2 drop-shadow-md">{track.icon}</div>
+                                                  <h3 className="text-xl md:text-2xl font-bold mb-1 drop-shadow-md">{track.title}</h3>
+                                                  <p className="text-sm font-sans text-gray-200 drop-shadow-sm">{track.shortDesc}</p>
+                                              </motion.div>
+                                          ))}
+                                      </div>
+                                  </motion.div>
+                              ) : (
+                                  // --- TRACK DETAILS VIEW ---
+                                  <motion.div
+                                      initial={{ opacity: 0, x: 20 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      className="h-full relative flex flex-col"
+                                  >
+                                      {/* X Button */}
+                                      <button
+                                          onClick={() => setSelectedTrack(null)}
+                                          className="absolute -top-2 -left-2 md:top-0 md:left-0 z-10 flex items-center gap-2 text-cyan-300 hover:text-white transition-colors group"
+                                      >
+                                          <X size={24} className="group-hover:rotate-90 transition-transform" />
+                                          <span className="text-sm font-sans tracking-widest">RETURN</span>
+                                      </button>
+
+                                          <div className="mt-10 md:mt-12 space-y-6">
+                                              <div className="flex items-center gap-4 border-b border-white/20 pb-4">
+                                                  <span className="text-5xl">{selectedTrack.icon}</span>
+                                                  <h2 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg">
+                                                      {selectedTrack.title}
+                                                  </h2>
+                                              </div>
+
+                                              <div className="font-sans text-lg md:text-xl leading-relaxed text-gray-200 space-y-4 max-w-3xl">
+                                                  <p>{selectedTrack.fullDesc}</p>
+                                              </div>
+                                          </div>
+                                  </motion.div>
+                              )}
+                          </div>
+                      </motion.div>
+                  </motion.div>
+              )}
+          </AnimatePresence>
+
+          <style jsx global>{`
+        /* Hide scrollbar for Chrome/Safari/Opera */
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 0px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(103, 232, 249, 0.3);
+          border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(103, 232, 249, 0.5);
+        }
+        
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-15px); }
+          100% { transform: translateY(0px); }
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+      `}</style>
     </main>
   );
 }
