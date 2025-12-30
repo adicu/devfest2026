@@ -29,7 +29,7 @@ export default function Speakers() {
       opacity: 1, 
       y: 0,
       transition: { 
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         duration: 0.8 
       }
