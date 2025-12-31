@@ -31,7 +31,7 @@ export default function Speakers() {
   ];
 
   return (
-    <main className="relative min-h-screen w-full overflow-hidden">
+    <main className="relative min-h-screen w-full overflow-hidden" style={{ cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto' }}>
       {/* Background Layer */}
       <div className="fixed inset-0 z-0">
         <Image
@@ -238,7 +238,7 @@ export default function Speakers() {
             className="flex justify-center items-center mb-6" 
             style={{ 
               marginTop: '-30px', 
-              position: 'relative', 
+              position: 'relative',
               zIndex: 2, 
               backgroundColor: '#1B104C',
               backgroundImage: 'url(/sponsor-row-1.svg)',
@@ -287,7 +287,7 @@ export default function Speakers() {
             style={{ 
               height: '143px', 
               width: '910px', 
-              marginLeft: '-6px',
+              marginLeft: '-6px', 
               marginTop: '-20px',
               position: 'relative',
               backgroundColor: '#1B104C',
@@ -323,8 +323,8 @@ export default function Speakers() {
                 height: '94px', 
                 display: 'block',
                 objectFit: 'contain'
-              }}
-            />
+            }}
+          />
           </div>
 
           {/* Sponsor Logos Row 4 - with frame container */}
