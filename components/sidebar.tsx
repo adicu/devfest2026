@@ -1,15 +1,10 @@
 'use client';
 
-import { Zen_Dots, Allerta_Stencil } from 'next/font/google';
+import { Zen_Dots } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const zenDots = Zen_Dots({
-  weight: '400',
-  subsets: ['latin'],
-});
-
-const allertaStencil = Allerta_Stencil({
   weight: '400',
   subsets: ['latin'],
 });
@@ -69,8 +64,8 @@ export default function Sidebar() {
 
           <div className="mb-3">
             <h4 className="mb-1 underline">DEVPOST</h4>
-            <p className={`break-words ${allertaStencil.className}`}>
-              Checkout the <Link href="https://devpost.com" target="_blank" rel="noopener noreferrer" className="text-[#E82AFA] underline">DevPost</Link> for prizes and submissions.
+            <p className="break-words">
+              Checkout the <Link href="https://devfest-2026.devpost.com/?ref_feature=challenge&ref_medium=discover" target="_blank" rel="noopener noreferrer" className="text-[#E82AFA] underline">DevPost</Link> for prizes and submissions.
             </p>
           </div>
 
@@ -86,7 +81,7 @@ export default function Sidebar() {
 
           <div>
             <h4 className="mb-1 underline">DEVFEST DISCORD</h4>
-            <p className={`break-words ${allertaStencil.className}`}>
+            <p className="break-words">
               Join our devfest <Link href="https://discord.com" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>discord</Link> community to ask questions, find teammates, and more!
             </p>
           </div>
@@ -128,7 +123,7 @@ export default function Sidebar() {
           }}>
             WHO IS ADI?
           </h3>
-          <p className={allertaStencil.className} style={{ 
+          <p style={{ 
             wordBreak: 'break-word', 
             marginTop: '0',
             overflow: 'hidden',
@@ -136,7 +131,7 @@ export default function Sidebar() {
           }}>
             <Link href="https://www.adicu.com/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>ADI</Link> (Application Development Initiative) is a student group at Columbia University that aims to foster a community of students interested in tech.
           </p>
-          <p className={allertaStencil.className} style={{ 
+          <p style={{ 
             wordBreak: 'break-word', 
             margin: '0',
             marginTop: '8px',

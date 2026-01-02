@@ -4,6 +4,12 @@ import Sidebar from "@/components/sidebar";
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { Allerta_Stencil } from 'next/font/google';
+
+const allertaStencil = Allerta_Stencil({
+  weight: '400',
+  subsets: ['latin'],
+});
 
 export default function Home() {
   const [hoveredPlanet, setHoveredPlanet] = useState<string | null>(null);
@@ -321,7 +327,7 @@ export default function Home() {
                 }}
               >
                 <div className="relative w-full h-full flex items-center">
-                  <p className="font-allerta-stencil text-black text-xs">
+                  <p className={`${allertaStencil.className} text-black text-xs`}>
                     {getSpeechBubbleText()}
                   </p>
                   {/* Speech bubble tail */}
