@@ -37,7 +37,7 @@ export default function Sidebar() {
       <div className="relative z-10 h-full flex flex-col overflow-hidden">
         {/* Links Section - Top (constrained to Group 13 box) */}
         <div 
-          className="absolute left-[19px] w-[216px] text-[16px] text-[#000000]"
+          className="absolute left-[19px] w-[216px] text-[15px] text-[#000000]"
           style={{ 
             top: '17px',
             height: '266px',
@@ -56,7 +56,7 @@ export default function Sidebar() {
               href="https://forms.gle/WEepULcHQo5GCefK7" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-[#E82AFA] underline break-words text-lg"
+              className="text-[#E82AFA] underline break-words text-[15px]"
             >
               REGISTER NOW
             </Link>
