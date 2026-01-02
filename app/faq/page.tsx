@@ -51,10 +51,10 @@ export default function FAQ() {
     },
     {
       question: "When is Devfest?",
-      answer: "The actual competition will be on 2/7-2/8 (Saturday to Sunday), but there will be workshops for the whole week from 2/2-2/6 before the competition. Please visit the schedules page for more information.",
+      answer: "DevFest features workshops throughout the week from 2/2-2/6 (Monday-Friday), followed by the main competition on 2/7-2/8 (Saturday-Sunday). Visit the schedules page for more information.",
       answerWithLink: (
         <>
-          The actual competition will be on 2/7-2/8 (Saturday to Sunday), but there will be workshops for the whole week from 2/2-2/6 before the competition. Please visit the{' '}
+          DevFest features workshops throughout the week from 2/2-2/6 (Monday-Friday), followed by the main competition on 2/7-2/8 (Saturday-Sunday). Visit the{' '}
           <Link 
             href="/schedules"
             className="underline hover:text-blue-300"
