@@ -1,10 +1,15 @@
 'use client';
 
-import { Zen_Dots } from 'next/font/google';
+import { Zen_Dots, Allerta_Stencil } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const zenDots = Zen_Dots({
+  weight: '400',
+  subsets: ['latin'],
+});
+
+const allertaStencil = Allerta_Stencil({
   weight: '400',
   subsets: ['latin'],
 });
@@ -14,7 +19,7 @@ export default function Sidebar() {
     <div className={`absolute left-[24px] top-[190px] z-30 w-[253px] h-[648px] ${zenDots.className} rounded-[20px] overflow-hidden`}>
       {/* Background Images */}
       {/* Group 13 - Top section background */}
-      <div className="absolute top-0 left-0 w-[253px] h-[300px] rounded-[20px] overflow-hidden pointer-events-none">
+      <div className="absolute top-0 left-0 w-[253px] h-[260px] rounded-[20px] overflow-hidden pointer-events-none">
         <Image
           src="/sidebar-group-13.svg"
           alt="Sidebar background top"
@@ -24,7 +29,7 @@ export default function Sidebar() {
       </div>
 
       {/* Group 12 - Bottom section background */}
-      <div className="absolute top-[320px] left-0 w-[253px] h-[240px] rounded-[20px] overflow-hidden pointer-events-none">
+      <div className="absolute top-[280px] left-0 w-[253px] h-[250px] rounded-[20px] overflow-hidden pointer-events-none">
         <Image
           src="/sidebar-group-12.svg"
           alt="Sidebar background bottom"
@@ -64,7 +69,7 @@ export default function Sidebar() {
 
           <div className="mb-3">
             <h4 className="mb-1 underline">DEVPOST</h4>
-            <p className="break-words">
+            <p className={`break-words ${allertaStencil.className}`}>
               Checkout the <Link href="https://devpost.com" target="_blank" rel="noopener noreferrer" className="text-[#E82AFA] underline">DevPost</Link> for prizes and submissions.
             </p>
           </div>
@@ -81,7 +86,7 @@ export default function Sidebar() {
 
           <div>
             <h4 className="mb-1 underline">DEVFEST DISCORD</h4>
-            <p className="break-words">
+            <p className={`break-words ${allertaStencil.className}`}>
               Join our devfest <Link href="https://discord.com" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>discord</Link> community to ask questions, find teammates, and more!
             </p>
           </div>
@@ -90,7 +95,7 @@ export default function Sidebar() {
 
       {/* Clipping container for bottom section text */}
       <div 
-        className="absolute top-[320px] left-0 w-[253px] h-[230px] rounded-[20px] overflow-hidden pointer-events-auto"
+        className="absolute top-[280px] left-0 w-[253px] h-[250px] rounded-[20px] overflow-hidden pointer-events-auto"
         style={{ 
           zIndex: 15,
           clipPath: 'inset(0)',
@@ -123,7 +128,7 @@ export default function Sidebar() {
           }}>
             WHO IS ADI?
           </h3>
-          <p style={{ 
+          <p className={allertaStencil.className} style={{ 
             wordBreak: 'break-word', 
             marginTop: '0',
             overflow: 'hidden',
@@ -131,7 +136,7 @@ export default function Sidebar() {
           }}>
             <Link href="https://www.adicu.com/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>ADI</Link> (Application Development Initiative) is a student group at Columbia University that aims to foster a community of students interested in tech.
           </p>
-          <p style={{ 
+          <p className={allertaStencil.className} style={{ 
             wordBreak: 'break-word', 
             margin: '0',
             marginTop: '8px',
