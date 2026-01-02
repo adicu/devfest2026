@@ -141,7 +141,7 @@ export default function Sidebar() {
             flexShrink: 0,
             overflow: 'hidden',
           }}>
-            Stay in touch: <Link href="https://www.instagram.com/adicolumbia/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Instagram</Link>, <Link href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Tiktok</Link>, <Link href="https://discord.com" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Discord</Link>
+            Stay in touch: <Link href="https://www.instagram.com/adicolumbia/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Instagram</Link>, <Link href="https://www.tiktok.com/@adicolumbia" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Tiktok</Link>, <Link href="https://discord.com" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Discord</Link>
           </p>
         </div>
       </div>
