@@ -51,7 +51,20 @@ export default function FAQ() {
     },
     {
       question: "When is Devfest?",
-      answer: "Devfest will be _______."
+      answer: "The actual competition will be on 2/7-2/8 (Saturday to Sunday), but there will be workshops for the whole week from 2/2-2/6 before the competition. Please visit the schedules page for more information.",
+      answerWithLink: (
+        <>
+          The actual competition will be on 2/7-2/8 (Saturday to Sunday), but there will be workshops for the whole week from 2/2-2/6 before the competition. Please visit the{' '}
+          <Link 
+            href="/schedules"
+            className="underline hover:text-blue-300"
+            style={{ color: '#1B104C' }}
+          >
+            schedules page
+          </Link>
+          {' '}for more information.
+        </>
+      )
     },
     {
       question: "What is the team size limit?",
@@ -246,7 +259,7 @@ export default function FAQ() {
 
         {/* FAQ Items */}
         <motion.div 
-            className="w-full space-y-2 mt-25"
+            className="w-full space-y-2 mt-20"
           variants={itemVariants}
         >
           {faqs.map((faq, index) => (
