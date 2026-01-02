@@ -1,17 +1,17 @@
 'use client';
 
-import { Allerta_Stencil } from 'next/font/google';
+import { Zen_Dots } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const allertaStencil = Allerta_Stencil({
+const zenDots = Zen_Dots({
   weight: '400',
   subsets: ['latin'],
 });
 
 export default function Sidebar() {
   return (
-    <div className={`absolute left-[24px] top-[190px] z-30 w-[253px] h-[648px] ${allertaStencil.className} rounded-[20px] overflow-hidden`}>
+    <div className={`absolute left-[24px] top-[190px] z-30 w-[253px] h-[648px] ${zenDots.className} rounded-[20px] overflow-hidden`}>
       {/* Background Images */}
       {/* Group 13 - Top section background */}
       <div className="absolute top-0 left-0 w-[253px] h-[300px] rounded-[20px] overflow-hidden pointer-events-none">
@@ -37,7 +37,7 @@ export default function Sidebar() {
       <div className="relative z-10 h-full flex flex-col overflow-hidden">
         {/* Links Section - Top (constrained to Group 13 box) */}
         <div 
-          className="absolute left-[19px] w-[216px] text-[16px] leading-[1.2em] text-[#000000]"
+          className="absolute left-[19px] w-[216px] text-[16px] text-[#000000]"
           style={{ 
             top: '17px',
             height: '266px',
@@ -47,6 +47,8 @@ export default function Sidebar() {
             overflowWrap: 'break-word',
             paddingBottom: '17px',
             boxSizing: 'border-box',
+            lineHeight: '100%',
+            letterSpacing: '0%',
           }}
         >
           <div className="mb-3">
@@ -96,7 +98,7 @@ export default function Sidebar() {
       >
         {/* WHO IS ADI Section - Bottom (constrained to Group 12 box) */}
         <div 
-          className="absolute left-[19px] top-[17px] w-[216px] text-[16px] leading-[1.2em] text-[#000000]"
+          className="absolute left-[19px] top-[17px] w-[216px] text-[16px] text-[#000000]"
           style={{
             overflow: 'hidden',
             wordWrap: 'break-word',
@@ -109,6 +111,8 @@ export default function Sidebar() {
             display: 'flex',
             flexDirection: 'column',
             height: '259px',
+            lineHeight: '100%',
+            letterSpacing: '0%',
           }}
         >
           <h3 className="font-bold underline" style={{ 
