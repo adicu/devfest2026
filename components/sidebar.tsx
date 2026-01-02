@@ -2,7 +2,6 @@
 
 import { Zen_Dots } from 'next/font/google';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const zenDots = Zen_Dots({
   weight: '400',
@@ -11,46 +10,31 @@ const zenDots = Zen_Dots({
 
 export default function Sidebar() {
   return (
-    <div className={`absolute left-[24px] top-[190px] z-30 w-[253px] h-[648px] ${zenDots.className} rounded-[20px] overflow-hidden`}>
-      {/* Background Images */}
-      {/* Group 13 - Top section background */}
-      <div className="absolute top-0 left-0 w-[253px] h-[260px] rounded-[20px] overflow-hidden pointer-events-none">
-        <Image
-          src="/sidebar-group-13.svg"
-          alt="Sidebar background top"
-          fill
-          className="object-cover"
-        />
-      </div>
-
-      {/* Group 12 - Bottom section background */}
-      <div className="absolute top-[280px] left-0 w-[253px] h-[250px] rounded-[20px] overflow-hidden pointer-events-none">
-        <Image
-          src="/sidebar-group-12.svg"
-          alt="Sidebar background bottom"
-          fill
-          className="object-cover"
-        />
-      </div>
-      
+    <div className={`absolute left-[24px] top-[190px] z-30 w-[253px] ${zenDots.className} rounded-[20px] overflow-hidden`}>
       {/* Content Container */}
-      <div className="relative z-10 h-full flex flex-col overflow-hidden">
+      <div className="relative z-10 flex flex-col">
         {/* Links Section - Top (constrained to Group 13 box) */}
         <div 
-          className="absolute left-[19px] w-[216px] text-[15px] text-[#000000]"
+          className="left-0 top-0 w-[253px] text-[15px] text-[#000000] rounded-[20px]"
           style={{ 
-            top: '17px',
-            height: '266px',
-            textAlign: 'left',
-            overflow: 'hidden',
-            wordWrap: 'break-word',
-            overflowWrap: 'break-word',
-            paddingBottom: '17px',
-            boxSizing: 'border-box',
-            lineHeight: '100%',
-            letterSpacing: '0%',
+            backgroundImage: 'url(/sidebar-group-13.svg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            padding: '17px 19px'
           }}
         >
+          <div
+            className="w-full"
+            style={{ 
+              textAlign: 'left',
+              wordWrap: 'break-word',
+              overflowWrap: 'break-word',
+              boxSizing: 'border-box',
+              lineHeight: '100%',
+              letterSpacing: '0%',
+            }}
+          >
           <div className="mb-3">
             <Link 
               href="https://forms.gle/WEepULcHQo5GCefK7" 
@@ -87,36 +71,32 @@ export default function Sidebar() {
               Join our devfest <Link href="https://discord.com" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>discord</Link> community to ask questions, find teammates, and more!
             </p>
           </div>
+          </div>
         </div>
-      </div>
 
-      {/* Clipping container for bottom section text */}
-      <div 
-        className="absolute top-[280px] left-0 w-[253px] h-[250px] rounded-[20px] overflow-hidden pointer-events-auto"
-        style={{ 
-          zIndex: 15,
-          clipPath: 'inset(0)',
-        }}
-      >
         {/* WHO IS ADI Section - Bottom (constrained to Group 12 box) */}
         <div 
-          className="absolute left-[19px] top-[17px] w-[216px] text-[16px] text-[#000000]"
+          className="mt-5 left-0 w-[253px] text-[16px] text-[#000000] rounded-[20px]"
           style={{
-            overflow: 'hidden',
-            wordWrap: 'break-word',
-            overflowWrap: 'break-word',
-            maxWidth: '216px',
-            maxHeight: '259px',
-            boxSizing: 'border-box',
-            padding: '0',
-            paddingBottom: '0',
-            display: 'flex',
-            flexDirection: 'column',
-            height: '259px',
-            lineHeight: '100%',
-            letterSpacing: '0%',
+            backgroundImage: 'url(/sidebar-group-12.svg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            padding: '17px 19px'
           }}
         >
+          <div
+            className="w-full"
+            style={{
+              wordWrap: 'break-word',
+              overflowWrap: 'break-word',
+              boxSizing: 'border-box',
+              display: 'flex',
+              flexDirection: 'column',
+              lineHeight: '100%',
+              letterSpacing: '0%',
+            }}
+          >
           <h3 className="underline" style={{ 
             wordBreak: 'break-word', 
             margin: '0 0 4px 0',
@@ -143,6 +123,7 @@ export default function Sidebar() {
           }}>
             Stay in touch: <Link href="https://www.instagram.com/adicolumbia/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Instagram</Link>, <Link href="https://www.tiktok.com/@adicolumbia" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Tiktok</Link>, <Link href="https://discord.com" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Discord</Link>
           </p>
+          </div>
         </div>
       </div>
     </div>

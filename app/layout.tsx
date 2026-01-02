@@ -62,19 +62,18 @@ export default function RootLayout({
           target="_blank" 
           style={{
             display: 'block',
-            maxWidth: '100px',
-            minWidth: '60px',
             position: 'fixed',
-            left: '24px', // Sticking to the left edge
-            top: '0',  // Sticking to the top edge
-            width: '10%',
+            left: '24px',
+            top: '0',
+            width: '150px',
+            height: '150px',
             zIndex: 10000
           }}
         >
           <img 
             src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-white.svg" 
             alt="Major League Hacking 2026 Hackathon Season" 
-            style={{ width: '100%' }} 
+            style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
           />
         </a>
         {children}

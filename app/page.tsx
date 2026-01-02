@@ -66,9 +66,9 @@ export default function Home() {
   };
 
   return (
-    <main className="relative w-full overflow-auto" style={{ height: '782px', cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto' }}>
+    <main className="relative w-screen overflow-auto" style={{ height: '100vh', cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto' }}>
       {/* Background Layer */}
-      <div className="fixed top-0 left-0 right-0 z-0" style={{ height: '782px', width: '100%' }}>
+      <div className="fixed inset-0 z-0">
         <Image
           src="/background-purple.png"
           alt="Purple Background"
@@ -85,15 +85,14 @@ export default function Home() {
       <Sidebar />
 
       {/* Navigation Bar */}
-      <nav className="relative z-20 w-full" style={{
+      <nav className="fixed top-0 left-0 right-0 z-20 w-full" style={{
         background: 'transparent',
         height: '95px',
-        paddingTop: '50px',
-        minWidth: '1512px'
+        paddingTop: '50px'
       }}>
-        <div className="flex items-center justify-between px-20 h-full">
+        <div className="flex items-center justify-between w-full px-20 h-full">
           {/* Logo and Title */}
-          <div className="flex items-center gap-4 ml-16">
+          <div className="flex items-center gap-4" style={{ marginLeft: '100px' }}>
             <div className="w-20 h-20 rounded-lg overflow-hidden">
               <Image
                 src="/logo.svg"
@@ -183,9 +182,9 @@ export default function Home() {
       </div>
 
       {/* Main Content Area */}
-      <div className="relative z-10" style={{ minWidth: '1512px', height: '687px' }}>
+      <div className="relative z-10" style={{ height: 'calc(100vh - 145px)', marginTop: '95px' }}>
         {/* Main Section with Planets */}
-        <div className="relative" style={{ minHeight: '506px' }}>
+        <div className="relative" style={{ minHeight: '460px' }}>
           {/* Main Section Container - matches Figma layout_9GODRF */}
           <div 
             className="absolute"
@@ -193,7 +192,7 @@ export default function Home() {
               left: '327px',
               top: '62px',
               width: '1108px',
-              height: '506px',
+              height: '460px',
             }}
           >
             {/* Schedule Planet - position relative to main section */}
