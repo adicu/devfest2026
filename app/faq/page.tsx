@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zen_Dots, Allerta_Stencil } from 'next/font/google';
-import { Instagram } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -72,7 +71,7 @@ export default function FAQ() {
       answer: "If you have any questions or concerns, please don't hesitate to reach out to us via email at devfestorganizers@googlegroups.com or via our Discord server where you can ping any of the organizers. For more information, please refer to the MLH code of conduct.",
       answerWithLink: (
         <>
-          If you have any questions or concerns, please don't hesitate to reach out to us via email at devfestorganizers@googlegroups.com or via our Discord server where you can ping any of the organizers. For more information, please refer to the{' '}
+          If you have any questions or concerns, please don&apos;t hesitate to reach out to us via email at devfestorganizers@googlegroups.com or via our Discord server where you can ping any of the organizers. For more information, please refer to the{' '}
           <a 
             href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
             target="_blank"
