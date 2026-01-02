@@ -358,8 +358,8 @@ export default function TracksPage() {
                                                   );
                                               })()}
 
-                                              {/* Description Text - Space Mono, 24px, #FBF5FF with highlighted phrases */}
-                                              <div className={`${spaceMono.className} text-[24px]`} style={{ color: '#FBF5FF', lineHeight: '1.2em', textAlign: 'left' }}>
+                                              {/* Description Text - Space Mono, 20px, #FBF5FF with highlighted phrases */}
+                                              <div className={`${spaceMono.className} text-[20px]`} style={{ color: '#FBF5FF', lineHeight: '1.2em', textAlign: 'left' }}>
                                                   {(() => {
                                                       const trackOrder = ['health', 'business', 'entertainment', 'social-impact'];
                                                       const trackNumber = trackOrder.indexOf(selectedTrack.id) + 1;
