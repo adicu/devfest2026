@@ -72,7 +72,9 @@ export default function Sidebar() {
           <div className="mb-3">
             <h4 className="mb-1 underline">SCHEDULE</h4>
             <Link 
-              href="/schedules" 
+              href="https://calendar.google.com/calendar/u/0/r" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#E82AFA] underline break-words"
             >
               Google Calendar
