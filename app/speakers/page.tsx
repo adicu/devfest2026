@@ -57,7 +57,7 @@ export default function Speakers() {
       }}>
         <div className="flex items-center justify-between px-20 h-full">
           {/* Logo and Title */}
-          <Link href="/" className="flex items-center gap-4 ml-16 cursor-pointer hover:opacity-80 transition-opacity">
+          <Link href="/" className="flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity" style={{ marginLeft: '100px' }}>
             <div className="w-20 h-20 rounded-lg overflow-hidden">
               <Image
                 src="/logo.svg"
