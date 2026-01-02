@@ -38,21 +38,21 @@ const tracksData = [
         title: 'BUSINESS AND ENTERPRISE',
         icon: '💼',
         shortDesc: 'Transform how organizations operate digitally.',
-        fullDesc: 'The BUSINESS AND ENTERPRISE track encourages teams to design software and systems that transform how organizations of all scales operate in an increasingly digital environment. These ideas are permeated through a wide range of themes, including finance, productivity, workflow automation, emerging technologies, blockchain, business intelligence, and organizational strategy. Projects may range from products that streamline day-to-day operations, to platforms that re-imagine the future of commerce, to AI-powered advisors for entrepreneurs. These solutions can draw upon analytics, AI, modern web infrastructure, or creative business models to solve real pain points faced by companies and customers alike. This track encourages teams to think beyond just the technical build and consider the broader business implications including scalability, sustainability, and accessibility.',
+        fullDesc: 'The BUSINESS AND ENTERPRISE track encourages teams to design software and systems that transform how organizations of all scales operate in an increasingly digital environment. These ideas are permeated through a wide range of themes, including finance, productivity, workflow automation, emerging technologies, blockchain, business intelligence, and organizational strategy.\n\nProjects may range from products that streamline day-to-day operations, to platforms that re-imagine the future of commerce, to AI-powered advisors for entrepreneurs. These solutions can draw upon analytics, AI, modern web infrastructure, or creative business models to solve real pain points faced by companies and customers alike.\n\nThis track encourages teams to think beyond just the technical build and consider the broader business implications including scalability, sustainability, and accessibility.',
     },
     {
         id: 'entertainment',
         title: 'ENTERTAINMENT',
         icon: '🎮',
         shortDesc: 'Blend artistry, storytelling, and interactivity.',
-        fullDesc: 'The ENTERTAINMENT track is a creative playground that invites participants to blend artistry, storytelling, and interactivity. Projects in this track includes everything from game development and immersive media, to interactive art and music technology, to educational entertainment. Teams are challenged to build and curate digital experiments that spark curiosity, deepen engagement, and bring people together. These projects where entertainment meets impact can take the form of gamified education tools, creative platforms for self-expression, systems that foster community, or new forms of storytelling that push technical boundaries. This track invites teams to let imagination lead, delivering memorable, meaningful experiments and engagement. The goal is to create something playful, surprising, and inspiring.',
+        fullDesc: 'The ENTERTAINMENT track is a creative playground that invites participants to blend artistry, storytelling, and interactivity. Projects in this track includes everything from game development and immersive media, to interactive art and music technology, to educational entertainment.\n\nTeams are challenged to build and curate digital experiments that spark curiosity, deepen engagement, and bring people together. These projects where entertainment meets impact can take the form of gamified education tools, creative platforms for self-expression, systems that foster community, or new forms of storytelling that push technical boundaries.\n\nThis track invites teams to let imagination lead, delivering memorable, meaningful experiments and engagement. The goal is to create something playful, surprising, and inspiring.',
     },
     {
         id: 'social-impact',
         title: 'SOCIAL IMPACT/\nSUSTAINABILITY',
         icon: '🌱',
         shortDesc: 'Make communities safer, more equitable, and sustainable.',
-        fullDesc: 'The SOCIAL IMPACT & SUSTAINABILITY track challenges teams to develop solutions that make communities safer, more equitable, and more environmentally responsible. Projects may span transportation, maps and mobility, climate and environment, civic technology, community health, and data-driven policy insights. Teams are encouraged to address real-world challenges, varying from the reduction of carbon footprints, to the improvement of access to sustainable transportation, to the identification of environmental hazards, to the empowerment of individuals to make greener and more informed choices. This track particularly welcomes projects that make complex environmental or social data intuitive. To do so, teams can draw from mobility data, climate datasets, community metrics, or public policy resources to design applications that are both actionable and accessible.',
+        fullDesc: 'The SOCIAL IMPACT & SUSTAINABILITY track challenges teams to develop solutions that make communities safer, more equitable, and more environmentally responsible. Projects may span transportation, maps and mobility, climate and environment, civic technology, community health, and data-driven policy insights.\n\nTeams are encouraged to address real-world challenges, varying from the reduction of carbon footprints, to the improvement of access to sustainable transportation, to the identification of environmental hazards, to the empowerment of individuals to make greener and more informed choices.\n\nThis track particularly welcomes projects that make complex environmental or social data intuitive. To do so, teams can draw from mobility data, climate datasets, community metrics, or public policy resources to design applications that are both actionable and accessible.',
     },
 ];
 
@@ -358,8 +358,8 @@ export default function TracksPage() {
                                                   );
                                               })()}
 
-                                              {/* Description Text - Zen Dots, 24px, #FBF5FF with highlighted phrases */}
-                                              <div className={`${zenDots.className} text-[24px]`} style={{ color: '#FBF5FF', lineHeight: '1.2em', textAlign: 'left' }}>
+                                              {/* Description Text - Space Mono, 22px, #FBF5FF with highlighted phrases */}
+                                              <div className={`${spaceMono.className} text-[22px]`} style={{ color: '#FBF5FF', lineHeight: '1.2em', textAlign: 'left' }}>
                                                   {(() => {
                                                       const trackOrder = ['health', 'business', 'entertainment', 'social-impact'];
                                                       const trackNumber = trackOrder.indexOf(selectedTrack.id) + 1;
