@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Zen_Dots } from 'next/font/google';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Zen_Dots, Allerta_Stencil } from 'next/font/google';
 import { Instagram } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,6 +10,11 @@ import Sidebar from "@/components/sidebar";
 
 // Load fonts
 const zenDots = Zen_Dots({
+  weight: '400',
+  subsets: ['latin'],
+});
+
+const allertaStencil = Allerta_Stencil({
   weight: '400',
   subsets: ['latin'],
 });
@@ -43,36 +48,43 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "What is Columbia DevFest?",
-      answer: "Columbia DevFest is a hackathon hosted by ADI Columbia at Columbia University. It's a weekend-long event where students come together to build innovative projects, learn new technologies, and network with industry professionals."
+      question: "Is the hackathon online or in-person?",
+      answer: "DevFest will be held in-person, on Columbia University's campus."
     },
     {
-      question: "When and where is the event?",
-      answer: "Columbia DevFest 2026 will take place on February 8th, 2026 at Columbia University in the City of New York. The exact venue details will be announced closer to the event date."
+      question: "Who is eligible to participate?",
+      answer: "DevFest is open to all college students ages 18 and older. Please be aware that travel is unfortunately NOT sponsored."
     },
     {
-      question: "Who can participate?",
-      answer: "The event is open to all college students, recent graduates, and high school students. You don't need to be a Columbia student to participate - we welcome students from all universities!"
+      question: "When is Devfest?",
+      answer: "Devfest will be _______."
     },
     {
-      question: "Do I need to pay to participate?",
-      answer: "No! Columbia DevFest is completely free to attend. We provide meals, snacks, and all the resources you'll need for the weekend."
+      question: "What is the team size limit?",
+      answer: "Teams can be of 1-4 people. Individual participation is allowed."
     },
     {
-      question: "What should I bring?",
-      answer: "Bring your laptop, charger, and any development tools you prefer. We'll provide Wi-Fi, power outlets, and other necessary infrastructure. Don't forget to bring your student ID!"
+      question: "Will there be mentorship or support given?",
+      answer: "Yes, experienced students and industry professionals (ADI alumni!) will be in-person and online during the hackathon."
     },
     {
-      question: "Can I work in a team?",
-      answer: "Yes! You can work individually or in teams of up to 4 people. We encourage collaboration and will have team formation activities at the beginning of the event."
-    },
-    {
-      question: "What are the prizes?",
-      answer: "We'll have exciting prizes for the winning teams across different categories. Prize details will be announced closer to the event date."
-    },
-    {
-      question: "Will there be mentors and workshops?",
-      answer: "Absolutely! We'll have industry professionals, alumni, and experienced developers available as mentors throughout the event. We'll also host workshops on various technologies and development topics."
+      question: "Who do I contact for questions or concerns?",
+      answer: "If you have any questions or concerns, please don't hesitate to reach out to us via email at devfestorganizers@googlegroups.com or via our Discord server where you can ping any of the organizers. For more information, please refer to the MLH code of conduct.",
+      answerWithLink: (
+        <>
+          If you have any questions or concerns, please don't hesitate to reach out to us via email at devfestorganizers@googlegroups.com or via our Discord server where you can ping any of the organizers. For more information, please refer to the{' '}
+          <a 
+            href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-blue-300"
+            style={{ color: '#1B104C' }}
+          >
+            MLH code of conduct
+          </a>
+          .
+        </>
+      )
     }
   ];
 
@@ -81,7 +93,7 @@ export default function FAQ() {
   };
 
   return (
-    <main className="relative min-h-screen w-full overflow-hidden text-white bg-black" style={{ cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto' }}>
+    <main className="relative min-h-screen w-full text-white bg-black" style={{ cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto' }}>
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -185,103 +197,120 @@ export default function FAQ() {
         </div>
       </div>
 
+      {/* Background Images Group - fixed position so it doesn't move with content */}
+      <div className="fixed z-5 pointer-events-none" style={{ width: '1108px', height: '781px', top: '55%', left: '55%', transform: 'translate(-50%, -50%) scale(0.9)', transformOrigin: 'center' }}>
+        {/* Union Circle Background (behind everything) - x: 115, y: -43 relative to Main section */}
+        <div className="absolute" style={{ left: '115px', top: '-43px', width: '878.09px', height: '854.81px', zIndex: 1 }}>
+          <Image
+            src="/faq-union-circle-257af8.png"
+            alt="FAQ Union Circle"
+            fill
+            className="object-contain"
+            style={{ objectFit: 'fill' }}
+          />
+        </div>
+
+        {/* Background Artwork (on top of circle, behind content) - x: 95, y: 105 relative to Main section */}
+        <div className="absolute" style={{ left: '95px', top: '105px', width: '898px', height: '661px', opacity: 0.8, zIndex: 2 }}>
+          <Image
+            src="/faq-background-artwork-1237b6.png"
+            alt="FAQ Background Artwork"
+            fill
+            className="object-contain"
+            style={{ objectFit: 'fill' }}
+          />
+        </div>
+      </div>
+
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center px-20 py-10">
+      <div className="relative z-10 flex flex-col items-center px-20 py-10 ml-45" style={{ marginTop: '-28px' }}>
+
         {/* Animated Content */}
         <motion.div
-          className="relative z-20 flex flex-col items-center w-full text-center max-w-4xl"
+          className="relative z-20 flex flex-col items-center w-full text-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          style={{ maxWidth: '530px' }}
         >
           {/* Title */}
           <motion.h1
-            className={`${zenDots.className} text-5xl sm:text-6xl md:text-7xl font-bold mb-12 text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]`}
+            className={`${zenDots.className} text-3xl font-bold mb-8 text-white text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]`}
             variants={itemVariants}
+            style={{ lineHeight: '1.2em' }}
           >
-            FAQ
+            Frequently<br />Asked Questions
           </motion.h1>
 
           {/* FAQ Items */}
           <motion.div 
-            className="w-full space-y-4"
+            className="w-full space-y-2 mt-25"
             variants={itemVariants}
           >
             {faqs.map((faq, index) => (
               <div 
                 key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden"
+                className="overflow-hidden"
+                style={{
+                  backgroundColor: openFAQ === index ? 'rgba(255, 255, 255, 0.86)' : 'transparent'
+                }}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full text-left p-6 hover:bg-white/5 transition-colors"
+                  className="w-full text-left transition-colors"
+                  style={{
+                    background: 'linear-gradient(0deg, rgba(27, 16, 76, 1) 35%, rgba(45, 104, 151, 1) 100%)',
+                    color: '#FFFFFF',
+                    padding: '10px 14px'
+                  }}
                 >
                   <div className="flex justify-between items-center">
-                    <h3 className={`${zenDots.className} text-lg font-bold pr-4`}>
+                    <h3 className={`${zenDots.className} font-normal pr-3`} style={{ lineHeight: '1.2em', fontSize: '13px' }}>
                       {faq.question}
                     </h3>
-                    <span className={`text-2xl transition-transform ${openFAQ === index ? 'rotate-45' : ''}`}>
-                      +
-                    </span>
+                    <motion.span 
+                      className="flex-shrink-0"
+                      animate={{ rotate: openFAQ === index ? 180 : 0 }}
+                      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                      style={{ 
+                        color: '#94C5E6',
+                        fontSize: '14px'
+                      }}
+                    >
+                      ▼
+                    </motion.span>
                   </div>
                 </button>
                 
-                {openFAQ === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 pb-6"
-                  >
-                    <p className={`${zenDots.className} text-gray-300 leading-relaxed`}>
-                      {faq.answer}
-                    </p>
-                  </motion.div>
-                )}
+                <AnimatePresence initial={false}>
+                  {openFAQ === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ 
+                        duration: 0.3,
+                        ease: [0.4, 0, 0.2, 1]
+                      }}
+                      style={{
+                        backgroundColor: 'rgba(255, 255, 255, 0.86)',
+                        color: '#1B104C',
+                        overflow: 'hidden'
+                      }}
+                    >
+                      <div style={{ padding: '12px 14px' }}>
+                        <p className={`${allertaStencil.className} leading-relaxed`} style={{ fontSize: '12px' }}>
+                          {faq.answerWithLink || faq.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </motion.div>
 
-          {/* Contact Info */}
-          <motion.div
-            className="mt-12 p-6 bg-purple-600/20 backdrop-blur-sm rounded-lg border border-white/20"
-            variants={itemVariants}
-          >
-            <h3 className={`${zenDots.className} text-xl font-bold mb-2`}>Still have questions?</h3>
-            <p className={`${zenDots.className} text-gray-300`}>
-              Feel free to reach out to us on Instagram or email us at{' '}
-              <a href="mailto:devfest@adicu.com" className="text-purple-300 hover:underline">
-                devfest@adicu.com
-              </a>
-            </p>
-          </motion.div>
         </motion.div>
-
-        {/* Container for bottom-left links */}
-        <div className="absolute bottom-8 left-8 z-30 flex items-center space-x-4">
-          {/* Instagram Link */}
-          <a
-            href="https://www.instagram.com/adicolumbia/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="ADI Columbia Instagram"
-            className="text-white/70 hover:text-white/90 transition-colors cursor-pointer"
-          >
-            <Instagram size={28} />
-          </a>
-
-          {/* Code of Conduct Link */}
-          <a
-            href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="MLH Code of Conduct"
-            className={`text-sm ${zenDots.className} text-white/70 hover:text-white/90 hover:underline transition-colors cursor-pointer`}
-          >
-            Code of Conduct
-          </a>
-        </div>
       </div>
     </main>
   );
