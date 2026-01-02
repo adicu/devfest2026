@@ -68,7 +68,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen w-full overflow-auto" style={{ cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto' }}>
       {/* Background Layer */}
-      <div className="fixed top-0 left-0 right-0 z-0" style={{ height: '982px', width: '100%' }}>
+      <div className="fixed top-0 left-0 right-0 z-0" style={{ height: '782px', width: '100%' }}>
         <Image
           src="/background-purple.png"
           alt="Purple Background"
@@ -124,15 +124,17 @@ export default function Home() {
 
       {/* Menu Overlay */}
       <div 
-        className={`fixed inset-0 z-30 bg-black transition-opacity duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-30 bg-black transition-opacity duration-300 ${
           isMenuOpen ? 'opacity-70' : 'opacity-0 pointer-events-none'
         }`}
+        style={{ height: '782px' }}
         onClick={() => setIsMenuOpen(false)}
       >
         <div 
-          className={`absolute right-0 top-0 h-full w-80 bg-purple-900 shadow-2xl p-8 transition-transform duration-300 ease-out ${
+          className={`absolute right-0 top-0 w-80 bg-purple-900 shadow-2xl p-8 transition-transform duration-300 ease-out ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
+          style={{ height: '782px' }}
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col gap-6 mt-20">
