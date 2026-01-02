@@ -66,7 +66,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-screen w-full overflow-auto" style={{ cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto' }}>
+    <main className="relative w-full overflow-auto" style={{ height: '782px', cursor: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'17\' viewBox=\'0 0 73 51\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M-6.14341e-05 7.29999e-06L56.6044 3.95817L24.8743 51L-6.14341e-05 7.29999e-06Z\' fill=\'white\'/%3E%3Crect x=\'35.83\' y=\'17.8153\' width=\'40.3205\' height=\'15.1202\' transform=\'rotate(24 35.83 17.8153)\' fill=\'white\'/%3E%3C/svg%3E") 0 0, auto' }}>
       {/* Background Layer */}
       <div className="fixed top-0 left-0 right-0 z-0" style={{ height: '782px', width: '100%' }}>
         <Image
@@ -183,7 +183,7 @@ export default function Home() {
       </div>
 
       {/* Main Content Area */}
-      <div className="relative z-10 min-h-[calc(100vh-95px)]" style={{ minWidth: '1512px' }}>
+      <div className="relative z-10" style={{ minWidth: '1512px', height: '687px' }}>
         {/* Main Section with Planets */}
         <div className="relative" style={{ minHeight: '506px' }}>
           {/* Main Section Container - matches Figma layout_9GODRF */}
