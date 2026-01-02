@@ -1,8 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { Zen_Dots, Allerta_Stencil } from 'next/font/google';
+import { Zen_Dots } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
@@ -10,11 +9,6 @@ import Sidebar from "@/components/sidebar";
 
 // Load fonts
 const zenDots = Zen_Dots({
-  weight: '400',
-  subsets: ['latin'],
-});
-
-const allertaStencil = Allerta_Stencil({
   weight: '400',
   subsets: ['latin'],
 });
@@ -122,10 +116,6 @@ export default function Schedules() {
       const contentWrapper = container.querySelector('.space-y-8') as HTMLElement;
       
       if (contentWrapper) {
-        // Calculate the element's position relative to the content wrapper
-        let scrollTop = 0;
-        let currentElement: HTMLElement | null = saturdayElement;
-        
         // Use getBoundingClientRect for accurate position calculation
         const containerRect = container.getBoundingClientRect();
         const elementRect = saturdayElement.getBoundingClientRect();
