@@ -1,17 +1,17 @@
 'use client';
 
-import { Pixelify_Sans } from 'next/font/google';
+import { Allerta_Stencil } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const pixelify = Pixelify_Sans({
+const allertaStencil = Allerta_Stencil({
   weight: '400',
   subsets: ['latin'],
 });
 
 export default function Sidebar() {
   return (
-    <div className={`absolute left-[24px] top-[190px] z-30 w-[253px] h-[648px] ${pixelify.className} rounded-[20px] overflow-hidden`}>
+    <div className={`absolute left-[24px] top-[190px] z-30 w-[253px] h-[648px] ${allertaStencil.className} rounded-[20px] overflow-hidden`}>
       {/* Background Images */}
       {/* Group 13 - Top section background */}
       <div className="absolute top-0 left-0 w-[253px] h-[300px] rounded-[20px] overflow-hidden pointer-events-none">
