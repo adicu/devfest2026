@@ -56,21 +56,21 @@ export default function Sidebar() {
               href="https://forms.gle/WEepULcHQo5GCefK7" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-[#E82AFA] underline break-words font-bold text-lg"
+              className="text-[#E82AFA] underline break-words text-lg"
             >
               REGISTER NOW
             </Link>
           </div>
 
           <div className="mb-3">
-            <h4 className="font-bold mb-1 underline">DEVPOST</h4>
+            <h4 className="mb-1 underline">DEVPOST</h4>
             <p className="break-words">
               Checkout the <Link href="https://devpost.com" target="_blank" rel="noopener noreferrer" className="text-[#E82AFA] underline">DevPost</Link> for prizes and submissions.
             </p>
           </div>
 
           <div className="mb-3">
-            <h4 className="font-bold mb-1 underline">SCHEDULE</h4>
+            <h4 className="mb-1 underline">SCHEDULE</h4>
             <Link 
               href="/schedules" 
               className="text-[#E82AFA] underline break-words"
@@ -80,7 +80,7 @@ export default function Sidebar() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-1 underline">DEVFEST DISCORD</h4>
+            <h4 className="mb-1 underline">DEVFEST DISCORD</h4>
             <p className="break-words">
               Join our devfest <Link href="https://discord.com" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>discord</Link> community to ask questions, find teammates, and more!
             </p>
@@ -115,7 +115,7 @@ export default function Sidebar() {
             letterSpacing: '0%',
           }}
         >
-          <h3 className="font-bold underline" style={{ 
+          <h3 className="underline" style={{ 
             wordBreak: 'break-word', 
             margin: '0 0 4px 0',
             flexShrink: 0,
