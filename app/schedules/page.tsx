@@ -19,7 +19,7 @@ export default function Schedules() {
 
   const scheduleData = [
     {
-      date: 'MONDAY, FEBRUARY 4TH',
+      date: 'MONDAY, FEBRUARY 2ND',
       events: [
         {
           time: '09:00 AM - 10:00 AM',
@@ -33,7 +33,7 @@ export default function Schedules() {
       ]
     },
     {
-      date: 'TUESDAY, FEBRUARY 5TH',
+      date: 'TUESDAY, FEBRUARY 3RD',
       events: [
         {
           time: '09:00 AM - 10:00 AM',
@@ -47,7 +47,7 @@ export default function Schedules() {
       ]
     },
     {
-      date: 'WEDNESDAY, FEBRUARY 6TH',
+      date: 'WEDNESDAY, FEBRUARY 4TH',
       events: [
         {
           time: '09:00 AM - 10:00 AM',
@@ -61,7 +61,7 @@ export default function Schedules() {
       ]
     },
     {
-      date: 'THURSDAY, FEBRUARY 7TH',
+      date: 'THURSDAY, FEBRUARY 5TH',
       events: [
         {
           time: '09:00 AM - 10:00 AM',
@@ -75,7 +75,7 @@ export default function Schedules() {
       ]
     },
     {
-      date: 'FRIDAY, FEBRUARY 8TH',
+      date: 'FRIDAY, FEBRUARY 6TH',
       events: [
         {
           time: '09:00 AM - 10:00 AM',
@@ -89,7 +89,21 @@ export default function Schedules() {
       ]
     },
     {
-      date: 'SATURDAY, FEBRUARY 9TH',
+      date: 'SATURDAY, FEBRUARY 7TH',
+      events: [
+        {
+          time: '09:00 AM - 10:00 AM',
+          room: 'ROOM: URIS 567',
+          title: 'Engineering Innovation in Maternal and Fetal Health: The Biomechanics of High-Risk Pregnancies',
+          speaker: {
+            name: 'JEFF BEZOS, CEO & FOUNDER OF AMAZON',
+            bio: 'JEFF IS A LEADER IN THE GLOBAL MARKET AND ESTABLISHED AMAZON, AN INNOVATIVE AND TRANSFORMATIVE PLATFORM FOR E-COMMERCE.'
+          }
+        }
+      ]
+    },
+    {
+      date: 'SUNDAY, FEBRUARY 8TH',
       events: [
         {
           time: '09:00 AM - 10:00 AM',
