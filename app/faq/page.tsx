@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zen_Dots, Allerta_Stencil } from 'next/font/google';
+import { Zen_Dots } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -9,11 +9,6 @@ import Sidebar from "@/components/sidebar";
 
 // Load fonts
 const zenDots = Zen_Dots({
-  weight: '400',
-  subsets: ['latin'],
-});
-
-const allertaStencil = Allerta_Stencil({
   weight: '400',
   subsets: ['latin'],
 });
@@ -71,7 +66,15 @@ export default function FAQ() {
       answer: "If you have any questions or concerns, please don't hesitate to reach out to us via email at devfestorganizers@googlegroups.com or via our Discord server where you can ping any of the organizers. For more information, please refer to the MLH code of conduct.",
       answerWithLink: (
         <>
-          If you have any questions or concerns, please don&apos;t hesitate to reach out to us via email at devfestorganizers@googlegroups.com or via our Discord server where you can ping any of the organizers. For more information, please refer to the{' '}
+          If you have any questions or concerns, please don&apos;t hesitate to reach out to us via email at{' '}
+          <a 
+            href="mailto:devfestorganizers@googlegroups.com"
+            className="underline hover:text-blue-300"
+            style={{ color: '#1B104C' }}
+          >
+            devfestorganizers@googlegroups.com
+          </a>
+          {' '}or via our Discord server where you can ping any of the organizers. For more information, please refer to the{' '}
           <a 
             href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
             target="_blank"
@@ -132,7 +135,7 @@ export default function FAQ() {
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={`flex items-center gap-2 text-white ${zenDots.className} text-3xl hover:opacity-80 transition-opacity`}
-          >
+        >
             <div className="flex flex-col gap-1.5">
               <div className="w-10 h-1 bg-white"></div>
               <div className="w-10 h-1 bg-white"></div>
@@ -224,49 +227,49 @@ export default function FAQ() {
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center px-20 py-10 ml-45" style={{ marginTop: '-28px' }}>
 
-        {/* Animated Content */}
-        <motion.div
+      {/* Animated Content */}
+      <motion.div
           className="relative z-20 flex flex-col items-center w-full text-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
           style={{ maxWidth: '530px' }}
-        >
-          {/* Title */}
-          <motion.h1
+      >
+        {/* Title */}
+        <motion.h1
             className={`${zenDots.className} text-3xl font-bold mb-8 text-white text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]`}
-            variants={itemVariants}
+          variants={itemVariants}
             style={{ lineHeight: '1.2em' }}
-          >
+        >
             Frequently<br />Asked Questions
-          </motion.h1>
+        </motion.h1>
 
-          {/* FAQ Items */}
-          <motion.div 
+        {/* FAQ Items */}
+        <motion.div 
             className="w-full space-y-2 mt-25"
-            variants={itemVariants}
-          >
-            {faqs.map((faq, index) => (
-              <div 
-                key={index}
+          variants={itemVariants}
+        >
+          {faqs.map((faq, index) => (
+            <div 
+              key={index}
                 className="overflow-hidden"
                 style={{
                   backgroundColor: openFAQ === index ? 'rgba(255, 255, 255, 0.86)' : 'transparent'
                 }}
-              >
-                <button
-                  onClick={() => toggleFAQ(index)}
+            >
+              <button
+                onClick={() => toggleFAQ(index)}
                   className="w-full text-left transition-colors"
                   style={{
                     background: 'linear-gradient(0deg, rgba(27, 16, 76, 1) 35%, rgba(45, 104, 151, 1) 100%)',
                     color: '#FFFFFF',
                     padding: '10px 14px'
                   }}
-                >
-                  <div className="flex justify-between items-center">
+              >
+                <div className="flex justify-between items-center">
                     <h3 className={`${zenDots.className} font-normal pr-3`} style={{ lineHeight: '1.2em', fontSize: '13px' }}>
-                      {faq.question}
-                    </h3>
+                    {faq.question}
+                  </h3>
                     <motion.span 
                       className="flex-shrink-0"
                       animate={{ rotate: openFAQ === index ? 180 : 0 }}
@@ -278,15 +281,15 @@ export default function FAQ() {
                     >
                       ▼
                     </motion.span>
-                  </div>
-                </button>
-                
+                </div>
+              </button>
+              
                 <AnimatePresence initial={false}>
-                  {openFAQ === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
+              {openFAQ === index && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
                       transition={{ 
                         duration: 0.3,
                         ease: [0.4, 0, 0.2, 1]
@@ -298,16 +301,16 @@ export default function FAQ() {
                       }}
                     >
                       <div style={{ padding: '12px 14px' }}>
-                        <p className={`${allertaStencil.className} leading-relaxed`} style={{ fontSize: '12px' }}>
+                        <p className={`${zenDots.className} leading-relaxed text-left`} style={{ fontSize: '12px' }}>
                           {faq.answerWithLink || faq.answer}
-                        </p>
+                  </p>
                       </div>
-                    </motion.div>
-                  )}
+                </motion.div>
+              )}
                 </AnimatePresence>
-              </div>
-            ))}
-          </motion.div>
+            </div>
+          ))}
+        </motion.div>
 
         </motion.div>
       </div>
