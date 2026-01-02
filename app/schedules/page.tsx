@@ -373,11 +373,11 @@ export default function Schedules() {
                       style={{
                         background: 'linear-gradient(90deg, rgba(172, 127, 254, 1) 0%, rgba(66, 34, 131, 1) 100%)',
                         borderRadius: '21px'
-                      }}
-                    >
+                    }}
+                  >
                       <h2 className={`${zenDots.className} text-white text-xl`}>
-                        {day.date}
-                      </h2>
+                      {day.date}
+                    </h2>
                     </div>
                   </div>
 
@@ -397,8 +397,8 @@ export default function Schedules() {
                           background: 'linear-gradient(139deg, rgba(66, 34, 131, 1) 29%, rgba(15, 8, 29, 1) 100%)',
                           borderRadius: '21px',
                           boxShadow: '0px 0px 15px 1px rgba(255, 255, 255, 0.5)'
-                        }}
-                      >
+                      }}
+                    >
                       {/* Event Header */}
                       <div className="flex justify-between items-start mb-4">
                         <p className={`${zenDots.className} text-white text-lg`}>
@@ -454,8 +454,8 @@ export default function Schedules() {
                               {event.speaker.bio}
                             </p>
                           </div>
+                          </div>
                         </div>
-                      </div>
                       </div>
                     </div>
                   ))}
@@ -480,10 +480,10 @@ export default function Schedules() {
                 background: 'linear-gradient(180deg, rgba(172, 127, 254, 1) 0%, rgba(66, 34, 131, 1) 100%)',
                 borderRadius: '21px',
                 boxShadow: '0px 0px 11px 1px rgba(255, 255, 255, 0.5)'
-              }}
-            >
-              <span className={`${zenDots.className} text-white text-lg`}>JUMP TO SATURDAY</span>
-              <ChevronDown size={20} className="text-white" />
+            }}
+          >
+            <span className={`${zenDots.className} text-white text-lg`}>JUMP TO SATURDAY</span>
+            <ChevronDown size={24} className="text-white" />
             </div>
           </button>
         </div>
