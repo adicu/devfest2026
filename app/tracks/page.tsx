@@ -31,7 +31,7 @@ const tracksData = [
         title: 'HEALTH',
         icon: '🏥',
         shortDesc: 'Improve physical, mental, and emotional well-being.',
-        fullDesc: 'The HEALTH track invites participants to explore how technology can improve physical, mental, and emotional well-being across diverse communities.\n\nThis track encourages teams to think holistically about what "health" means in the modern world and rethink what being health-conscious means.\n\nProjects may range from apps that help individuals build healthier habits, to systems that make medical data more accessible, to tools that support clinicians in making informed decisions. This track also welcomes projects that engage with broader public health questions: How can we increase access to care? How can technology reduce disparities in health outcomes? What innovations could help individuals better understand their health?',
+        fullDesc: 'The HEALTH track invites participants to explore how technology can improve physical, mental, and emotional well-being across diverse communities.\n\nThis track encourages teams to think holistically about what "health" means in the modern world and rethink what being health-conscious means.\n\nProjects may range from apps that help individuals build healthier habits, to systems that make medical data more accessible, to tools that support clinicians in making informed decisions.\n\nThis track also welcomes projects that engage with broader public health questions: How can we increase access to care? How can technology reduce disparities in health outcomes? What innovations could help individuals better understand their health?',
     },
     {
         id: 'business',
