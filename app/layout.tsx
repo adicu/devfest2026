@@ -41,8 +41,11 @@ const allertaStencil = Allerta_Stencil({
 });
 
 export const metadata: Metadata = {
-  title: "Columbia DevFest Countdown",
-  description: "Countdown to the Columbia DevFest Hackathon on Feb 8th, 2026",
+  title: "DevFest 2026",
+  icons: {
+    icon: "/icon.svg",
+  },
+  description: "DevFest is an annual week-long workshop series and hackathon held at Columbia University."
 };
 
 export default function RootLayout({
