@@ -265,20 +265,22 @@ export default function Schedules() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center px-20">
+      <div className="relative z-10 flex flex-col items-center lg:px-20 px-4" style={{ height: '100vh', minHeight: '100vh' }}>
         {/* Timeline Container with Light Blue Background */}
         <div 
-          className="w-[1000px] rounded-lg relative flex flex-col"
+          className="rounded-lg relative flex flex-col timeline-container-responsive"
           style={{
             backgroundImage: 'url(/schedule-background-681eb6.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            padding: '20px',
+            padding: '1.3%',
             borderRadius: '25px',
-            top: '50px',
-			left: '350px',
-            height: '605px',
+            top: '8%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '95%',
+            height: '75%',
             position: 'absolute'
           }}
         >
@@ -293,7 +295,7 @@ export default function Schedules() {
               minHeight: 0
             }}
           >
-          <div className="space-y-8 p-6">
+          <div className="space-y-8" style={{ padding: '2%' }}>
             {/* Timeline Banner - Purple Gradient */}
             <div 
               className="w-full mb-8 p-[1px] rounded-lg relative"
@@ -434,8 +436,10 @@ export default function Schedules() {
                           <div 
                             className="flex-shrink-0 relative"
                             style={{
-                              width: '166.45px',
-                              height: '242.57px'
+                              width: '11%',
+                              height: '20%',
+                              minWidth: '120px',
+                              minHeight: '180px'
                             }}
                           >
                             <Image
@@ -468,21 +472,24 @@ export default function Schedules() {
           {/* Jump to Saturday Button - Positioned at bottom of frame */}
           <button
             onClick={handleJumpToSaturday}
-            className="absolute bottom-6 right-6 p-[1px] rounded-lg flex items-center gap-2 transition-all hover:scale-105 z-20"
+            className="absolute p-[1px] rounded-lg flex items-center gap-2 transition-all hover:scale-105 z-30"
             style={{
               background: 'linear-gradient(120deg, rgba(251, 0, 255, 1) 0%, rgba(0, 158, 255, 1) 91%)',
-              borderRadius: '22px'
+              borderRadius: '22px',
+              bottom: '3%',
+              right: '5%'
             }}
           >
             <div
-              className="px-6 py-3 rounded-lg flex items-center gap-2"
+              className="rounded-lg flex items-center gap-2"
               style={{
                 background: 'linear-gradient(180deg, rgba(172, 127, 254, 1) 0%, rgba(66, 34, 131, 1) 100%)',
                 borderRadius: '21px',
-                boxShadow: '0px 0px 11px 1px rgba(255, 255, 255, 0.5)'
+                boxShadow: '0px 0px 11px 1px rgba(255, 255, 255, 0.5)',
+                padding: '3% 5%'
             }}
           >
-            <span className={`${zenDots.className} text-white text-lg`}>JUMP TO SATURDAY</span>
+            <span className={`${zenDots.className} text-white text-lg whitespace-nowrap`}>JUMP TO SATURDAY</span>
             <ChevronDown size={24} className="text-white" />
             </div>
           </button>

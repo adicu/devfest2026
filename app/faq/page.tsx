@@ -213,9 +213,9 @@ export default function FAQ() {
       </div>
 
       {/* Background Images Group - fixed position so it doesn't move with content */}
-      <div className="fixed z-5 pointer-events-none" style={{ width: '1108px', height: '781px', top: '55%', left: '55%', transform: 'translate(-50%, -50%) scale(0.9)', transformOrigin: 'center' }}>
-        {/* Union Circle Background (behind everything) - x: 115, y: -43 relative to Main section */}
-        <div className="absolute" style={{ left: '115px', top: '-43px', width: '878.09px', height: '854.81px', zIndex: 1 }}>
+      <div className="fixed z-5 pointer-events-none" style={{ width: '75%', height:'75%', top: '47%', left: '60%', transform: 'translate(-50%, -50%) scale(0.9)', transformOrigin: 'center' }}>
+        {/* Union Circle Background (behind everything) - with floating animation */}
+        <div className="absolute animate-float-up" style={{ height: '125%', width: '80%', zIndex: 1 }}>
           <Image
             src="/faq-union-circle-257af8.png"
             alt="FAQ Union Circle"
@@ -225,8 +225,8 @@ export default function FAQ() {
           />
         </div>
 
-        {/* Background Artwork (on top of circle, behind content) - x: 95, y: 105 relative to Main section */}
-        <div className="absolute" style={{ left: '95px', top: '105px', width: '898px', height: '661px', opacity: 0.8, zIndex: 2 }}>
+        {/* Background Artwork (on top of circle, behind content) */}
+        <div className="absolute animate-float-up" style={{ top: '20%', width: '81.0%', height: '84.6%', opacity: 0.8, zIndex: 2 }}>
           <Image
             src="/faq-background-artwork-1237b6.png"
             alt="FAQ Background Artwork"
@@ -238,7 +238,7 @@ export default function FAQ() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center px-20 py-10 ml-45" style={{ marginTop: '-28px' }}>
+      <div className="relative z-10 flex flex-col items-center" style={{ marginTop: '1%', marginLeft: '10%', paddingLeft: '5.2%', paddingRight: '5.2%', paddingTop: '2.8%', paddingBottom: '2.8%' }}>
 
       {/* Animated Content */}
       <motion.div
@@ -246,7 +246,7 @@ export default function FAQ() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-          style={{ maxWidth: '530px' }}
+          style={{ maxWidth: '35%' }}
       >
         {/* Title */}
         <motion.h1
@@ -259,7 +259,7 @@ export default function FAQ() {
 
         {/* FAQ Items */}
         <motion.div 
-            className="w-full space-y-2 mt-20"
+            className="w-full space-y-2 mt-10"
           variants={itemVariants}
         >
           {faqs.map((faq, index) => (
@@ -327,6 +327,17 @@ export default function FAQ() {
 
         </motion.div>
       </div>
+
+      <style jsx global>{`
+        @keyframes float-up {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-15px); }
+          100% { transform: translateY(0px); }
+        }
+        .animate-float-up {
+          animation: float-up 6s ease-in-out infinite;
+        }
+      `}</style>
     </main>
   );
 }

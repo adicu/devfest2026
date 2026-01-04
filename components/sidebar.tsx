@@ -10,7 +10,7 @@ const zenDots = Zen_Dots({
 
 export default function Sidebar() {
   return (
-    <div className={`absolute left-[24px] top-[190px] z-30 w-[253px] ${zenDots.className} rounded-[20px] overflow-hidden`}>
+    <div className={`hidden lg:block lg:fixed lg:left-[24px] lg:z-30 lg:w-[253px] ${zenDots.className} rounded-[20px] overflow-hidden`} style={{ top: '190px' }}>
       {/* Content Container */}
       <div className="relative z-10 flex flex-col">
         {/* Links Section - Top (constrained to Group 13 box) */}

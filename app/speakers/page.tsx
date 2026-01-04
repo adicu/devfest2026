@@ -140,13 +140,14 @@ export default function Speakers() {
 
       {/* Main Content Frame */}
       <div 
-        className="absolute z-10"
+        className="absolute z-10 main-content-frame-responsive"
         style={{
-          left: '390px',
-          top: '190px',
-          width: '1030px',
-          height: 'calc(100vh - 210px)',
-          maxHeight: 'calc(100vh - 210px)',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          top: '20%',
+          width: '90%',
+          height: '75%',
+          maxHeight: '75%',
           backgroundColor: '#1B104C',
           borderRadius: '25px',
           overflowY: 'auto',
@@ -154,7 +155,7 @@ export default function Speakers() {
         }}
       >
         {/* Judges Section */}
-        <div className="relative" style={{ padding: '47px 78px 0 78px' }}>
+        <div className="relative" style={{ padding: '3.1% 5.1% 0 5.1%' }}>
           <h2 className={`${zenDots.className} text-white text-4xl mb-8`} style={{ fontSize: '40px', lineHeight: '1.2em' }}>
             Judges
           </h2>
@@ -164,10 +165,10 @@ export default function Speakers() {
             {judges.map((judge, index) => (
               <div
                 key={judge.id}
-                className="relative"
+                className="relative w-full"
                 style={{
-                  width: '272px',
-                  height: '213px',
+                  aspectRatio: '272 / 213',
+                  minHeight: '180px'
                 }}
               >
                 {/* Judge Card Background/Frame */}
@@ -184,10 +185,10 @@ export default function Speakers() {
                 <div
                   className="absolute"
                   style={{
-                    left: '6.74px',
-                    top: '33.68px',
-                    width: '120.42px',
-                    height: '144.81px',
+                    left: '2.5%',
+                    top: '15.8%',
+                    width: '44.3%',
+                    height: '68%',
                     backgroundColor: '#ccc',
                     borderRadius: '4px',
                   }}
@@ -199,10 +200,10 @@ export default function Speakers() {
                 <div
                   className={`absolute ${pixelify.className} text-white`}
                   style={{
-                    left: '138.95px',
-                    top: '30.31px',
-                    width: '125.47px',
-                    height: '148.17px',
+                    left: '51.1%',
+                    top: '14.2%',
+                    width: '46.1%',
+                    height: '69.5%',
                     fontSize: '14px',
                     lineHeight: '1.2em',
                   }}
@@ -228,121 +229,143 @@ export default function Speakers() {
         </div>
 
         {/* Sponsors Section */}
-        <div className="relative" style={{ padding: '0 78px 50px 78px', zIndex: 1 }}>
-          <h2 className={`${zenDots.className} text-white text-4xl mb-8`} style={{ fontSize: '40px', lineHeight: '1.2em' }}>
-            Sponsors
-          </h2>
-
-          {/* Dedalus Labs Logo - positioned between row 1 and 2 */}
-          <div 
-            className="flex justify-center items-center mb-6" 
-            style={{ 
-              marginTop: '-30px', 
-              position: 'relative',
-              zIndex: 2, 
-              backgroundColor: '#1B104C',
-              backgroundImage: 'url(/sponsor-row-1.svg)',
-              backgroundSize: '100% 100%',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'left top',
-              width: '910px',
-              height: '218px',
-              marginLeft: '-6px'
-            }}
-          >
-            <Image
-              src="/dedalus-labs-logo.png"
-              alt="Dedalus Labs"
-              width={149}
-              height={149}
-              style={{ 
-                width: '149px', 
-                height: '149px', 
-                display: 'block',
-                objectFit: 'contain'
-              }}
-            />
+        <div className="relative" style={{ padding: '0', zIndex: 1, width: '100%' }}>
+          <div style={{ padding: '0 5.1% 0 5.1%' }}>
+            <h2 className={`${zenDots.className} text-white text-4xl mb-8`} style={{ fontSize: '40px', lineHeight: '1.2em' }}>
+              Sponsors
+            </h2>
           </div>
 
-          {/* Sponsor Logos Row 2 - with frame container */}
-          <div 
-            className="mb-6" 
-            style={{ 
-              height: '166px', 
-              width: '910px', 
-              marginLeft: '-6px', 
-              position: 'relative',
-              backgroundColor: '#1B104C',
-              backgroundImage: 'url(/sponsor-row-2.svg)',
-              backgroundSize: '100% 100%',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'left top',
-              border: '2px solid transparent'
-            }}
-          />
-
-          {/* Sponsor Logos Row 3 - with frame container */}
-          <div 
-            className="mb-6 flex items-center justify-center" 
-            style={{ 
-              height: '143px', 
-              width: '910px', 
-              marginLeft: '-6px', 
-              marginTop: '-20px',
-              position: 'relative',
-              backgroundColor: '#1B104C',
-              backgroundImage: 'url(/sponsor-row-3.svg)',
-              backgroundSize: '100% 100%',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'left top',
-              border: '2px solid transparent',
-              gap: '40px'
-            }}
-          >
-            {/* Sonar Logo */}
-            <Image
-              src="/logo-left.png"
-              alt="Sonar"
-              width={131}
-              height={93}
+          {/* Sponsor Rows Wrapper - full width */}
+          <div className="relative" style={{ width: '100%', paddingBottom: '3.3%' }}>
+            {/* Dedalus Labs Logo - positioned between row 1 and 2 */}
+            <div className="relative mb-6" style={{ marginTop: '-2%', height: '15%', zIndex: 2, width: '100%' }}>
+            {/* Background Image - full width */}
+            <div 
               style={{ 
-                width: '131px', 
-                height: '93px', 
-                display: 'block',
-                objectFit: 'contain'
+                position: 'absolute',
+                left: '0',
+                right: '0',
+                top: '0',
+                bottom: '0',
+                backgroundColor: '#1B104C',
+                backgroundImage: 'url(/sponsor-row-1.svg)',
+                backgroundSize: '100% 100%',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center center',
+                width: '100%',
+                height: '100%'
               }}
             />
-            {/* Three Interlocking Circles Logo */}
-            <Image
-              src="/logo-right.png"
-              alt="Sponsor"
-              width={94}
-              height={94}
-              style={{ 
-                width: '94px', 
-                height: '94px', 
-                display: 'block',
-                objectFit: 'contain'
-            }}
-          />
-          </div>
+            {/* Logo */}
+            <div className="relative flex justify-center items-center" style={{ height: '100%', zIndex: 1 }}>
+              <Image
+                src="/dedalus-labs-logo.png"
+                alt="Dedalus Labs"
+                width={149}
+                height={149}
+                style={{ 
+                  width: '12%', 
+                  height: '55%', 
+                  display: 'block',
+                  objectFit: 'contain'
+                }}
+              />
+            </div>
+            </div>
 
-          {/* Sponsor Logos Row 4 - with frame container */}
-          <div 
-            className="mb-6" 
-            style={{ 
-              height: '126px', 
-              width: '910px', 
-              marginLeft: '-6px', 
-              position: 'relative',
-              backgroundColor: '#1B104C',
-              backgroundImage: 'url(/sponsor-row-4.svg)',
-              backgroundSize: '100% 100%',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'left top',
-              border: '2px solid transparent'
-            }}
-          />
+            {/* Sponsor Logos Row 2 - with frame container */}
+            <div className="relative mb-6" style={{ height: '120px', minHeight: '120px', zIndex: 2, width: '100%' }}>
+              {/* Background Image - full width */}
+              <div 
+                style={{ 
+                  position: 'absolute',
+                  left: '0',
+                  right: '0',
+                  top: '0',
+                  bottom: '0',
+                  backgroundColor: '#1B104C',
+                  backgroundImage: 'url(/sponsor-row-2.svg)',
+                  backgroundSize: '100% 100%',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center center',
+                  width: '100%',
+                  height: '100%'
+                }}
+              />
+            </div>
+
+            {/* Sponsor Logos Row 3 - with frame container */}
+            <div className="relative mb-6" style={{ marginTop: '-1.4%', height: '9.9%', zIndex: 2, width: '100%' }}>
+              {/* Background Image - full width */}
+              <div 
+                style={{ 
+                  position: 'absolute',
+                  left: '0',
+                  right: '0',
+                  top: '0',
+                  bottom: '0',
+                  backgroundColor: '#1B104C',
+                  backgroundImage: 'url(/sponsor-row-3.svg)',
+                  backgroundSize: '100% 100%',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center center',
+                  width: '100%',
+                  height: '100%'
+                }}
+              />
+              {/* Logos */}
+              <div className="relative flex items-center justify-center" style={{ height: '100%', zIndex: 1, gap: '2.8%' }}>
+                {/* Sonar Logo */}
+                <Image
+                  src="/logo-left.png"
+                  alt="Sonar"
+                  width={131}
+                  height={93}
+                  style={{ 
+                    width: '11%', 
+                    height: '52%', 
+                    display: 'block',
+                    objectFit: 'contain'
+                  }}
+                />
+                {/* Three Interlocking Circles Logo */}
+                <Image
+                  src="/logo-right.png"
+                  alt="Sponsor"
+                  width={94}
+                  height={94}
+                  style={{ 
+                    width: '8%', 
+                    height: '52%', 
+                    display: 'block',
+                    objectFit: 'contain'
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Sponsor Logos Row 4 - with frame container */}
+            <div className="relative mb-6" style={{ height: '100px', minHeight: '100px', zIndex: 2, width: '100%' }}>
+              {/* Background Image - full width */}
+              <div 
+                style={{ 
+                  position: 'absolute',
+                  left: '0',
+                  right: '0',
+                  top: '0',
+                  bottom: '0',
+                  backgroundColor: '#1B104C',
+                  backgroundImage: 'url(/sponsor-row-4.svg)',
+                  backgroundSize: '100% 100%',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center center',
+                  width: '100%',
+                  height: '100%'
+                }}
+              />
+            </div>
+          </div>
 
         </div>
       </div>

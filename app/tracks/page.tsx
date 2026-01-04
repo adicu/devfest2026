@@ -177,8 +177,8 @@ export default function TracksPage() {
           </div>
 
           {/* ---------------- INTERACTIVE PLANET LAYER ---------------- */}
-          <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div className="relative w-[900px] h-[900px] left-[70px] top-[55px]">
+          <div className="fixed inset-0 flex items-center justify-center z-10 pointer-events-none">
+              <div className="relative" style={{ width: '60%', height: '150%', left: '3.6%', top: '5.7%' }}>
 
                   {/* 2. Planet Asset */}
                   <div className="relative w-full h-full animate-float">
@@ -229,7 +229,7 @@ export default function TracksPage() {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       onClick={handleBackdropClick}
-                      className="fixed inset-0 z-50 flex items-center justify-center bg-transparent ml-50 mt-20"
+                      className="fixed inset-0 z-50 flex items-center justify-center bg-transparent"
                   >
                       {/* 4. Popup Frame Asset */}
                       <motion.div
@@ -237,7 +237,8 @@ export default function TracksPage() {
                           animate={{ scale: 1, opacity: 1 }}
                           exit={{ scale: 0.9, opacity: 0 }}
                           onClick={(e) => e.stopPropagation()}
-                          className="relative w-[1207px] h-[729px] flex flex-col items-center justify-center p-12 md:p-20 text-white"
+                          className="relative flex flex-col items-center justify-center text-white w-[95%] lg:w-[90%] ml-[2.5%] lg:ml-[10%]"
+                          style={{ height: '90%', padding: '5% 8% 0% 8%', marginTop: '5%' }}
                       >
                           {/* Frame Background Image */}
                           <Image
@@ -257,35 +258,36 @@ export default function TracksPage() {
                                       setIsPopupOpen(false);
                                   }
                               }}
-                              className="absolute flex items-center justify-center w-7 h-7 text-white cursor-pointer"
+                              className="absolute flex items-center justify-center text-white cursor-pointer"
                               style={{ 
-                                  top: '115.5px',
-                                  left: '283px',
+                                  top: '15.8%',
+                                  left: '23.4%',
+                                  width: '2.3%',
+                                  height: '3.8%',
                                   zIndex: 100
                               }}
                           >
-                              <X size={36} className="drop-shadow-2xl" strokeWidth={2} />
+                              <X style={{ width: '130%', height: '130%' }} className="drop-shadow-2xl" strokeWidth={2} />
                           </button>
 
-                          {!selectedTrack && (
-                              <h2 className={`${zenDots.className} text-[24px] text-white ml-20 mt-14 mb-4 tracking-wider drop-shadow-md`} style={{ lineHeight: '1.2em' }}>
-                              SCANNING TRACKS...
-                          </h2>
-                          )}
-
                           {/* Content Container */}
-                          <div className="w-[695px] h-[470px] ml-20 relative flex items-center justify-center">
+                          <div className="relative flex flex-col items-center justify-center" style={{ width: '85%', height: '75%', marginLeft: '2.6%', paddingBottom: 0 }}>
 
                               {!selectedTrack ? (
                                   // --- INITIAL GRID VIEW ---
                                   <motion.div
                                       initial={{ opacity: 0, x: 20 }}
                                       animate={{ opacity: 1, x: 0 }}
-                                      className="flex items-center justify-center"
+                                      className="flex flex-col items-center justify-center"
+                                      style={{ width: '80%', height: '100%', marginLeft: '5%' }}
                                   >
+                                      {/* SCANNING TRACKS Heading */}
+                                      <h2 className={`${zenDots.className} text-[24px] text-white tracking-wider drop-shadow-md`} style={{ lineHeight: '1.2em', margin: 0, padding: 0, marginBottom: '2%' }}>
+                                          SCANNING TRACKS...
+                                      </h2>
 
                                       {/* Grid Layout - 2x2 grid matching Figma */}
-                                      <div className="grid grid-cols-2 gap-4">
+                                      <div className="grid grid-cols-2 grid-rows-2" style={{ width: '100%', height: '100%', gap: '1.5%' }}>
                                           {tracksData.map((track, index) => {
                                               // Map track IDs to match Figma order
                                               const trackOrder = ['health', 'business', 'entertainment', 'social-impact'];
@@ -306,8 +308,8 @@ export default function TracksPage() {
                                                   onClick={() => setSelectedTrack(track)}
                                                   whileHover={{ scale: 1.03 }}
                                                   whileTap={{ scale: 0.97 }}
-                                                      className="relative h-[220px] w-[320px] cursor-pointer group flex flex-col items-center justify-center p-0 text-center"
-                                                      style={{ zIndex: 10 }}
+                                                      className="relative cursor-pointer group flex flex-col items-center justify-center p-0 text-center"
+                                                      style={{ height: '100%', width: '100%', zIndex: 10 }}
                                               >
                                                       {/* Track Image Background */}
                                                   <Image
@@ -318,7 +320,7 @@ export default function TracksPage() {
                                                       />
 
                                                       {/* Track Title - Zen Dots, 20px, with color-coded titles */}
-                                                      <h3 className={`${zenDots.className} text-[20px] drop-shadow-md text-center`} style={{ lineHeight: '1.2em', whiteSpace: 'pre-line' }}>
+                                                      <h3 className={`${zenDots.className} text-[12px] md:text-[20px] drop-shadow-md text-center`} style={{ lineHeight: '1.2em', whiteSpace: 'pre-line' }}>
                                                           <span style={{ color: '#FBF5FF' }}>Track {trackNumber}:</span>
                                                           <br />
                                                           <span style={{ color: titleColor }}>{track.title}</span>
@@ -333,9 +335,10 @@ export default function TracksPage() {
                                   <motion.div
                                       initial={{ opacity: 0, x: 20 }}
                                       animate={{ opacity: 1, x: 0 }}
-                                      className="relative flex flex-col w-[683px] max-h-[447px] overflow-y-auto custom-scrollbar pr-2 mt-20"
+                                      className="flex flex-col items-center justify-start overflow-y-auto custom-scrollbar"
+                                      style={{ width: '80%', height: '100%', marginLeft: '5%' }}
                                   >
-                                          <div className="space-y-6">
+                                          <div className="space-y-6" style={{ width: '100%' }}>
                                               {/* Track Title - Format: "Track X: TITLE" */}
                                               {(() => {
                                                   const trackOrder = ['health', 'business', 'entertainment', 'social-impact'];
@@ -351,7 +354,7 @@ export default function TracksPage() {
                                                   const titleColor = titleColors[trackNumber as keyof typeof titleColors] || '#FBF5FF';
                                                   
                                                   return (
-                                                      <h2 className={`${zenDots.className} text-[28px] drop-shadow-lg`} style={{ lineHeight: '1.2em' }}>
+                                                      <h2 className={`${zenDots.className} text-[16px] md:text-[28px] drop-shadow-lg`} style={{ lineHeight: '1.2em', marginLeft: '3%' }}>
                                                           <span style={{ color: '#FBF5FF' }}>Track {trackNumber}:</span>{' '}
                                                           <span style={{ color: titleColor }}>{selectedTrack.title}</span>
                                                   </h2>
@@ -359,7 +362,7 @@ export default function TracksPage() {
                                               })()}
 
                                               {/* Description Text - Space Mono, 22px, #FBF5FF with highlighted phrases */}
-                                              <div className={`${spaceMono.className} text-[22px]`} style={{ color: '#FBF5FF', lineHeight: '1.2em', textAlign: 'left' }}>
+                                              <div className={`${spaceMono.className} text-[12px] md:text-[22px]`} style={{ color: '#FBF5FF', lineHeight: '1.2em', textAlign: 'left' }}>
                                                   {(() => {
                                                       const trackOrder = ['health', 'business', 'entertainment', 'social-impact'];
                                                       const trackNumber = trackOrder.indexOf(selectedTrack.id) + 1;
