@@ -19,71 +19,24 @@ export default function Schedules() {
 
   const scheduleData = [
     {
-      date: 'MONDAY, FEBRUARY 2ND',
-      events: [
-        {
-          time: '09:00 AM - 10:00 AM',
-          room: 'ROOM: URIS 567',
-          title: 'Engineering Innovation in Maternal and Fetal Health: The Biomechanics of High-Risk Pregnancies',
-          speaker: {
-            name: 'JEFF BEZOS, CEO & FOUNDER OF AMAZON',
-            bio: 'JEFF IS A LEADER IN THE GLOBAL MARKET AND ESTABLISHED AMAZON, AN INNOVATIVE AND TRANSFORMATIVE PLATFORM FOR E-COMMERCE.'
-          }
-        }
-      ]
-    },
-    {
-      date: 'TUESDAY, FEBRUARY 3RD',
-      events: [
-        {
-          time: '09:00 AM - 10:00 AM',
-          room: 'ROOM: URIS 567',
-          title: 'Engineering Innovation in Maternal and Fetal Health: The Biomechanics of High-Risk Pregnancies',
-          speaker: {
-            name: 'JEFF BEZOS, CEO & FOUNDER OF AMAZON',
-            bio: 'JEFF IS A LEADER IN THE GLOBAL MARKET AND ESTABLISHED AMAZON, AN INNOVATIVE AND TRANSFORMATIVE PLATFORM FOR E-COMMERCE.'
-          }
-        }
-      ]
-    },
-    {
-      date: 'WEDNESDAY, FEBRUARY 4TH',
-      events: [
-        {
-          time: '09:00 AM - 10:00 AM',
-          room: 'ROOM: URIS 567',
-          title: 'Engineering Innovation in Maternal and Fetal Health: The Biomechanics of High-Risk Pregnancies',
-          speaker: {
-            name: 'JEFF BEZOS, CEO & FOUNDER OF AMAZON',
-            bio: 'JEFF IS A LEADER IN THE GLOBAL MARKET AND ESTABLISHED AMAZON, AN INNOVATIVE AND TRANSFORMATIVE PLATFORM FOR E-COMMERCE.'
-          }
-        }
-      ]
-    },
-    {
-      date: 'THURSDAY, FEBRUARY 5TH',
-      events: [
-        {
-          time: '09:00 AM - 10:00 AM',
-          room: 'ROOM: URIS 567',
-          title: 'Engineering Innovation in Maternal and Fetal Health: The Biomechanics of High-Risk Pregnancies',
-          speaker: {
-            name: 'JEFF BEZOS, CEO & FOUNDER OF AMAZON',
-            bio: 'JEFF IS A LEADER IN THE GLOBAL MARKET AND ESTABLISHED AMAZON, AN INNOVATIVE AND TRANSFORMATIVE PLATFORM FOR E-COMMERCE.'
-          }
-        }
-      ]
-    },
-    {
       date: 'FRIDAY, FEBRUARY 6TH',
       events: [
         {
-          time: '09:00 AM - 10:00 AM',
-          room: 'ROOM: URIS 567',
-          title: 'Engineering Innovation in Maternal and Fetal Health: The Biomechanics of High-Risk Pregnancies',
+          time: '7:00 PM - 8:00 PM',
+          room: 'ROOM: Lerner 312',
+          title: 'Meeting',
           speaker: {
-            name: 'JEFF BEZOS, CEO & FOUNDER OF AMAZON',
-            bio: 'JEFF IS A LEADER IN THE GLOBAL MARKET AND ESTABLISHED AMAZON, AN INNOVATIVE AND TRANSFORMATIVE PLATFORM FOR E-COMMERCE.'
+            name: '',
+            bio: 'https://meet.google.com/hop-djjk-sqv'
+          }
+        },
+        {
+          time: '8:00 PM - 10:00 PM',
+          room: 'ROOM: CEPSR 302',
+          title: 'Meeting',
+          speaker: {
+            name: '',
+            bio: 'https://meet.google.com/hop-djjk-sqv'
           }
         }
       ]
@@ -92,147 +45,129 @@ export default function Schedules() {
       date: 'SATURDAY, FEBRUARY 7TH',
       events: [
         {
-          time: '09:00 AM - 10:00 AM',
-          room: '',
+          time: '09:00 AM - 09:45 AM',
+          room: 'ROOM: Uris Library',
           title: 'Check-in',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Meet fellow participants as you get ready for a full day of hacking and innovation.'
           }
         },
         {
-          time: '10:05 AM - 10:10 AM',
-          room: '',
+          time: '10:00 AM - 10:10 AM',
+          room: 'ROOM: Uris Library',
           title: 'Welcome',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Kick off the event with a brief introduction and other presentations'
           }
         },
         {
-          time: '10:10 AM - 10:35 AM',
-          room: '',
-          title: 'Opening Ceremony + MLH Speech + Groq promo',
+          time: '10:05 AM - 11:00 AM',
+          room: 'ROOM: Uris Library',
+          title: 'Opening Ceremony',
           speaker: {
-            name: '',
-            bio: ''
-          }
-        },
-        {
-          time: '10:55 AM - 11:00 AM',
-          room: '',
-          title: 'Final Announcements',
-          speaker: {
-            name: '',
-            bio: ''
+            name: 'LYDIA CHILTON, ASSISTANT PROFESSOR @ COLUMBIA UNIVERSITY',
+            bio: 'Generative AI has fundamentally changed the way programmers work. It has also changed how the entire design, development, and business lifecycles work. We will introduce two new paradigms for how app design and programming will be in a future powered by generative AI and AI agents.'
           }
         },
         {
           time: '11:00 AM',
-          room: '',
+          room: 'ROOM: Uris Library',
           title: 'Hacking begins!',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Time to start building! Form your teams, brainstorm your ideas, and dive into coding your next big project.'
           }
         },
         {
           time: '11:00 AM - 11:30 AM',
-          room: '',
+          room: 'ROOM: Uris Library',
           title: 'Team Formation',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Still searching for teammates or the perfect project idea? Use this time to connect with others, pitch concepts, and build your dream team.'
           }
         },
         {
           time: '12:00 PM - 1:00 PM',
-          room: '',
+          room: 'ROOM: Carleton Commons (Mudd)',
           title: 'Lunch',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Refuel and recharge. Grab a bite to eat while sharing progress and fresh ideas with your fellow hackers.'
           }
         },
         {
           time: '1:00 PM - 2:00 PM',
-          room: '',
-          title: 'Modal Sponsor Workshop: Simple Scalable Serverless Services in Python, with Modal',
+          room: 'ROOM: Mudd 524 (45)',
+          title: 'Simple Scalable Serverless Services in Python, with Modal',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Building an application on the cloud doesn\'t have to suck. Even if it uses GPUs. In this talk, I\'ll present Modal, the serverless Python infrastructure you didn\'t know you always wanted.'
           }
         },
         {
           time: '2:00 PM - 3:00 PM',
-          room: '',
+          room: 'ROOM: Mudd 545 (75)',
           title: 'MLH Github Event',
           speaker: {
-            name: '',
-            bio: ''
+            name: 'EVENT LED BY MLH',
+            bio: 'Ready to level up your version control skills? Learn collaborative tricks, best practices, and GitHub hacks!'
           }
         },
         {
           time: '3:00 PM - 4:00 PM',
-          room: '',
-          title: 'Warp Sponsor Workshop',
+          room: 'ROOM: Mudd 524 (45)',
+          title: 'How to become a Command Line Connoisseur',
           speaker: {
-            name: '',
-            bio: ''
+            name: 'WORKSHOP',
+            bio: 'In this workshop, we\'ll dive deep into terminal tips and tricks to increase your developer productivity, with awesome CLI tools. From beginners to terminal veterans, we\'ll have something for everyone. We\'ll also cover how the terminal interacts with the shell/PTY and some cool terminal history! This workshop is brought to you by the terminal experts at Warp, a blazingly-fast terminal app for the 21st century (warp.dev). Bring your laptops!'
           }
         },
         {
           time: '4:00 PM - 5:00 PM',
-          room: '',
+          room: 'ROOM: Mudd 545 (75)',
           title: 'AI Panel',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Artificial intelligence has taken over the tech industry, and is increasingly relevant -- join us as we sit down with experts working with AI in a number of unique ways as they share their insights on trends, a deep dive into the industry, the future, opportunities, and anything else you might be curious about!'
           }
         },
         {
           time: '5:00 PM - 6:00 PM',
-          room: '',
+          room: 'ROOM: Mudd 524 (45)',
           title: 'Starting a Startup: From Idea to Exit',
           speaker: {
-            name: '',
-            bio: ''
+            name: 'ELIAM MEDINA, COFOUNDER (WILLING, TELORA)',
+            bio: 'Thinking about starting a startup? Already started it? Then, you should come to this talk. You\'ll learn why you need cofounders, what makes a good startup idea, and how to get your first customers.'
           }
         },
         {
           time: '6:00 PM - 7:00 PM',
-          room: '',
+          room: 'ROOM: Mudd 545 (75)',
           title: 'Careers Across Tech Panel',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Join us as experts in industries across technology share their insights! Featuring panelists working in cybersecurity, software engineering, finance/trading, product management, entrepreneurship, pre-sales, and more, this will be a fantastic exploration into some of the numerous industries that technology spans.'
           }
         },
         {
           time: '7:00 PM - 8:00 PM',
-          room: '',
+          room: 'ROOM: Carleton Commons (Mudd)',
           title: 'Dinner + MLH Typeracer Mini-Event',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Refuel with a tasty meal, then test your typing speed in an adrenaline-pumping Typeracer challenge hosted by MLH. Great food, friendly competition—what more could you want?'
           }
         },
         {
-          time: '12:00 AM',
-          room: '',
-          title: 'Fun activity 2: Speed dating, Fun activity 3: Cornhole (if we have the cornhole set)',
-          speaker: {
-            name: '',
-            bio: ''
-          }
-        },
-        {
-          time: '12:00 AM',
+          time: '11:59 PM',
           room: '',
           title: 'Project Submission Check-In Form Due',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Submit your form by midnight'
           }
         }
       ]
@@ -241,12 +176,12 @@ export default function Schedules() {
       date: 'SUNDAY, FEBRUARY 8TH',
       events: [
         {
-          time: '9:00 AM',
-          room: '',
+          time: '9:00 AM - 10:00 AM',
+          room: 'ROOM: Carleton Commons (Mudd)',
           title: 'Breakfast',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Fuel up and get ready for the final stretch of the hackathon!'
           }
         },
         {
@@ -255,43 +190,43 @@ export default function Schedules() {
           title: 'Hacking ends!',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Time\'s up—congratulations on reaching the finish line!'
           }
         },
         {
           time: '11:00 AM - 12:00 PM',
-          room: '',
+          room: 'ROOM: Carleton Commons (Mudd)',
           title: 'Lunch',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Refuel after a busy morning! Use this time to connect with fellow hackers'
           }
         },
         {
           time: '12:00 PM - 3:00 PM',
-          room: '',
+          room: 'ROOM: Uris Library',
           title: 'Judging',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Our judges will review your projects, and participants will present'
           }
         },
         {
-          time: '3:00 - 4:00 PM',
-          room: '',
-          title: 'Professional Development Panel',
+          time: '3:00 PM - 4:00 PM',
+          room: 'ROOM: Mudd 545 (75)',
+          title: 'Professional Development',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Expand your career horizons with insights from industry pros and content creators. Learn how to grow your skill set, stand out on social media, and thrive in tech. Bring your questions and be ready for fresh perspectives!'
           }
         },
         {
-          time: '4:00 - 5:00 PM',
-          room: '',
+          time: '4:00 PM - 5:00 PM',
+          room: 'ROOM: Uris Library',
           title: 'Closing Ceremony',
           speaker: {
             name: '',
-            bio: ''
+            bio: 'Celebrate the end of a successful hackathon! Winners will be announced, prizes awarded, and parting words shared—wrap up your hackathon experience on a high note.'
           }
         }
       ]
@@ -525,8 +460,7 @@ export default function Schedules() {
               
               {/* Description Text - Centered */}
               <p className={`${zenDots.className} text-white text-sm text-center`}>
-                Scroll through the week-long journey. Each day highlights sessions, rooms, and speakers working at the edge of innovation.
-              </p>
+                Scroll through the timeline to see all the events and activities happening during the hackathon.</p>
               </div>
             </div>
             {/* Vertical Timeline Line */}
@@ -564,8 +498,8 @@ export default function Schedules() {
                   </div>
 
                   {/* Event Cards */}
-                  {(day.date.includes('SATURDAY') || day.date.includes('SUNDAY')) ? (
-                    /* Saturday: All events in one purple box */
+                  {(day.date.includes('FRIDAY') || day.date.includes('SATURDAY') || day.date.includes('SUNDAY')) ? (
+                    /* Friday, Saturday, Sunday: All events in one purple box */
                     <div 
                       className="rounded-lg p-[1px] mb-8 relative z-10"
                       style={{
@@ -581,15 +515,62 @@ export default function Schedules() {
                           boxShadow: '0px 0px 15px 1px rgba(255, 255, 255, 0.5)'
                         }}
                       >
-                        <div className="space-y-3">
+                        <div className="space-y-6">
                           {day.events.map((event, eventIndex) => (
-                            <div key={eventIndex} className="flex" style={{ gap: '40px' }}>
-                              <p className={`${zenDots.className} text-white text-lg whitespace-nowrap`} style={{ width: '240px', flexShrink: 0 }}>
-                                {event.time}
-                              </p>
-                              <p className={`${zenDots.className} text-white text-lg flex-1`}>
+                            <div key={eventIndex} className="space-y-2">
+                              {/* Time and Room Header */}
+                              <div className="flex justify-between items-start gap-4">
+                                <p className={`${zenDots.className} text-white text-lg whitespace-nowrap`} style={{ width: '240px', flexShrink: 0 }}>
+                                  {event.time}
+                                </p>
+                                {event.room && (
+                                  <p className={`${zenDots.className} text-white text-lg`}>
+                                    {event.room}
+                                  </p>
+                                )}
+                              </div>
+                              
+                              {/* Event Title */}
+                              <h3 className={`${zenDots.className} text-white text-xl`}>
                                 {event.title}
-                              </p>
+                              </h3>
+                              
+                              {/* Speaker Name (if available) */}
+                              {event.speaker.name && (
+                                <p className={`${zenDots.className} text-white text-base opacity-90`}>
+                                  {event.speaker.name}
+                                </p>
+                              )}
+                              
+                              {/* Description/Bio */}
+                              {event.speaker.bio && (
+                                <p className={`${zenDots.className} text-white text-sm opacity-80`} style={{ lineHeight: '1.5' }}>
+                                  {event.speaker.bio.startsWith('http') ? (
+                                    <a 
+                                      href={event.speaker.bio} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="text-blue-300 hover:text-blue-200 underline"
+                                    >
+                                      click me to join
+                                    </a>
+                                  ) : (
+                                    event.speaker.bio
+                                  )}
+                                </p>
+                              )}
+                              
+                              {/* Separator line between events (except last) */}
+                              {eventIndex < day.events.length - 1 && (
+                                <div 
+                                  className="mt-4"
+                                  style={{
+                                    width: '100%',
+                                    height: '1px',
+                                    backgroundColor: 'rgba(255, 255, 255, 0.3)'
+                                  }}
+                                />
+                              )}
                             </div>
                           ))}
                         </div>

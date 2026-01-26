@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]><html lang="en" class="ie9"><![endif]-->
+<!--[if lt IE 9]><html lang="en" class="ie8"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<head>
+  
+  <meta charset="UTF-8">
+
+  <title>404</title>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/assets/favicon/manifest.json">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#000000">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" rel="preconnect">
+
+  <meta name="theme-color" content="#eeeeee">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="404 Error: Page not found.">
+  <meta property="og:title" content="404" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="404 Error: Page not found." />
+  <meta property="og:image" content="https://thumbs.balsamiq.com/t_error.html.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@balsamiq" />
+  <meta name="twitter:title" content="404" />
+  <meta name="twitter:description" content="404 Error: Page not found." />
+  <meta name="twitter:image" content="https://thumbs.balsamiq.com/t_error.html.png" />
+
+  <link rel="preconnect" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="/assets/css/balsamiq-complete.min.css?1769191494976" type="text/css" media="all" />
+
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="943339af-04da-49da-b0cc-824075c61a6b" data-widget-enabled="false" type="text/javascript"></script>
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <script src="/assets/js/balsamiq-complete.min.js?1769191494976"></script>
+
+  <script>
+                !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+                posthog.init('phc_tRci9ZCH9sQvV7DFCZMf1kp4epCtXas08FLZXuYc573', {
+                    api_host: 'https://e.balsamiq.com',
+                    person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+                });
+                document.addEventListener('click', function(event) {
+                    let link = event.target.closest('a');
+                    if (!link) return;
+                    let destinationURL = new URL(link.href);
+                    if (destinationURL.hostname === 'balsamiq.cloud') {
+                        const sessionId = window.posthog.get_session_id();
+                        const distinctId = window.posthog.get_distinct_id();
+                        destinationURL.searchParams.set('session_id', sessionId);
+                        destinationURL.searchParams.set('distinct_id', distinctId);
+                        link.href = destinationURL.toString();
+                    }
+                }, true);
+            </script>
+</head>
+
+<body class="bsmq error404 targetTop top" id="error404">
+  <!-- GA - Google Tag Manager -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMQ8XW" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TMQ8XW');</script>
+  <!-- END Google Tag Manager - balsamiq.com -->
+
+  <header id="site-header" class="site-header" data-swiftype-index="false">
+    <!--div id="notification-banner" data-banner-id="image-to-wireframe-2025q3" class="notification-banner relative py-4">
+      <div class="container text-center px-10">
+        <p class="m-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 inline-block align-middle"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>
+          <span class="align-middle">NEW: Turn screenshots into editable wireframes with Image to Wireframe (Beta). <a href="/support/docs/wireframing/images-and-icons/image-to-wireframe/" class="underline underline-offset-2">Learn how →</a></span>
+        </p>
+      </div>
+      <div class="absolute right-2 top-1/2 -translate-y-1/2">
+          <button type="button" class="-mr-1 flex p-2"><span class="sr-only">Dismiss</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-6 text-eggplant"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+      </div>
+    </div-->
+
+    <nav class="mx-auto primary-nav -bg" id="primary-nav" aria-label="Main">
+      <div class="container flex justify-between py-4 md:py-8 pr-0 md:pr-10 2xl:pr-5">
+        <div class="flex items-center md:hidden" id="logo">
+          <a href="/"><img src="/assets/logomark.svg" height="45" width="45" alt="Balsamiq Logo" /></a>
+        </div>
+
+        <div class="items-center hidden md:flex">
+          <a href="/"><img id="logo" class="max-w-[155px] md:max-w-[250px] md:h-[57px] rounded-none" src="/assets/logo.svg" width="266" height="60" alt="Balsamiq Logo" /></a>
+        </div>
+
+        <div class="hidden lg:flex items-center space-x-10">
+          <a href="/product/">Product</a>
+          <a href="/pricing/">Pricing</a>
+
+          <div class="group relative cursor-pointer py-2">
+            <div class="flex items-center justify-between space-x-2">
+              <a class="menu-hover flex items-center hover:underline" href="/resources/">Resources</a>
+              <span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="dropdown-menu invisible absolute z-50 mt-2 flex flex-nowrap w-auto flex-col py-1 px-4 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none group-hover:visible">
+              <a href="/learn/" class="block px-4 py-2 whitespace-nowrap" role="menuitem">Balsamiq Academy</a>
+              <a href="/support/" class="block px-4 py-2" role="menuitem">Help Center</a>
+              <a href="/changelog/" class="block px-4 py-2" role="menuitem">Changelog</a>
+              <a href="/customers/" class="block px-4 py-2">Customer stories</a>
+              <a href="/blog/" class="block px-4 py-2" role="menuitem">Blog</a>
+              <a href="/good-product-club/" class="block px-4 py-2" role="menuitem">Good Product Club</a>
+            </div>
+          </div>
+          <div>
+            <a href="https://balsamiq.cloud/#login" class="btn btn-secondary py-3 px-6 rounded-2x btn-try">Log in</a>
+            <a href="https://balsamiq.cloud/#signup" class="btn btn-primary py-3 px-6 rounded-2xl btn-try ml-4">Try it free</a>
+          </div>
+        </div>
+
+        <div class="flex items-center lg:hidden">
+          <a href="https://balsamiq.cloud/#signup" class="btn btn-primary btn-try px-5 h-[45px]">Try it free</a>
+
+          <button id="menu-button" aria-label="menu" class="text-eggplant px-4 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="mobile-menu lg:hidden hidden">
+        <div class="p-2 px-6 pb-4 space-y-4 text-lg">
+          <ul>
+            <li><a href="/product/" class="block">Product</a></li>
+            <li><a href="/pricing/" class="block">Pricing</a></li>
+            <li>
+              <details class="dropdown-item">
+                <summary>
+                  <div class="dropdown-label">
+                    <div id="resourcesMenu">Resources</div>
+                    <span class="arrow">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </summary>
+                <div class="dropwdown-list">
+                  <ul>
+                    <li><a href="/learn/">Balsamiq Academy</a></li>
+                    <li><a href="/support/">Help Center</a></li>
+                    <li><a href="/changelog/">Changelog</a></li>
+                    <li><a href="/customers/">Customer stories</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/good-product-club/">Good Product Club</a></li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+        <div class="p-2 px-6 pb-10">
+          <a href="https://balsamiq.cloud/#login" class="btn btn-secondary btn-try w-full">Log in</a>
+          <a href="https://balsamiq.cloud/#signup" class="btn btn-primary btn-try w-full mt-4">Try it free</a>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const root   = document.documentElement;
+          const header = document.getElementById('site-header');
+          const navBtn = document.getElementById('menu-button');
+          const mobileMenu = document.getElementById('mobile-menu');
+          const banner = document.getElementById('notification-banner');
+          if (!header) return;
+
+          // --- Persist banner dismissal across pages (localStorage) ---
+          const DISMISS_TTL_DAYS = 30; // set 0 for "forever"
+          const BANNER_ID = banner?.dataset.bannerId || 'global-banner';
+          const LS_KEY = `bsmq:banner-dismissed:${BANNER_ID}`;
+
+          // Hide immediately if previously dismissed (prevents layout jump)
+          if (banner) {
+            try {
+              const v = localStorage.getItem(LS_KEY);
+              const now = Date.now();
+              let dismissed = false;
+              if (v && /^\d+$/.test(v)) dismissed = (+v) > now; // TTL mode (expiry timestamp)
+              else if (v === '1') dismissed = true;             // forever mode
+              if (dismissed) banner.classList.add('hidden');
+            } catch (_) {}
+          }
+
+          // --- 1) Dynamic --header-h variable ---
+          function setHeaderVar() {
+            // Use offsetHeight to include padding/border
+            root.style.setProperty('--header-h', header.offsetHeight + 'px');
+          }
+          setHeaderVar();
+
+          // Window resize
+          let rAF;
+          window.addEventListener('resize', () => {
+            if (rAF) cancelAnimationFrame(rAF);
+            rAF = requestAnimationFrame(setHeaderVar);
+          });
+
+          // Header height can change (banner, mobile menu, breakpoints…)
+          if ('ResizeObserver' in window) {
+            new ResizeObserver(setHeaderVar).observe(header);
+          }
+
+          // When the mobile menu toggles, recalc after reflow
+          navBtn?.addEventListener('click', () => {
+            mobileMenu?.classList.toggle('hidden');
+            requestAnimationFrame(setHeaderVar);
+          });
+
+          // Banner close (fade out → hide → persist dismissal → recalc header height)
+          if (banner) {
+            const closeBtn = banner.querySelector('button');
+            if (closeBtn) {
+              closeBtn.addEventListener('click', () => {
+                banner.classList.add('opacity-0'); // fade out
+                setTimeout(() => {
+                  banner.classList.add('hidden');
+
+                  // Persist dismissal
+                  try {
+                    if (DISMISS_TTL_DAYS > 0) {
+                      const expiry = Date.now() + DISMISS_TTL_DAYS * 864e5;
+                      localStorage.setItem(LS_KEY, String(expiry));
+                    } else {
+                      localStorage.setItem(LS_KEY, '1'); // forever
+                    }
+                  } catch (_) {}
+
+                  setHeaderVar(); // header height changed
+                }, 200); // must match duration-200
+              });
+            }
+          }
+
+          // --- 2) Shadow on scroll with IntersectionObserver ---
+          const sentinel = document.createElement('div');
+          sentinel.setAttribute('aria-hidden', 'true');
+          sentinel.style.position = 'absolute';
+          sentinel.style.top = '0';
+          sentinel.style.height = '1px';
+          document.body.prepend(sentinel);
+
+          const io = new IntersectionObserver(([e]) => {
+            if (e.isIntersecting) {
+              header.classList.remove('shadow-md');
+            } else {
+              header.classList.add('shadow-md');
+            }
+          });
+          io.observe(sentinel);
+        })();
+      </script>
+    </nav>
+  </header>
+
+
+<!-- START - GTM / GA 404 Code -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: "404_error" });
+</script>
+<!-- END - GTM / GA 404 Code -->
+
+<main>
+  <section class="py-5 md:py-10">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div>
+          <h1 class="mb-10 mt-4 w-full">404: Oops! You've reached the edge of our wireframe universe</h1>
+          <p class="mb-10 md:w-9/12">It looks like we haven't made this page yet. We're sorry. Maybe searching will
+            help?</p>
+
+          <div class="search search--errorpage p-relative center text-center">
+            <form action="/search/" class="search__form" method="get">
+              <div id="searchingInError" class="flex flex-col md:flex-row gap-4">
+                <input class="search__input border border-eggplant" id="s" accesskey="s" type="text"
+                  placeholder="Search..." name="q" tabindex="1" autocomplete="off" />
+                <input class="search__btn btn btn-primary m" id="ss" type="submit" value="Search" tabindex="2" />
+              </div>
+            </form>
+            <script src="/assets/js/balsamiq_search_autocomplete.js"></script>
+            <script>
+              BalsamiqSearchAutoComplete.initAutoCompleteInputDiv("searchingInError");
+              document.querySelector("main #s").focus();
+            </script>
+          </div>
+        </div>
+
+        <img src="/assets/404.png" width="1250" height="835" alt="" class="object-cover">
+      </div>
+    </div>
+  </section>
+
+  <div class="mt-10 lg:mt-20"><div id="banner-products" class="bg-apricot p-8 lg:p-14 relative overflow-hidden">
+  <div class="squiggle opacity-40 absolute z-0 w-[650px] h-[650px] top-36 -right-36 md:w-[830px] md:h-[830px] md:-top-52 md:-right-24 lg:w-[1150px] lg:h-[1150px] lg:-top-64 lg:-right-16 bg-cover" style="background-image: url('/assets/squiggle-white.png');"></div>
+  <div class="container z-10 relative">
+    <h3 class="text-center mb-6">The best products start with a wireframe</h3>
+    <p class="text-center mx-auto lg:w-1/2">Turn vague product ideas into clear, actionable wireframes. No more endless debates, chaotic tools, or confusing spec documents.</p>
+    <div class="flex flex-col md:flex-row items-center md:items-start justify-center gap-2 md:gap-6 mt-8 mb-12">
+      <div>
+        <a href="https://balsamiq.cloud/#signup" class="btn btn-primary">
+          <span>Try it free for 14 days</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+        <p class="text-sm mt-3 mb-6 md:mb-0 text-center"><span>No credit card required</span>
+        </div>
+      <!--a href="#" class="btn btn-secondary">Request Free Product Demo</a-->
+    </div>
+  </div>
+</div>
+</div>
+</main>
+
+<section class="relative px-4 py-10 lg:py-20 lg:px-0 bg-light-lavender" id="newsletter">
+    <div class="absolute -inset-y-0 lg:w-1/2 lg:top-0 lg:right-0 bg-cover bg-no-repeat bg-center newsletter-cta-img"
+        style="background-image: url('/assets/newsletter-cta.jpg');">
+    </div>
+
+    <div class="container grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-28 items-center">
+        <div class="p-4 lg:p-0">
+
+            <h4 class="mt-0 mb-6 max-w-md">Our monthly emails will make you better at your job</h4>
+            <p class="mb-5 w-4/5">
+                Get our inside stories on product design, making things people love, and running a business built to
+                last. Delivered once a month to your inbox.
+            </p>
+            <form id="cio_footer_inputForm" class="justify-center flex-col items-start mt-4">
+    <div class="w-full flex flex-col">
+        <div class="form-control mb-3">
+            <input id="cio_footer_inputEmail" type="email" class="w-full border border-eggplant" placeholder="Enter your email" required>
+        </div>
+    </div>
+    <div class="w-full form-control mb-2">
+        <div class="checkbox text-left">
+            <input type="checkbox" id="cio_footer_pp" class="border border-eggplant" style="border-radius:7px !important;">
+            <label for="cio_footer_pp">I have read and agree to Balsamiq's <a href="/legal/privacy/" class="underline"
+                    target="_blank" rel="noopener">Privacy Policy</a>. <span class="redmed">*</span></label>
+        </div>
+    </div>
+    <div>
+        <input id="cio_footer_joinbtn" class="btn btn-primary" disabled type="submit" value="I'm in!">
+    </div>
+    <div class="w-full mt-5">
+        <div id="cio_footer_responseMessage" class="mt-0 lexend-500 text-lg"></div>
+    </div>
+</form>
+<script>
+    BLQ.setUpCustomerIoForm('cio_footer', 'newsletter', 'subscribed_to_newsletter');
+</script>
+
+        </div>
+    </div>
+</section>
+<footer class="px-4 lg:px-0 bg-eggplant text-white py-8">
+    <div
+        class="container grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8 mb-5 lg:mb-28 mt-6 lg:mt-12">
+        <div>
+            <div class="md:mb-5 lg:mb-10">
+                <a href="/">
+                    <img id="footer-logo" alt="Balsamiq Logo" class="max-w-[155px] xl:max-w-[200px] rounded-none"
+                        src="/assets/logo-white.svg" width="209" height="48" />
+                </a>
+            </div>
+        </div>
+        <div>
+            <p class="lexend-500 text-size-200 text-lavender mt-0">Product</p>
+            <ul class="space-y-4 pl-0 mb-0">
+                <li class="ml-0 list-none"><a href="/product/">Features</a></li>
+                <li class="ml-0 list-none"><a href="/pricing/">Pricing</a></li>
+                <li class="ml-0 list-none"><a href="/changelog/">Changelog</a></li>
+                <li class="ml-0 list-none"><a href="/product/desktop/">Balsamiq for Desktop</a></li>
+                <li class="ml-0 list-none"><a href="/product/confluence">Balsamiq for Confluence</a></li>
+                <li class="ml-0 list-none"><a href="/product/jira">Balsamiq for Jira</a></li>
+                <li class="ml-0 list-none"><a href="/comparisons">Balsamiq vs other tools</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <p class="lexend-500 text-size-200 text-lavender mt-0">Resources</p>
+            <ul class="space-y-4 pl-0 mb-0">
+                <li class="ml-0 list-none"><a href="/learn/">Balsamiq Academy</a></li>
+                <li class="ml-0 list-none"><a href="/support/">Help Center</a></li>
+                <li class="ml-0 list-none"><a href="/customers/">Customer stories</a></li>
+                <li class="ml-0 list-none"><a href="/blog/">Blog</a></li>
+                <li class="ml-0 list-none"><a href="/good-product-club/">Good Product Club</a></li>
+                <li class="ml-0 list-none"><a href="https://status.balsamiq.com">Server status</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <p class="lexend-500 text-size-200 text-lavender mt-0">Community</p>
+            <ul class="space-y-4 pl-0 mb-0">
+                <li class="ml-0 list-none"><a href="/research/">Research program</a></li>
+                <li class="ml-0 list-none"><a href="/slack/">Slack community</a></li>
+                <li class="ml-0 list-none"><a href="/nonprofits">Free for nonprofits</a></li>
+                <li class="ml-0 list-none"><a href="/education">Free for education</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <p class="lexend-500 text-size-200 text-lavender mt-0">Company</p>
+            <ul class="space-y-4 pl-0 mb-0">
+                <li class="ml-0 list-none"><a href="/company/">About us</a></li>
+                <li class="ml-0 list-none"><a href="/company/careers/">Careers</a></li>
+                <li class="ml-0 list-none"><a href="/brand/">Brand assets</a></li>
+                <li class="ml-0 list-none"><a href="/legal/">Legal</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container text-xs">
+        <hr class="border-gray-300 mt-0 mb-8">
+        <div class="flex flex-col sm:flex-row gap-4 justify-between items-left sm:items-center mb-8">
+            <div class="flex space-x-4">
+                <a aria-label="LinkedIn" href="https://www.linkedin.com/company/balsamiq" class="text-white relative -top-0.5"
+                    target="_blank" rel="noopener noreferrer">
+                    <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                    </svg>
+                </a>
+                <a aria-label="YouTube" href="https://www.youtube.com/balsamiq" class="text-white" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M23.498 6.186c-.276-1.04-1.089-1.854-2.128-2.129-1.877-.512-9.367-.512-9.367-.512s-7.49 0-9.367.512c-1.04.275-1.854 1.089-2.129 2.129-.512 1.877-.512 5.79-.512 5.79s0 3.914.512 5.791c.275 1.04 1.089 1.854 2.129 2.128 1.877.512 9.367.512 9.367.512s7.49 0 9.367-.512c1.04-.275 1.854-1.089 2.128-2.128.512-1.877.512-5.791.512-5.791s0-3.914-.512-5.79zm-13.498 9.467v-7.588l6.154 3.794-6.154 3.794z" />
+                    </svg>
+                </a>
+                <a aria-label="X" href="https://x.com/balsamiq" class="text-white" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                        shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                        image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+                        viewBox="0 0 512 462.799">
+                        <path fill-rule="nonzero"
+                            d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="flex space-x-2 flex-wrap md:content-end">
+                <span id='copy-year'>&copy; 2008-</span>
+                <script>
+                    document.getElementById('copy-year').innerHTML = '&copy; 2008-' + (new Date().getFullYear());
+                </script> <a href="/">Balsamiq</a>
+                <span>·</span>
+                <a href="/legal/privacy/">Privacy</a>
+                <span>·</span>
+                <a href="/legal/tos/">Terms</a>
+                <span>·</span>
+                <a href="javascript: Cookiebot.renew()">Cookie Preferences</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Highlight the current parent in the navs
+    const links = document.querySelectorAll('nav a');
+    const currentUrl = window.location.href;
+    links.forEach(link => {
+        if (link.href === currentUrl) {
+            link.classList.add('current');
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        BLQ.closeUp('a.fb');
+
+        // KEYBOARD SHORTCUTS
+        var os = BLQ.getOS();
+        if (os == "Mac" || os == "iOS") {
+            [].slice.call(document.querySelectorAll('.ctrl')).forEach(function (node) { node.innerHTML = '⌘' });
+        }
+
+        // KEYBOARD SHORTCUTS
+        if (navigator.appVersion.indexOf("Macintosh") != -1) {
+            [].slice.call(document.querySelectorAll('.ctrl')).forEach(function (node) {
+                node.innerHTML = '⌘'
+            });
+        }
+        anchors.options = {
+            icon: '#',
+            placement: 'left'
+        };
+
+        anchors.add('h2:not(.no-anchor), h3:not(.no-anchor), h4:not(.no-anchor), h5:not(.no-anchor)');
+
+        [].slice.call(document.querySelectorAll('img[alt="gif"]')).forEach(function (node) {
+            BLQ.gifPlayer(node);
+        });
+
+        [].slice.call(document.querySelectorAll('img[alt="os"]')).forEach(function (node) {
+            BLQ.getOSimg(node);
+        });
+
+        const faqs = document.querySelectorAll(".faq-accordion");
+
+        faqs.forEach((faq) => {
+            faq.addEventListener("click", (event) => {
+                if (event.target.tagName !== 'A') {
+                    event.preventDefault();
+
+                    const isOpen = faq.hasAttribute("open");
+
+                    faqs.forEach((otherFaq) => {
+                        if (otherFaq !== faq) {
+                            otherFaq.removeAttribute("open");
+                            const answer = otherFaq.querySelector(".faq-answer");
+                            answer.style.maxHeight = null; // Collapse
+                        }
+                    });
+
+                    if (!isOpen) {
+                        faq.setAttribute("open", "");
+                        const answer = faq.querySelector(".faq-answer");
+                        answer.style.maxHeight = answer.scrollHeight + "px"; // Expand
+                    } else {
+                        faq.removeAttribute("open");
+                        const answer = faq.querySelector(".faq-answer");
+                        answer.style.maxHeight = null; // Collapse
+                    }
+                }
+            });
+        });
+
+        // Code copy functionality
+        function initCodeCopyButtons() {
+            const codeBlocks = document.querySelectorAll('code');
+
+            codeBlocks.forEach((codeBlock) => {
+                // Skip if it's inline code (not in a paragraph by itself)
+                if (codeBlock.parentNode.tagName.toLowerCase() === 'p') {
+                    return;
+                }
+
+                // Skip if code block has no-copy class or attribute
+                if (codeBlock.classList.contains('no-copy') ||
+                    codeBlock.hasAttribute('data-no-copy') ||
+                    (codeBlock.parentNode.tagName.toLowerCase() === 'pre' && codeBlock.parentNode.classList.contains('no-copy')) ||
+                    (codeBlock.parentNode.tagName.toLowerCase() === 'pre' && codeBlock.parentNode.hasAttribute('data-no-copy'))) {
+                    return;
+                }
+
+                // Skip if button already exists
+                if (codeBlock.previousElementSibling && codeBlock.previousElementSibling.classList.contains('copy-button')) {
+                    return;
+                }
+
+                // Create container if it doesn't exist
+                if (!codeBlock.parentNode.classList.contains('code-container')) {
+                    const container = document.createElement('div');
+                    container.className = 'code-container';
+                    codeBlock.parentNode.insertBefore(container, codeBlock);
+                    container.appendChild(codeBlock);
+                }
+
+                // Create copy button
+                const copyButton = document.createElement('button');
+                copyButton.className = 'copy-button';
+                copyButton.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy-icon lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    <span class="copy-text"></span>
+                `;
+
+                // Add click event to copy button
+                copyButton.addEventListener('click', async (event) => {
+                    event.preventDefault(); // Prevent default button behavior
+                    event.stopPropagation(); // Prevent event bubbling
+
+                    try {
+                        await navigator.clipboard.writeText(codeBlock.textContent.trim());
+
+                        // Visual feedback
+                        copyButton.classList.add('copied');
+                        setTimeout(() => {
+                            copyButton.classList.remove('copied');
+                        }, 2000);
+
+                    } catch (err) {
+                        console.error('Failed to copy text: ', err);
+
+                        // Fallback for older browsers - position textarea off-screen
+                        const textArea = document.createElement('textarea');
+                        textArea.value = codeBlock.textContent.trim();
+                        textArea.style.position = 'fixed';
+                        textArea.style.left = '-9999px';
+                        textArea.style.top = '-9999px';
+                        textArea.setAttribute('readonly', '');
+                        textArea.style.opacity = '0';
+                        document.body.appendChild(textArea);
+                        textArea.select();
+                        try {
+                            document.execCommand('copy');
+                            copyButton.classList.add('copied');
+                            setTimeout(() => {
+                                copyButton.classList.remove('copied');
+                            }, 2000);
+                        } catch (fallbackErr) {
+                            console.error('Fallback copy failed: ', fallbackErr);
+                        }
+                        document.body.removeChild(textArea);
+                    }
+                });
+
+                // Insert button before the code block in the container
+                codeBlock.parentNode.insertBefore(copyButton, codeBlock);
+            });
+        }
+
+        // Initialize copy buttons
+        initCodeCopyButtons();
+
+    });
+</script>
+
+<!-- HelpScout Beacon -->
+<script type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});</script>
+<script type="text/javascript">window.Beacon('init', 'f7b5b8a1-ba9e-408e-9b1d-6e947f95dabe')</script>
+
+<!-- Google One Tap login-->
+
+            <script>
+                function initializeGoogleOneTap() {
+                    google.accounts.id.initialize({
+                        client_id: '4720648203-v1g732u6b7rlr5j1tceik3mbhf8aupos.apps.googleusercontent.com',
+                        itp_support: true,
+                        use_fedcm_for_prompt: true,
+                        callback: (rsp) => {
+                            const form = document.createElement('form');
+                            form.method = 'POST';
+                            form.action = 'https://balsamiq.cloud/google_onetap';
+
+                            const hiddenField = document.createElement('input');
+                            hiddenField.type = 'hidden';
+                            hiddenField.name = 'credential';
+                            hiddenField.value = rsp.credential;
+                            form.appendChild(hiddenField);
+
+                            document.body.appendChild(form);
+                            form.submit();
+                        },
+                    });
+
+                    google.accounts.id.prompt(); // Display the One Tap prompt
+                }
+                window.addEventListener('load', initializeGoogleOneTap);
+            </script>
+            
+</body>
+
+</html>
+
+
+<!--div class="mx-auto bg-lavender-50 bg-apricot my-4 card-item__meta alert alert-info md:w-7/12 md:w-5/12 alert-warning banner-cta bg-opacity-40 border-r btn-sm md:pl-10 pl-10 md:p-12 md:p-10 mb-4 w-[280px] border-b-0 md:w-1/3 md:max-w-2xl md:pr-8 pb-6 border-b border-eggplant-20 md:border-b-0 md:border-r md:pr-10 select-wrapper w-[200px] min-w-[280px] gap-12 my-0 w-[25px] h-[25px] pb-5 flex-none bg-eggplant-20 bg-opacity-10 bg-eggplant-80 leading-none md:items-center border-transparent mb-8 m-0 mb-4 pb-2 w-28 md:gap-10 gap-10 md:gap-20 gap-20 entry-date
+btn btn-primary float-right pl-10 pb-5 meta w-2/6 my-3 my-5 bg-opacity-60 underline-a pgntn-page-pagination page-numbers .pgntn-page-pagination-intro
+top-[74px] px-10 py-0 px-8 max-h-[calc(100vh-74px)] overflow-y-auto max-w-full list-disc overflow-y-scroll max-h-[804px] break-words
+form-error underline-a lg:grid-cols-2 lg:grid-cols-8 lg:col-span-5 lg:col-span-3 w-full px-3 px-8 my-2 border-l-0 border-r-0 w-2/3 mb-10
+ mb-2 md:w-1/2 w-4/12 mb-4 w-8/12 border border-gray-300 w-96 grid-cols-3 w-[350px] mt-8 gap-8 gap-12 gap-16 flex-row mb-6 w-2/5 w-3/5
+ space-x-4 space-y-8 ml-0 p-14 w-1/2 h-14 pt-8 md:w-1/2 w-2/3 text-md bg-cream bg-opacity-50 w-14 h-12 w-12 w-3/4 md:w-2/4 w-1/3 w-2/4
+  w-2/5 w-3/5 w-1/4 my-14 btn btn-secondary alert alert-warning underline-a lg:inline-block mb-0 text-primary btn-selected p-6
+  top-[70px] grid-cols-2 my-10 top-0 left-4 transform -translate-y-2 text-green-600 text-green-700 text-red-700 text-red-600 ml-12 text-lg
+  list-none font-medium md:mb-5 mt-4 text-sm text-right w-8 h-8 animate-spin fill-primary sr-only text-gray-200 avatar-big bg-gray-600
+  on-this-page on-this-page-h3-match text-underline underline-a border border-l mt-24 md:mt-24 md:mt-40 border-gray-400 border-eggplant border-opacity-20 sideNav-2 sideNav-3 mb-8 rounded-none two-cols"></div-->
+<!--so they don't get purged -->
