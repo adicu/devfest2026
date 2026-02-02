@@ -56,19 +56,19 @@ export default function Sidebar() {
           <div className="mb-3">
             <h4 className="mb-1 underline">SCHEDULE</h4>
             <Link 
-              href="https://calendar.google.com/calendar/u/0/r" 
+              href="https://docs.google.com/spreadsheets/d/12jLGA5Kyo7vrsxk7dJMpldg-eM9-hnGgvrWRQcx6UBM/edit?usp=sharing" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#E82AFA] underline break-words"
             >
-              Google Calendar
+              Click me
             </Link>
           </div>
 
           <div>
             <h4 className="mb-1 underline">DEVFEST DISCORD</h4>
             <p className="break-words">
-              Join our devfest <Link href="https://discord.com" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>discord</Link> community to ask questions, find teammates, and more!
+              Join our devfest <Link href="https://discord.com/invite/sg8mENaRB2" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>discord</Link> community to ask questions, find teammates, and more!
             </p>
           </div>
           </div>
@@ -121,7 +121,7 @@ export default function Sidebar() {
             flexShrink: 0,
             overflow: 'hidden',
           }}>
-            Stay in touch: <Link href="https://www.instagram.com/adicolumbia/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Instagram</Link>, <Link href="https://www.tiktok.com/@adicolumbia" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Tiktok</Link>, <Link href="https://discord.com" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Discord</Link>
+            Stay in touch: <Link href="https://www.instagram.com/adicolumbia/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Instagram</Link>, <Link href="https://www.tiktok.com/@adicolumbia" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Tiktok</Link>, <Link href="https://discord.com/invite/sg8mENaRB2" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E82AFA' }}>Discord</Link>
           </p>
           </div>
         </div>

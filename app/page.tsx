@@ -57,7 +57,7 @@ export default function Home() {
       case 'schedule':
         return "Check out the schedule to see when everything happens!";
       case 'tracks':
-        return "Explore the different tracks available at DevFest!";
+        return "The tracks will be revealed during the hackathon!";
       case 'judges-speakers':
         return "Meet our amazing judges and speakers!";
       default:
@@ -206,8 +206,10 @@ export default function Home() {
               }}
             >
               {/* Schedule Planet - position relative to planets group */}
-              <Link 
-                href="/schedules" 
+              <a 
+                href="https://docs.google.com/spreadsheets/d/12jLGA5Kyo7vrsxk7dJMpldg-eM9-hnGgvrWRQcx6UBM/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="absolute transition-transform hover:scale-110 animate-float-up"
                 style={{
                   left: '305px',
@@ -226,7 +228,7 @@ export default function Home() {
                   sizes="330px"
                   className="object-contain"
                 />
-              </Link>
+              </a>
 
               {/* FAQ Planet */}
               <Link
@@ -253,8 +255,7 @@ export default function Home() {
               </Link>
 
               {/* Tracks Planet */}
-              <Link
-                href="/tracks"
+              <div
                 className="absolute transition-transform hover:scale-110 animate-float-down"
                 style={{
                   left: '600px',
@@ -273,7 +274,7 @@ export default function Home() {
                   sizes="300px"
                   className="object-contain"
                 />
-              </Link>
+              </div>
 
               {/* Judges/Speakers Planet */}
               <Link

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Russo_One, Zen_Dots, Space_Mono } from 'next/font/google';
 import { X } from 'lucide-react';
@@ -57,9 +58,15 @@ const tracksData = [
 ];
 
 export default function TracksPage() {
+    const router = useRouter();
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedTrack, setSelectedTrack] = useState<typeof tracksData[0] | null>(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    useEffect(() => {
+        // Redirect to home page when this page is accessed
+        router.push('/');
+    }, [router]);
 
     const handlePlanetClick = () => setIsPopupOpen(true);
 

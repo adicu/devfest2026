@@ -23,11 +23,11 @@ export default function Speakers() {
 
   // Judges data
   const judges = [
-    { id: 1, name: 'Ly Na Nguyen', info: 'Apple', image: null },
+    { id: 1, name: 'William Nafack', info: 'JP Morgan Chase', image: null },
     { id: 2, name: 'Alper Canberk', info: 'Sunday', image: null },
     { id: 3, name: 'Euphie Zhou', info: 'CRIO', image: null },
     { id: 4, name: 'Gabor Csapo', info: 'Google', image: '/Gabor.png' },
-    { id: 5, name: 'Ahsaas Bajaj', info: 'Instacart', image: null },
+    { id: 5, name: 'Ahsaas Bajaj', info: 'Instacart', image: '/ahsaas.png' },
   ];
 
   return (
@@ -233,7 +233,7 @@ export default function Speakers() {
                     {judge.name}
                   </span>
                   <br />
-                  working at {judge.info}
+                  Working at {judge.info}
                 </div>
               </div>
             ))}
@@ -275,6 +275,16 @@ export default function Speakers() {
                 <Image
                   src="/flowglad.png"
                   alt="Flowglad"
+                  width={200}
+                  height={120}
+                  className="object-contain"
+                  style={{ maxHeight: '120px', width: 'auto' }}
+                />
+              </Link>
+              <Link href="https://ifm.ai/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity bg-white rounded-lg p-2">
+                <Image
+                  src="/ifm.png"
+                  alt="IFM - Institute of Foundation Models"
                   width={200}
                   height={120}
                   className="object-contain"
@@ -339,7 +349,7 @@ export default function Speakers() {
               Bronze Sponsors
             </h3>
             <div className="flex justify-center items-center flex-wrap gap-8">
-              <Link href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <Link href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity bg-white rounded-lg p-2">
                 <Image
                   src="/elevenlabs.png"
                   alt="ElevenLabs"
@@ -349,10 +359,30 @@ export default function Speakers() {
                   style={{ maxHeight: '80px', width: 'auto' }}
                 />
               </Link>
-              <Link href="https://balsamiq.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <Link href="https://balsamiq.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity bg-white rounded-lg p-2">
                 <Image
                   src="/balsamiq.png"
                   alt="Balsamiq"
+                  width={160}
+                  height={80}
+                  className="object-contain"
+                  style={{ maxHeight: '80px', width: 'auto' }}
+                />
+              </Link>
+              <Link href="https://figma.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity bg-white rounded-lg p-2">
+                <Image
+                  src="/figma.png"
+                  alt="Figma"
+                  width={160}
+                  height={80}
+                  className="object-contain"
+                  style={{ maxHeight: '80px', width: 'auto' }}
+                />
+              </Link>
+			  <Link href="https://featherless.ai/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity bg-white rounded-lg p-2">
+                <Image
+                  src="/featherless.png"
+                  alt="Featherless"
                   width={160}
                   height={80}
                   className="object-contain"
