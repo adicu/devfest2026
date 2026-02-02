@@ -312,13 +312,13 @@ export default function Home() {
             >
               {/* Character Image */}
               <div className="absolute" style={{  
-				left: '28.3%',
-                top: '0',
-                width: '36.7%', 
+				left: '33.3%',
+                top: '-5%',
+                width: '30.7%', 
                 zIndex: 10,
               }}>
                 <Image
-                  src="/roarie-character-629497.png"
+                  src="/roarie-character-40dcfd.png"
                   alt="Roarie Character"
                   width={93}
                   height={111}
