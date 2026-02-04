@@ -207,7 +207,7 @@ export default function Home() {
             >
               {/* Schedule Planet - position relative to planets group */}
               <a 
-                href="https://docs.google.com/spreadsheets/d/12jLGA5Kyo7vrsxk7dJMpldg-eM9-hnGgvrWRQcx6UBM/edit?usp=sharing"
+                href="https://docs.google.com/spreadsheets/d/1sSDcNFrFrXo1Hk3-0M5JQBzCOKoNsQynivQOTraLfCU/edit?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute transition-transform hover:scale-110 animate-float-up"
