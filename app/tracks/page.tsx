@@ -369,53 +369,32 @@ export default function TracksPage() {
                           animate={{ scale: 1, opacity: 1 }}
                           exit={{ scale: 0.9, opacity: 0 }}
                           onClick={(e) => e.stopPropagation()}
-                          className="relative flex flex-col items-center justify-center text-white w-full lg:w-[95%] ml-0 lg:ml-[5%]"
-                          style={{ height: '98%', padding: '3% 1% 0% 1%', marginTop: '1%' }}
+                          className="relative flex flex-col items-center justify-start text-white w-full h-full"
+                          style={{ padding: '3% 1% 0% 1%' }}
                       >
-                          {/* Frame Background Image */}
-                          <Image
-                              src="/background_tracks.png"
-                              alt="Popup Background"
-                              fill
-                              className="object-fill pointer-events-none"
-                              style={{ zIndex: -1 }}
-                          />
-
-                          {/* X Button to cover the X in background image */}
-                          <button
-                              onClick={() => {
-                                  if (selectedPrize) {
-                                      setSelectedPrize(null);
-                                  } else {
-                                      router.push('/');
-                                  }
-                              }}
-                              className="absolute flex items-center justify-center text-white cursor-pointer"
-                              style={{
-                                  top: '15.8%',
-                                  left: '23.4%',
-                                  width: '2.3%',
-                                  height: '3.8%',
-                                  zIndex: 100
-                              }}
-                          >
-                              <X style={{ width: '130%', height: '130%' }} className="drop-shadow-2xl" strokeWidth={2} />
-                          </button>
 
                           {/* Content Container */}
-                          <div className="relative flex flex-col items-center justify-start w-[95%] lg:w-[85%]" style={{ height: '75%', marginLeft: '2.6%', paddingBottom: 0 }}>
+                          <div className="relative flex flex-col items-center justify-start w-[95%] lg:w-[85%] h-full" style={{ paddingBottom: '20px', paddingTop: '20px' }}>
 
                               {/* PRIZES VIEW */}
                               {!selectedPrize && (
                                   <motion.div
                                       initial={{ opacity: 0, x: 20 }}
                                       animate={{ opacity: 1, x: 0 }}
-                                      className="flex flex-col items-center justify-start overflow-y-auto custom-scrollbar w-[95%] lg:w-[80%]"
-                                      style={{ height: '90%', marginLeft: '2%' }}
+                                      className="flex flex-col items-center justify-start overflow-y-auto custom-scrollbar w-[95%] lg:w-[80%] h-full"
                                   >
-                                      <h2 className={`${zenDots.className} text-[18px] md:text-[24px] text-white tracking-wider drop-shadow-md`} style={{ lineHeight: '1.2em', margin: 0, padding: 0, marginBottom: '2%' }}>
-                                          PRIZES & AWARDS
-                                      </h2>
+                                      {/* Title with close button */}
+                                      <div className="flex items-center justify-center gap-4 w-full mb-4">
+                                          <h2 className={`${zenDots.className} text-[18px] md:text-[24px] text-white tracking-wider drop-shadow-md`} style={{ lineHeight: '1.2em' }}>
+                                              PRIZES & AWARDS
+                                          </h2>
+                                          <button
+                                              onClick={() => router.push('/')}
+                                              className="flex items-center justify-center text-white cursor-pointer hover:opacity-70 transition-opacity"
+                                          >
+                                              <X size={24} className="drop-shadow-2xl" strokeWidth={2} />
+                                          </button>
+                                      </div>
 
                                       {/* Grid Layout - 2 columns like tracks */}
                                       <div className="grid grid-cols-2 gap-3 w-full pb-4">
@@ -426,7 +405,7 @@ export default function TracksPage() {
                                                   whileHover={{ scale: 1.03 }}
                                                   whileTap={{ scale: 0.97 }}
                                                   className="relative cursor-pointer group flex flex-col items-center justify-center p-0 text-center"
-                                                  style={{ height: '120px', width: '100%', zIndex: 10 }}
+                                                  style={{ height: '90px', width: '100%', zIndex: 10 }}
                                               >
                                                   {/* Prize Tile Background */}
                                                   <Image
@@ -437,10 +416,10 @@ export default function TracksPage() {
                                                   />
 
                                                   {/* Prize Title and Info */}
-                                                  <h3 className={`${zenDots.className} text-[10px] md:text-[14px] drop-shadow-md text-center px-2`} style={{ lineHeight: '1.2em' }}>
+                                                  <h3 className={`${zenDots.className} text-[12px] md:text-[16px] drop-shadow-md text-center px-2`} style={{ lineHeight: '1.2em' }}>
                                                       <span style={{ color: prize.color }}>{prize.title}</span>
                                                   </h3>
-                                                  <p className={`${spaceMono.className} text-[8px] md:text-[11px] text-white/80 mt-1`}>
+                                                  <p className={`${spaceMono.className} text-[10px] md:text-[13px] text-white/80 mt-1`}>
                                                       {prize.prize}
                                                   </p>
                                               </motion.div>
