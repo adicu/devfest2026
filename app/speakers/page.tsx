@@ -28,6 +28,9 @@ export default function Speakers() {
     { id: 3, name: 'Euphie Zhou', info: 'CRIO', image: null },
     { id: 4, name: 'Gabor Csapo', info: 'Google', image: '/Gabor.png' },
     { id: 5, name: 'Ahsaas Bajaj', info: 'Instacart', image: '/ahsaas.png' },
+    { id: 6, name: 'Shivam Goyal', info: 'PropIQ', image: '/goyal.jpg' },
+    { id: 7, name: 'Kritika Kumari', info: 'Bayview Asset Management,', image: '/kumari.jpeg' },
+    { id: 8, name: 'Jane Zhang', info: 'IFM at MBZUAI', image: '/zhang.jpeg' },
   ];
 
   return (
