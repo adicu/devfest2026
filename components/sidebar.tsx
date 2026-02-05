@@ -36,14 +36,9 @@ export default function Sidebar() {
             }}
           >
           <div className="mb-3">
-            <Link 
-              href="https://forms.gle/WEepULcHQo5GCefK7" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-[#E82AFA] underline break-words text-[15px]"
-            >
-              REGISTER NOW
-            </Link>
+            <span className="text-[#888888] break-words text-[15px]">
+              REGISTRATION CLOSED
+            </span>
           </div>
 
           <div className="mb-3">
