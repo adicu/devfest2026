@@ -51,20 +51,7 @@ export default function FAQ() {
     },
     {
       question: "When is Devfest?",
-      answer: "DevFest features workshops throughout the week from 2/2-2/6 (Monday-Friday), followed by the main competition on 2/7-2/8 (Saturday-Sunday). Visit the schedules page for more information.",
-      answerWithLink: (
-        <>
-          DevFest features workshops throughout the week from 2/2-2/6 (Monday-Friday), followed by the main competition on 2/7-2/8 (Saturday-Sunday). Visit the{' '}
-          <Link 
-            href="/schedules"
-            className="underline hover:text-blue-300"
-            style={{ color: '#1B104C' }}
-          >
-            schedules page
-          </Link>
-          {' '}for more information.
-        </>
-      )
+      answer: "DevFest will kick off with workshops and speaker events on Friday evening, followed by the main competition on 2/7-2/8 (Saturday-Sunday)."
     },
     {
       question: "What is the team size limit?",
@@ -76,19 +63,11 @@ export default function FAQ() {
     },
     {
       question: "Who do I contact for questions or concerns?",
-      answer: "If you have any questions or concerns, please don't hesitate to reach out to us via email at devfestorganizers@googlegroups.com or via our Discord server where you can ping any of the organizers. For more information, please refer to the MLH code of conduct.",
+      answer: "If you have any questions or concerns, please don't hesitate to reach out to us via our Discord server where you can ping any of the organizers. For more information, please refer to the MLH code of conduct.",
       answerWithLink: (
         <>
-          If you have any questions or concerns, please don&apos;t hesitate to reach out to us via email at{' '}
-          <a 
-            href="mailto:devfestorganizers@googlegroups.com"
-            className="underline hover:text-blue-300"
-            style={{ color: '#1B104C' }}
-          >
-            devfestorganizers@googlegroups.com
-          </a>
-          {' '}or via our Discord server where you can ping any of the organizers. For more information, please refer to the{' '}
-          <a 
+          If you have any questions or concerns, please don&apos;t hesitate to reach out to us via our Discord server where you can ping any of the organizers. For more information, please refer to the{' '}
+          <a
             href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
             target="_blank"
             rel="noopener noreferrer"

@@ -369,8 +369,8 @@ export default function TracksPage() {
                           animate={{ scale: 1, opacity: 1 }}
                           exit={{ scale: 0.9, opacity: 0 }}
                           onClick={(e) => e.stopPropagation()}
-                          className="relative flex flex-col items-center justify-center text-white w-full lg:w-[90%] ml-0 lg:ml-[10%]"
-                          style={{ height: '95%', padding: '5% 1% 0% 1%', marginTop: '2%' }}
+                          className="relative flex flex-col items-center justify-center text-white w-full lg:w-[95%] ml-0 lg:ml-[5%]"
+                          style={{ height: '98%', padding: '3% 1% 0% 1%', marginTop: '1%' }}
                       >
                           {/* Frame Background Image */}
                           <Image

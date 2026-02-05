@@ -305,9 +305,9 @@ export default function Home() {
           >
             {/* Planets Group Container */}
             <div
-              className="absolute left-[20%]"
+              className="absolute left-[28%]"
               style={{
-                top: '-10%',
+                top: '10%',
                 width: '100%',
                 height: '100%',
               }}
@@ -412,8 +412,8 @@ export default function Home() {
             <div
               className="absolute"
               style={{
-                left: '60%',
-                top: '43%',
+                left: '68%',
+                top: '60%',
                 width: '54.2%',
                 height: '65.2%',
                 zIndex: 10,
