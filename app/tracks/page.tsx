@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Russo_One, Zen_Dots, Space_Mono } from 'next/font/google';
@@ -25,55 +25,178 @@ const spaceMono = Space_Mono({
   subsets: ['latin'],
 });
 
-// Track Data
-const tracksData = [
+// Prizes Data
+const prizesData = [
     {
-        id: 'health',
-        title: 'HEALTH',
-        icon: '🏥',
-        shortDesc: 'Improve physical, mental, and emotional well-being.',
-        fullDesc: 'The HEALTH track invites participants to explore how technology can improve physical, mental, and emotional well-being across diverse communities.\n\nThis track encourages teams to think holistically about what "health" means in the modern world and rethink what being health-conscious means.\n\nProjects may range from apps that help individuals build healthier habits, to systems that make medical data more accessible, to tools that support clinicians in making informed decisions.\n\nThis track also welcomes projects that engage with broader public health questions: How can we increase access to care? How can technology reduce disparities in health outcomes? What innovations could help individuals better understand their health?',
+        id: 'first-overall',
+        title: 'First Overall',
+        winners: '1 winner',
+        prize: 'PS5 for all team members',
+        color: '#FFD700',
+        description: null,
     },
     {
-        id: 'business',
-        title: 'BUSINESS AND ENTERPRISE',
-        icon: '💼',
-        shortDesc: 'Transform how organizations operate digitally.',
-        fullDesc: 'The BUSINESS AND ENTERPRISE track encourages teams to design software and systems that transform how organizations of all scales operate in an increasingly digital environment. These ideas are permeated through a wide range of themes, including finance, productivity, workflow automation, emerging technologies, blockchain, business intelligence, and organizational strategy.\n\nProjects may range from products that streamline day-to-day operations, to platforms that re-imagine the future of commerce, to AI-powered advisors for entrepreneurs. These solutions can draw upon analytics, AI, modern web infrastructure, or creative business models to solve real pain points faced by companies and customers alike.\n\nThis track encourages teams to think beyond just the technical build and consider the broader business implications including scalability, sustainability, and accessibility.',
+        id: 'second-overall',
+        title: 'Second Overall',
+        winners: '1 winner',
+        prize: 'Nintendo Switches for all team members',
+        color: '#C0C0C0',
+        description: null,
     },
     {
-        id: 'entertainment',
-        title: 'ENTERTAINMENT',
-        icon: '🎮',
-        shortDesc: 'Blend artistry, storytelling, and interactivity.',
-        fullDesc: 'The ENTERTAINMENT track is a creative playground that invites participants to blend artistry, storytelling, and interactivity. Projects in this track includes everything from game development and immersive media, to interactive art and music technology, to educational entertainment.\n\nTeams are challenged to build and curate digital experiments that spark curiosity, deepen engagement, and bring people together. These projects where entertainment meets impact can take the form of gamified education tools, creative platforms for self-expression, systems that foster community, or new forms of storytelling that push technical boundaries.\n\nThis track invites teams to let imagination lead, delivering memorable, meaningful experiments and engagement. The goal is to create something playful, surprising, and inspiring.',
+        id: 'track-1-prize',
+        title: 'Track 1 Prize',
+        winners: '1 winner',
+        prize: 'Smart Watch for all team members',
+        color: '#95E7FC',
+        description: null,
     },
     {
-        id: 'social-impact',
-        title: 'SOCIAL IMPACT/\nSUSTAINABILITY',
-        icon: '🌱',
-        shortDesc: 'Make communities safer, more equitable, and sustainable.',
-        fullDesc: 'The SOCIAL IMPACT & SUSTAINABILITY track challenges teams to develop solutions that make communities safer, more equitable, and more environmentally responsible. Projects may span transportation, maps and mobility, climate and environment, civic technology, community health, and data-driven policy insights.\n\nTeams are encouraged to address real-world challenges, varying from the reduction of carbon footprints, to the improvement of access to sustainable transportation, to the identification of environmental hazards, to the empowerment of individuals to make greener and more informed choices.\n\nThis track particularly welcomes projects that make complex environmental or social data intuitive. To do so, teams can draw from mobility data, climate datasets, community metrics, or public policy resources to design applications that are both actionable and accessible.',
+        id: 'track-2-prize',
+        title: 'Track 2 Prize',
+        winners: '1 winner',
+        prize: 'Mechanical Keyboard for all team members',
+        color: '#F374FF',
+        description: null,
+    },
+    {
+        id: 'track-3-prize',
+        title: 'Track 3 Prize',
+        winners: '1 winner',
+        prize: 'Fujifilm Instant Camera for all team members',
+        color: '#FAD0FE',
+        description: null,
+    },
+    {
+        id: 'track-4-prize',
+        title: 'Track 4 Prize',
+        winners: '1 winner',
+        prize: 'Big SodaStream for all team members',
+        color: '#85C8FF',
+        description: null,
+    },
+    {
+        id: 'best-beginner',
+        title: 'Best Beginner',
+        winners: '1 winner',
+        prize: 'Drawing Tablets for all team members',
+        color: '#98FB98',
+        description: null,
+    },
+    {
+        id: 'popular-vote',
+        title: 'Popular Vote',
+        winners: '1 winner',
+        prize: 'Sony Headphones for all team members',
+        color: '#FFB6C1',
+        description: null,
+    },
+    {
+        id: 'dedalus-labs',
+        title: 'Best use of Dedalus Labs ADK',
+        winners: '3 winners',
+        prize: '$1,350 in cash',
+        color: '#E82AFA',
+        description: `Build a production agent using the Dedalus Labs ADK and the Dedalus Auth standard. Submissions must solve a real user need and be usable by someone other than the builder. Scope can be small, but it must demonstrate high-quality platform usage, correct auth integration, and a clear, practical workflow with measurable impact that solves a real problem.
+
+Judging will be completed on the following criteria, scored 1-10: Need (Does this solve a real problem, and will people actually use this?), Dedalus Quality (Is this a strong, unique implementation of Dedalus' strengths and a good showcase of authentication?), Ship Quality (Is it reliable/Does the MVP work from end-to-end?)
+
+1st prize: 750 USD + 250 API credits
+2nd prize: 500 USD + 250 API credits
+3rd prize: 100 USD + 250 API credits`,
+    },
+    {
+        id: 'flowglad',
+        title: 'Best use of Flowglad',
+        winners: '3 winners',
+        prize: '$875 in cash',
+        color: '#4ADE80',
+        description: `All three team winners include lunch at the Flowglad (YC) office with the Co-Founders and an optional YC application review.
+
+1st Prize: $50k credits + $500 cash + 1st Edition Flowglad metal coin
+2nd Prize: $25k credits + $250 cash + 1st Edition Flowglad metal coin
+3rd Prize: $15k credits + $125 cash + 1st Edition Flowglad metal coin
+
+To qualify, teams must complete a test mode payment and share their org ID for verification. Familiarize yourself with the repo: https://github.com/flowglad/flowglad
+
+For real-time access, hit us up during the hackathon at our booth or in our Discord: https://discord.com/servers/flowglad-1273695198639161364`,
+    },
+    {
+        id: 'k2-think',
+        title: 'Best Use of K2 Think',
+        winners: '1 winner',
+        prize: 'reMarkable tablets',
+        color: '#60A5FA',
+        description: `Build with the world's fastest reasoning model. We'll particularly value projects that demonstrate:
+• Meaningful use of K2 Think's advanced reasoning capabilities in real-world scenarios
+• Creativity in how the K2 Think API is applied (beyond obvious or trivial use cases)
+• The importance of K2 Think within the product—i.e., whether it plays a core role rather than a peripheral API call
+
+Join requirements: We'll allocate one API key per team. To get K2 Think API access, please join our WhatsApp group and share the email address of your team leader. Contact: jane.zhang@mbzuai.ac.ae, WhatsApp or Discord (janezhang423).
+WhatsApp group: https://chat.whatsapp.com/D0vXoctPvPq3rIMhvdn0il`,
+    },
+    {
+        id: 'computer-use-safetykit',
+        title: 'Best Use of Computer Use',
+        winners: '1 winner',
+        prize: "Arc'teryx Jackets for all team members",
+        color: '#F97316',
+        description: `Sponsored by SafetyKit
+
+Highlight projects that use advanced computer-use capabilities. Show how AI can interact with software, tools, or digital environments to complete real tasks through automation, navigation, or end-to-end workflows.
+
+Track requirements:
+• Computer use must be a core part of the project
+• The project should meaningfully interact with real software, tools, or interfaces`,
+    },
+    {
+        id: 'elevenlabs',
+        title: 'Best Use of ElevenLabs',
+        winners: '1 winner',
+        prize: '6 months of ElevenLabs Scale tier (equivalent to $330/month) for all team members',
+        color: '#A78BFA',
+        description: null,
+    },
+    {
+        id: 'figma',
+        title: 'Best Use of Figma',
+        winners: '1 winner',
+        prize: 'Figma Merch',
+        color: '#F472B6',
+        description: 'Enter Figma Link in Submission to participate!',
+    },
+    {
+        id: 'featherless',
+        title: 'Best use of Featherless',
+        winners: '3 winners',
+        prize: 'Featherless Scale Plans',
+        color: '#34D399',
+        description: `1st Prize: Featherless Scale Plan worth $300
+2nd Prize: Featherless Scale Plan worth $150
+3rd Prize: Featherless Scale Plan worth $75`,
+    },
+    {
+        id: 'more-prizes',
+        title: 'More prizes + sponsor prizes coming soon!',
+        winners: '8 winners',
+        prize: 'More prizes TBA',
+        color: '#FCD34D',
+        description: null,
     },
 ];
 
 export default function TracksPage() {
     const router = useRouter();
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
-    const [selectedTrack, setSelectedTrack] = useState<typeof tracksData[0] | null>(null);
+    const [isPopupOpen, setIsPopupOpen] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [selectedPrize, setSelectedPrize] = useState<typeof prizesData[0] | null>(null);
 
-    useEffect(() => {
-        // Redirect to home page when this page is accessed
-        router.push('/');
-    }, [router]);
 
     const handlePlanetClick = () => setIsPopupOpen(true);
 
     const handleBackdropClick = (e: React.MouseEvent) => {
         if (e.target === e.currentTarget) {
-            setIsPopupOpen(false);
-            setSelectedTrack(null);
+            router.push('/');
         }
   };
 
@@ -98,34 +221,34 @@ export default function TracksPage() {
           <nav className="relative z-20 w-full" style={{
             background: 'transparent',
             height: '95px',
-            paddingTop: '50px'
+            paddingTop: '30px'
           }}>
-            <div className="flex items-center justify-between px-20 h-full">
+            <div className="flex items-center justify-between px-4 lg:px-20 h-full">
               {/* Logo and Title */}
-              <Link href="/" className="flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity" style={{ marginLeft: '100px' }}>
-                <div className="w-20 h-20 rounded-lg overflow-hidden">
+              <Link href="/" className="flex items-center gap-2 lg:gap-4 cursor-pointer hover:opacity-80 transition-opacity ml-0 lg:ml-[100px]">
+                <div className="w-12 h-12 lg:w-20 lg:h-20 rounded-lg overflow-hidden">
                   <Image
                     src="/logo.svg"
                     alt="DevFest Logo"
                     width={80}
                     height={80}
-                    className="w-20 h-20"
+                    className="w-12 h-12 lg:w-20 lg:h-20"
                   />
                 </div>
-                <h1 className={`${zenDots.className} text-white text-4xl`}>Devfest 2026</h1>
+                <h1 className={`${zenDots.className} text-white text-xl lg:text-4xl`}>Devfest 2026</h1>
               </Link>
 
               {/* Menu Button */}
-              <button 
+              <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`flex items-center gap-2 text-white ${zenDots.className} text-3xl hover:opacity-80 transition-opacity`}
+                className={`flex items-center gap-2 text-white ${zenDots.className} text-xl lg:text-3xl hover:opacity-80 transition-opacity`}
               >
-                <div className="flex flex-col gap-1.5">
-                  <div className="w-10 h-1 bg-white"></div>
-                  <div className="w-10 h-1 bg-white"></div>
-                  <div className="w-10 h-1 bg-white"></div>
+                <div className="flex flex-col gap-1">
+                  <div className="w-6 lg:w-10 h-0.5 lg:h-1 bg-white"></div>
+                  <div className="w-6 lg:w-10 h-0.5 lg:h-1 bg-white"></div>
+                  <div className="w-6 lg:w-10 h-0.5 lg:h-1 bg-white"></div>
                 </div>
-                <span>MENU</span>
+                <span className="hidden lg:inline">MENU</span>
               </button>
             </div>
           </nav>
@@ -151,13 +274,15 @@ export default function TracksPage() {
                 >
                   Home
                 </Link>
-                <Link
-                  href="/schedules"
+                <a
+                  href="https://docs.google.com/spreadsheets/d/1sSDcNFrFrXo1Hk3-0M5JQBzCOKoNsQynivQOTraLfCU/edit?gid=0#gid=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setIsMenuOpen(false)}
                   className={`text-white ${zenDots.className} text-2xl hover:text-purple-300 transition-colors`}
                 >
                   Schedule
-                </Link>
+                </a>
                 <Link
                   href="/tracks"
                   onClick={() => setIsMenuOpen(false)}
@@ -236,7 +361,7 @@ export default function TracksPage() {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       onClick={handleBackdropClick}
-                      className="fixed inset-0 z-50 flex items-center justify-center bg-transparent"
+                      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
                   >
                       {/* 4. Popup Frame Asset */}
                       <motion.div
@@ -244,8 +369,8 @@ export default function TracksPage() {
                           animate={{ scale: 1, opacity: 1 }}
                           exit={{ scale: 0.9, opacity: 0 }}
                           onClick={(e) => e.stopPropagation()}
-                          className="relative flex flex-col items-center justify-center text-white w-[95%] lg:w-[90%] ml-[2.5%] lg:ml-[10%]"
-                          style={{ height: '90%', padding: '5% 8% 0% 8%', marginTop: '5%' }}
+                          className="relative flex flex-col items-center justify-center text-white w-full lg:w-[90%] ml-0 lg:ml-[10%]"
+                          style={{ height: '95%', padding: '5% 1% 0% 1%', marginTop: '2%' }}
                       >
                           {/* Frame Background Image */}
                           <Image
@@ -259,14 +384,14 @@ export default function TracksPage() {
                           {/* X Button to cover the X in background image */}
                           <button
                               onClick={() => {
-                                  if (selectedTrack) {
-                                      setSelectedTrack(null);
+                                  if (selectedPrize) {
+                                      setSelectedPrize(null);
                                   } else {
-                                      setIsPopupOpen(false);
+                                      router.push('/');
                                   }
                               }}
                               className="absolute flex items-center justify-center text-white cursor-pointer"
-                              style={{ 
+                              style={{
                                   top: '15.8%',
                                   left: '23.4%',
                                   width: '2.3%',
@@ -278,157 +403,78 @@ export default function TracksPage() {
                           </button>
 
                           {/* Content Container */}
-                          <div className="relative flex flex-col items-center justify-center" style={{ width: '85%', height: '75%', marginLeft: '2.6%', paddingBottom: 0 }}>
+                          <div className="relative flex flex-col items-center justify-start w-[95%] lg:w-[85%]" style={{ height: '75%', marginLeft: '2.6%', paddingBottom: 0 }}>
 
-                              {!selectedTrack ? (
-                                  // --- INITIAL GRID VIEW ---
+                              {/* PRIZES VIEW */}
+                              {!selectedPrize && (
                                   <motion.div
                                       initial={{ opacity: 0, x: 20 }}
                                       animate={{ opacity: 1, x: 0 }}
-                                      className="flex flex-col items-center justify-center"
-                                      style={{ width: '80%', height: '100%', marginLeft: '5%' }}
+                                      className="flex flex-col items-center justify-start overflow-y-auto custom-scrollbar w-[95%] lg:w-[80%]"
+                                      style={{ height: '90%', marginLeft: '2%' }}
                                   >
-                                      {/* SCANNING TRACKS Heading */}
-                                      <h2 className={`${zenDots.className} text-[24px] text-white tracking-wider drop-shadow-md`} style={{ lineHeight: '1.2em', margin: 0, padding: 0, marginBottom: '2%' }}>
-                                          SCANNING TRACKS...
+                                      <h2 className={`${zenDots.className} text-[18px] md:text-[24px] text-white tracking-wider drop-shadow-md`} style={{ lineHeight: '1.2em', margin: 0, padding: 0, marginBottom: '2%' }}>
+                                          PRIZES & AWARDS
                                       </h2>
 
-                                      {/* Grid Layout - 2x2 grid matching Figma */}
-                                      <div className="grid grid-cols-2 grid-rows-2" style={{ width: '100%', height: '100%', gap: '1.5%' }}>
-                                          {tracksData.map((track, index) => {
-                                              // Map track IDs to match Figma order
-                                              const trackOrder = ['health', 'business', 'entertainment', 'social-impact'];
-                                              const trackNumber = trackOrder.indexOf(track.id) + 1;
-                                              
-                                              // Color mapping for each track
-                                              const titleColors = {
-                                                  1: '#95E7FC', // HEALTH - cyan
-                                                  2: '#F374FF', // BUSINESS AND ENTERPRISE - pink
-                                                  3: '#FAD0FE', // ENTERTAINMENT - light pink
-                                                  4: '#85C8FF'  // SOCIAL IMPACT/SUSTAINABILITY - light blue
-                                              };
-                                              const titleColor = titleColors[trackNumber as keyof typeof titleColors] || '#FBF5FF';
-                                              
-                                              return (
+                                      {/* Grid Layout - 2 columns like tracks */}
+                                      <div className="grid grid-cols-2 gap-3 w-full pb-4">
+                                          {prizesData.map((prize, index) => (
                                               <motion.div
-                                                  key={track.id}
-                                                  onClick={() => setSelectedTrack(track)}
+                                                  key={prize.id}
+                                                  onClick={() => setSelectedPrize(prize)}
                                                   whileHover={{ scale: 1.03 }}
                                                   whileTap={{ scale: 0.97 }}
-                                                      className="relative cursor-pointer group flex flex-col items-center justify-center p-0 text-center"
-                                                      style={{ height: '100%', width: '100%', zIndex: 10 }}
+                                                  className="relative cursor-pointer group flex flex-col items-center justify-center p-0 text-center"
+                                                  style={{ height: '120px', width: '100%', zIndex: 10 }}
                                               >
-                                                      {/* Track Image Background */}
+                                                  {/* Prize Tile Background */}
                                                   <Image
                                                       src="/track_tile.png"
-                                                      alt="Track Tile Background"
+                                                      alt="Prize Tile Background"
                                                       fill
-                                                          className="object-fill -z-10 rounded-lg"
-                                                      />
+                                                      className="object-fill -z-10 rounded-lg"
+                                                  />
 
-                                                      {/* Track Title - Zen Dots, 20px, with color-coded titles */}
-                                                      <h3 className={`${zenDots.className} text-[12px] md:text-[20px] drop-shadow-md text-center`} style={{ lineHeight: '1.2em', whiteSpace: 'pre-line' }}>
-                                                          <span style={{ color: '#FBF5FF' }}>Track {trackNumber}:</span>
-                                                          <br />
-                                                          <span style={{ color: titleColor }}>{track.title}</span>
-                                                      </h3>
+                                                  {/* Prize Title and Info */}
+                                                  <h3 className={`${zenDots.className} text-[10px] md:text-[14px] drop-shadow-md text-center px-2`} style={{ lineHeight: '1.2em' }}>
+                                                      <span style={{ color: prize.color }}>{prize.title}</span>
+                                                  </h3>
+                                                  <p className={`${spaceMono.className} text-[8px] md:text-[11px] text-white/80 mt-1`}>
+                                                      {prize.prize}
+                                                  </p>
                                               </motion.div>
-                                              );
-                                          })}
-          </div>
-        </motion.div>
-                              ) : (
-                                  // --- TRACK DETAILS VIEW ---
+                                          ))}
+                                      </div>
+                                  </motion.div>
+                              )}
+
+                              {/* PRIZE DETAILS VIEW */}
+                              {selectedPrize && (
                                   <motion.div
                                       initial={{ opacity: 0, x: 20 }}
                                       animate={{ opacity: 1, x: 0 }}
-                                      className="flex flex-col items-center justify-start overflow-y-auto custom-scrollbar"
-                                      style={{ width: '80%', height: '100%', marginLeft: '5%' }}
+                                      className="flex flex-col items-start justify-start overflow-y-auto custom-scrollbar w-full"
+                                      style={{ height: '100%', marginLeft: '2%', paddingRight: '2%' }}
                                   >
-                                          <div className="space-y-6" style={{ width: '100%' }}>
-                                              {/* Track Title - Format: "Track X: TITLE" */}
-                                              {(() => {
-                                                  const trackOrder = ['health', 'business', 'entertainment', 'social-impact'];
-                                                  const trackNumber = trackOrder.indexOf(selectedTrack.id) + 1;
-                                                  
-                                                  // Color mapping for track titles
-                                                  const titleColors = {
-                                                      1: '#95E7FC', // HEALTH - cyan
-                                                      2: '#F374FF', // BUSINESS AND ENTERPRISE - pink
-                                                      3: '#FAD0FE', // ENTERTAINMENT - light pink
-                                                      4: '#85C8FF'  // SOCIAL IMPACT/SUSTAINABILITY - light blue
-                                                  };
-                                                  const titleColor = titleColors[trackNumber as keyof typeof titleColors] || '#FBF5FF';
-                                                  
-                                                  return (
-                                                      <h2 className={`${zenDots.className} text-[16px] md:text-[28px] drop-shadow-lg`} style={{ lineHeight: '1.2em', marginLeft: '3%' }}>
-                                                          <span style={{ color: '#FBF5FF' }}>Track {trackNumber}:</span>{' '}
-                                                          <span style={{ color: titleColor }}>{selectedTrack.title}</span>
-                                                  </h2>
-                                                  );
-                                              })()}
-
-                                              {/* Description Text - Space Mono, 22px, #FBF5FF with highlighted phrases */}
-                                              <div className={`${spaceMono.className} text-[12px] md:text-[22px]`} style={{ color: '#FBF5FF', lineHeight: '1.2em', textAlign: 'left' }}>
-                                                  {(() => {
-                                                      const trackOrder = ['health', 'business', 'entertainment', 'social-impact'];
-                                                      const trackNumber = trackOrder.indexOf(selectedTrack.id) + 1;
-                                                      
-                                                      // Color mapping for each track
-                                                      const trackColors = {
-                                                          1: '#95E7FC', // HEALTH - cyan
-                                                          2: '#F374FF', // BUSINESS AND ENTERPRISE - pink
-                                                          3: '#FAD0FE', // ENTERTAINMENT - light pink
-                                                          4: '#85C8FF'  // SOCIAL IMPACT/SUSTAINABILITY - light blue
-                                                      };
-                                                      const highlightColor = trackColors[trackNumber as keyof typeof trackColors] || '#FBF5FF';
-                                                      
-                                                      // Phrases to highlight for each track
-                                                      const highlightPhrases: Record<string, string[]> = {
-                                                          'health': [
-                                                              'physical, mental, and emotional well-being',
-                                                              'health-conscious'
-                                                          ],
-                                                          'business': [
-                                                              'finance, productivity, workflow automation',
-                                                              'emerging technologies, blockchain',
-                                                              'business intelligence',
-                                                              'organizational strategy',
-                                                              'scalability, sustainability, and accessibility'
-                                                          ],
-                                                          'entertainment': [
-                                                              'artistry, storytelling, and interactivity',
-                                                              'game development and immersive media',
-                                                              'interactive art and music technology',
-                                                              'gamified education tools',
-                                                              'playful, surprising, and inspiring'
-                                                          ],
-                                                          'social-impact': [
-                                                              'transportation, maps and mobility',
-                                                              'climate and environment',
-                                                              'civic technology',
-                                                              'carbon footprints',
-                                                              'sustainable transportation',
-                                                              'environmental hazards',
-                                                              'greener and more informed choices'
-                                                          ]
-                                                      };
-                                                      
-                                                      const phrases = highlightPhrases[selectedTrack.id] || [];
-                                                      let text = selectedTrack.fullDesc;
-                                                      
-                                                      // Highlight each phrase
-                                                      phrases.forEach(phrase => {
-                                                          const regex = new RegExp(`(${phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-                                                          text = text.replace(regex, (match) => {
-                                                              return `<span style="color: ${highlightColor}">${match}</span>`;
-                                                          });
-                                                      });
-                                                      
-                                                      return <p style={{ whiteSpace: 'pre-line' }} dangerouslySetInnerHTML={{ __html: text }} />;
-                                                  })()}
-                                              </div>
+                                      <div className="space-y-4 w-full">
+                                          <h2 className={`${zenDots.className} text-[16px] md:text-[24px] drop-shadow-lg`} style={{ color: selectedPrize.color, lineHeight: '1.2em' }}>
+                                              {selectedPrize.title}
+                                          </h2>
+                                          <div className="flex gap-4 flex-wrap">
+                                              <span className={`${spaceMono.className} text-[12px] md:text-[16px] px-3 py-1 rounded-full bg-white/10`} style={{ color: selectedPrize.color }}>
+                                                  {selectedPrize.winners}
+                                              </span>
+                                              <span className={`${spaceMono.className} text-[12px] md:text-[16px] px-3 py-1 rounded-full bg-white/10 text-white`}>
+                                                  {selectedPrize.prize}
+                                              </span>
                                           </div>
+                                          {selectedPrize.description && (
+                                              <div className={`${spaceMono.className} text-[12px] md:text-[16px] text-white/90`} style={{ lineHeight: '1.5em', whiteSpace: 'pre-line' }}>
+                                                  {selectedPrize.description}
+                                              </div>
+                                          )}
+                                      </div>
                                   </motion.div>
                               )}
                           </div>

@@ -53,34 +53,34 @@ export default function Speakers() {
       <nav className="relative z-20 w-full" style={{
         background: 'transparent',
         height: '95px',
-        paddingTop: '50px'
+        paddingTop: '30px'
       }}>
-        <div className="flex items-center justify-between px-20 h-full">
+        <div className="flex items-center justify-between px-4 lg:px-20 h-full">
           {/* Logo and Title */}
-          <Link href="/" className="flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity" style={{ marginLeft: '100px' }}>
-            <div className="w-20 h-20 rounded-lg overflow-hidden">
+          <Link href="/" className="flex items-center gap-2 lg:gap-4 cursor-pointer hover:opacity-80 transition-opacity ml-0 lg:ml-[100px]">
+            <div className="w-12 h-12 lg:w-20 lg:h-20 rounded-lg overflow-hidden">
               <Image
                 src="/logo.svg"
                 alt="DevFest Logo"
                 width={80}
                 height={80}
-                className="w-20 h-20"
+                className="w-12 h-12 lg:w-20 lg:h-20"
               />
             </div>
-            <h1 className={`${zenDots.className} text-white text-4xl`}>Devfest 2026</h1>
+            <h1 className={`${zenDots.className} text-white text-xl lg:text-4xl`}>Devfest 2026</h1>
           </Link>
 
           {/* Menu Button */}
-          <button 
+          <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`flex items-center gap-2 text-white ${zenDots.className} text-3xl hover:opacity-80 transition-opacity`}
+            className={`flex items-center gap-2 text-white ${zenDots.className} text-xl lg:text-3xl hover:opacity-80 transition-opacity`}
           >
-            <div className="flex flex-col gap-1.5">
-              <div className="w-10 h-1 bg-white"></div>
-              <div className="w-10 h-1 bg-white"></div>
-              <div className="w-10 h-1 bg-white"></div>
+            <div className="flex flex-col gap-1">
+              <div className="w-6 lg:w-10 h-0.5 lg:h-1 bg-white"></div>
+              <div className="w-6 lg:w-10 h-0.5 lg:h-1 bg-white"></div>
+              <div className="w-6 lg:w-10 h-0.5 lg:h-1 bg-white"></div>
             </div>
-            <span>MENU</span>
+            <span className="hidden lg:inline">MENU</span>
           </button>
         </div>
       </nav>
@@ -106,13 +106,15 @@ export default function Speakers() {
             >
               Home
             </Link>
-            <Link
-              href="/schedules"
+            <a
+              href="https://docs.google.com/spreadsheets/d/1sSDcNFrFrXo1Hk3-0M5JQBzCOKoNsQynivQOTraLfCU/edit?gid=0#gid=0"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}
               className={`text-white ${zenDots.className} text-2xl hover:text-purple-300 transition-colors`}
             >
               Schedule
-            </Link>
+            </a>
             <Link
               href="/tracks"
               onClick={() => setIsMenuOpen(false)}
@@ -139,7 +141,7 @@ export default function Speakers() {
       </div>
 
       {/* Main Content Frame */}
-      <div 
+      <div
         className="absolute z-10 main-content-frame-responsive"
         style={{
           left: '50%',
@@ -155,14 +157,14 @@ export default function Speakers() {
         }}
       >
         {/* Judges Section */}
-        <div className="relative" style={{ padding: '3.1% 5.1% 0 5.1%' }}>
+        <div className="relative" style={{ padding: '3.1% 5.1% 3.3% 5.1%' }}>
           <h2 className={`${zenDots.className} text-white text-4xl mb-8`} style={{ fontSize: '40px', lineHeight: '1.2em' }}>
             Judges
           </h2>
 
           {/* Judges Grid */}
-          <div className="grid grid-cols-3 gap-6 mb-12">
-            {judges.map((judge, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {judges.map((judge) => (
               <div
                 key={judge.id}
                 className="relative w-full"
@@ -237,159 +239,6 @@ export default function Speakers() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Sponsors Section */}
-        <div className="relative" style={{ padding: '0 5.1% 3.3% 5.1%', zIndex: 1, width: '100%' }}>
-          <h2 className={`${zenDots.className} text-white text-4xl mb-8`} style={{ fontSize: '40px', lineHeight: '1.2em' }}>
-            Sponsors
-          </h2>
-
-          {/* Platinum Sponsor */}
-          <div className="mb-12">
-            <h3 className={`${zenDots.className} text-white text-2xl mb-6`}>
-              Platinum Sponsor
-            </h3>
-            <div className="flex justify-center items-center">
-              <Link href="https://www.dedaluslabs.ai/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <Image
-                  src="/dedalus-labs-logo.png"
-                  alt="Dedalus Labs"
-                  width={200}
-                  height={200}
-                  className="object-contain"
-                  style={{ maxHeight: '150px', width: 'auto' }}
-                />
-              </Link>
-            </div>
-          </div>
-
-          {/* Gold Sponsors */}
-          <div className="mb-12">
-            <h3 className={`${zenDots.className} text-white text-2xl mb-6`}>
-              Gold Sponsors
-            </h3>
-            <div className="flex justify-center items-center flex-wrap gap-8">
-              <Link href="https://www.flowglad.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <Image
-                  src="/flowglad.png"
-                  alt="Flowglad"
-                  width={200}
-                  height={120}
-                  className="object-contain"
-                  style={{ maxHeight: '120px', width: 'auto' }}
-                />
-              </Link>
-              <Link href="https://ifm.ai/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity bg-white rounded-lg p-2">
-                <Image
-                  src="/ifm.png"
-                  alt="IFM - Institute of Foundation Models"
-                  width={200}
-                  height={120}
-                  className="object-contain"
-                  style={{ maxHeight: '120px', width: 'auto' }}
-                />
-              </Link>
-            </div>
-          </div>
-
-          {/* Silver Sponsors */}
-          <div className="mb-12">
-            <h3 className={`${zenDots.className} text-white text-2xl mb-6`}>
-              Silver Sponsors
-            </h3>
-            <div className="flex justify-center items-center flex-wrap gap-8">
-              <Link href="https://www.safetykit.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <Image
-                  src="/safetykit.jpeg"
-                  alt="SafetyKit"
-                  width={180}
-                  height={100}
-                  className="object-contain"
-                  style={{ maxHeight: '100px', width: 'auto' }}
-                />
-              </Link>
-              <Link href="https://scale.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <Image
-                  src="/scale.png"
-                  alt="Scale"
-                  width={180}
-                  height={100}
-                  className="object-contain"
-                  style={{ maxHeight: '100px', width: 'auto' }}
-                />
-              </Link>
-              <Link href="https://www.sonarsource.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <Image
-                  src="/sonarsource.jpg"
-                  alt="SonarSource"
-                  width={180}
-                  height={100}
-                  className="object-contain"
-                  style={{ maxHeight: '100px', width: 'auto' }}
-                />
-              </Link>
-              <Link href="https://www.columbia.edu/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <Image
-                  src="/columbia.jpg"
-                  alt="Columbia"
-                  width={180}
-                  height={100}
-                  className="object-contain"
-                  style={{ maxHeight: '100px', width: 'auto' }}
-                />
-              </Link>
-            </div>
-          </div>
-
-          {/* Bronze Sponsors */}
-          <div className="mb-12">
-            <h3 className={`${zenDots.className} text-white text-2xl mb-6`}>
-              Bronze Sponsors
-            </h3>
-            <div className="flex justify-center items-center flex-wrap gap-8">
-              <Link href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity bg-white rounded-lg p-2">
-                <Image
-                  src="/elevenlabs.png"
-                  alt="ElevenLabs"
-                  width={160}
-                  height={80}
-                  className="object-contain"
-                  style={{ maxHeight: '80px', width: 'auto' }}
-                />
-              </Link>
-              <Link href="https://balsamiq.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity bg-white rounded-lg p-2">
-                <Image
-                  src="/balsamiq.png"
-                  alt="Balsamiq"
-                  width={160}
-                  height={80}
-                  className="object-contain"
-                  style={{ maxHeight: '80px', width: 'auto' }}
-                />
-              </Link>
-              <Link href="https://figma.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity bg-white rounded-lg p-2">
-                <Image
-                  src="/figma.png"
-                  alt="Figma"
-                  width={160}
-                  height={80}
-                  className="object-contain"
-                  style={{ maxHeight: '80px', width: 'auto' }}
-                />
-              </Link>
-			  <Link href="https://featherless.ai/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity bg-white rounded-lg p-2">
-                <Image
-                  src="/featherless.png"
-                  alt="Featherless"
-                  width={160}
-                  height={80}
-                  className="object-contain"
-                  style={{ maxHeight: '80px', width: 'auto' }}
-                />
-              </Link>
-            </div>
           </div>
         </div>
       </div>

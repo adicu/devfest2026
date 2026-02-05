@@ -59,24 +59,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${russoOne.variable} ${pixelifySans.variable} ${zenDots.variable} ${allertaStencil.variable} font-sans antialiased overflow-hidden`}
       >
         {/* MLH Trust Badge */}
-        <a 
-          id="mlh-trust-badge" 
-          href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=white" 
-          target="_blank" 
-          style={{
-            display: 'block',
-            position: 'fixed',
-            left: '24px',
-            top: '0',
-            width: '150px',
-            height: '150px',
-            zIndex: 10000
-          }}
+        <a
+          id="mlh-trust-badge"
+          href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=white"
+          target="_blank"
+          className="block fixed z-[10000] top-0 right-12 w-20 h-20 lg:left-6 lg:right-auto lg:w-[150px] lg:h-[150px]"
         >
-          <img 
-            src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-white.svg" 
-            alt="Major League Hacking 2026 Hackathon Season" 
-            style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+          <img
+            src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-white.svg"
+            alt="Major League Hacking 2026 Hackathon Season"
+            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
           />
         </a>
         {children}

@@ -127,34 +127,34 @@ export default function FAQ() {
       <nav className="relative z-20 w-full" style={{
         background: 'transparent',
         height: '95px',
-        paddingTop: '50px'
+        paddingTop: '30px'
       }}>
-        <div className="flex items-center justify-between px-20 h-full">
+        <div className="flex items-center justify-between px-4 lg:px-20 h-full">
           {/* Logo and Title */}
-          <Link href="/" className="flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity" style={{ marginLeft: '100px' }}>
-            <div className="w-20 h-20 rounded-lg overflow-hidden">
+          <Link href="/" className="flex items-center gap-2 lg:gap-4 cursor-pointer hover:opacity-80 transition-opacity ml-0 lg:ml-[100px]">
+            <div className="w-12 h-12 lg:w-20 lg:h-20 rounded-lg overflow-hidden">
               <Image
                 src="/logo.svg"
                 alt="DevFest Logo"
                 width={80}
                 height={80}
-                className="w-20 h-20"
+                className="w-12 h-12 lg:w-20 lg:h-20"
               />
             </div>
-            <h1 className={`${zenDots.className} text-white text-4xl`}>Devfest 2026</h1>
+            <h1 className={`${zenDots.className} text-white text-xl lg:text-4xl`}>Devfest 2026</h1>
           </Link>
 
           {/* Menu Button */}
-          <button 
+          <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`flex items-center gap-2 text-white ${zenDots.className} text-3xl hover:opacity-80 transition-opacity`}
-        >
-            <div className="flex flex-col gap-1.5">
-              <div className="w-10 h-1 bg-white"></div>
-              <div className="w-10 h-1 bg-white"></div>
-              <div className="w-10 h-1 bg-white"></div>
+            className={`flex items-center gap-2 text-white ${zenDots.className} text-xl lg:text-3xl hover:opacity-80 transition-opacity`}
+          >
+            <div className="flex flex-col gap-1">
+              <div className="w-6 lg:w-10 h-0.5 lg:h-1 bg-white"></div>
+              <div className="w-6 lg:w-10 h-0.5 lg:h-1 bg-white"></div>
+              <div className="w-6 lg:w-10 h-0.5 lg:h-1 bg-white"></div>
             </div>
-            <span>MENU</span>
+            <span className="hidden lg:inline">MENU</span>
           </button>
         </div>
       </nav>
@@ -180,13 +180,15 @@ export default function FAQ() {
             >
               Home
             </Link>
-            <Link
-              href="/schedules"
+            <a
+              href="https://docs.google.com/spreadsheets/d/1sSDcNFrFrXo1Hk3-0M5JQBzCOKoNsQynivQOTraLfCU/edit?gid=0#gid=0"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}
               className={`text-white ${zenDots.className} text-2xl hover:text-purple-300 transition-colors`}
             >
               Schedule
-            </Link>
+            </a>
             <Link
               href="/tracks"
               onClick={() => setIsMenuOpen(false)}
@@ -238,15 +240,14 @@ export default function FAQ() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center" style={{ marginTop: '1%', marginLeft: '10%', paddingLeft: '5.2%', paddingRight: '5.2%', paddingTop: '2.8%', paddingBottom: '2.8%' }}>
+      <div className="relative z-10 flex flex-col items-center px-4 lg:px-0" style={{ marginTop: '1%', paddingTop: '2.8%', paddingBottom: '2.8%' }}>
 
       {/* Animated Content */}
       <motion.div
-          className="relative z-20 flex flex-col items-center w-full text-center"
+          className="relative z-20 flex flex-col items-center w-full text-center max-w-[90%] lg:max-w-[35%] lg:ml-[10%]"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-          style={{ maxWidth: '35%' }}
       >
         {/* Title */}
         <motion.h1
